@@ -14,7 +14,7 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
 
-    networking.hostName = "nixos"; # Define your hostname.
+    networking.hostName = "marvin"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
@@ -77,8 +77,6 @@
 
     # Enable touchpad support (enabled default in most desktopManager).
     services.xserver.libinput.enable = true;
-
-    # enable programms
 
     #  Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.spatola = {

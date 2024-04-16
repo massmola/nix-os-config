@@ -88,6 +88,7 @@
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [
             pkgs.firefox
+            pkgs.direnv
         ];
     };
 

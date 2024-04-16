@@ -8,6 +8,7 @@
     imports =
         [ # Include the results of the hardware scan.
         ./hardware-configuration.nix
+        <home-manager/nixos>
         ];
 
     # Bootloader.
@@ -105,7 +106,6 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
 	pkgs.vscode
-        pkgs.neovim
         pkgs.bat
         pkgs.git
     ];
@@ -115,6 +115,26 @@
 
     # enable flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+    # Home Manager
+    programs.home-manager.enable = true;
+    home-manager.users.spatola = { pkgs, ... }: {
+
+        home.username = "spatola";
+        home.homeDirectory = "/home/spatola";
+
+        home.packages = [
+            pkgs.neovim
+        ];
+
+  };
+
+        programs.bash.enable = true;
+
+        # The state version is required and should stay at the version you
+        # originally installed.
+        home.stateVersion = "23.11";
+    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

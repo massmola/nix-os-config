@@ -44,7 +44,11 @@
     };
 
     # wayland
-    programs.sway.enable = true;
+    # programs.sway.enable = true;
+
+    # needed for wayland
+    security.polkit.enable = true;
+    hardware.opengl.enable = true;  # when using QEMU KVM
 
     # Enable the X11 windowing system.
     # services.xserver.enable = true;
@@ -101,9 +105,11 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-	pkgs.vscode
-        pkgs.bat
-        pkgs.git
+	    pkgs.vscode
+        bat
+        git
+        wget
+        curl
     ];
 
     # hardware changes
@@ -182,6 +188,8 @@
     # this value at the release version of the first install of this system.
     # Before changing this value read the documentation for this option
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+    system.autoUpgrade.enable = true;
+    system.autoUpgrade.allowReboot = true;
     system.stateVersion = "23.11"; # Did you read the comment?
 
 }

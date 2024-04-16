@@ -129,6 +129,30 @@
         ];
 
 
+
+        # let home manager work with your programms
+
+        # programs.bash = {
+        #     enable = true;
+        #     aliases = {
+        #         nixrebuild = "git -am 'nixos rebuild' && git push && sudo cp ./configuration.nix /etc/nixos/configuration.nix && sudo nixos-rebuild switch";
+        #     };
+        # };
+        
+        programs.home-manager.enable = true;
+
+        programs.git = {
+            enable = true;
+            userName = "MassimiIiano";
+            userEmail = "massimiliano.mola.bzs@gmail.com";
+            aliases = {
+                pu = "push";
+                co = "checkout";
+                br = "branch";
+                cm = "commit";
+            };
+        };
+
         # The state version is required and should stay at the version you
         # originally installed.
         home.stateVersion = "23.11";

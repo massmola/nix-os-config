@@ -132,14 +132,17 @@
 
         # let home manager work with your programms
 
-        # programs.bash = {
-        #     enable = true;
-        #     aliases = {
-        #         nixrebuild = "git -am 'nixos rebuild' && git push && sudo cp ./configuration.nix /etc/nixos/configuration.nix && sudo nixos-rebuild switch";
-        #     };
-        # };
         
         programs.home-manager.enable = true;
+
+        programs.bash = {
+            enable = true;
+            shellAliases  = {
+                nixsave = "git commit -am 'nixos: save' && git push";
+                nixbuild = "sudo cp ./configuration.nix /etc/nixos/configuration.nix && sudo nixos-rebuild switch";
+                nixsb = "nixsave && nixbuild";
+            };
+        };
 
         programs.git = {
             enable = true;

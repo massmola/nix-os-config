@@ -76,7 +76,7 @@
     };
 
     # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
+    services.xserver.libinput.enable = true;
 
     # enable programms
 
@@ -86,8 +86,7 @@
         description = "Spatola";
         extraGroups = [ "networkmanager" "wheel" ];
         packages = with pkgs; [
-            firefox-devedition
-            vscode
+            pkgs.firefox
         ];
     };
 
@@ -105,9 +104,10 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-        neovim
-        bat
-        git
+	pkgs.vscode
+        pkgs.neovim
+        pkgs.bat
+        pkgs.git
     ];
     
     hardware.bluetooth.enable = true;

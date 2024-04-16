@@ -114,27 +114,26 @@
     hardware.bluetooth.enable = true;
 
     # enable flakes
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    # nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
     # Home Manager
-    programs.home-manager.enable = true;
-    home-manager.users.spatola = { pkgs, ... }: {
+    # programs.home-manager.enable = true;
+    # home-manager.users.spatola = { pkgs, ... }: {
 
-        home.username = "spatola";
-        home.homeDirectory = "/home/spatola";
+    #     # prerequisits
+    #     home.username = "spatola";
+    #     home.homeDirectory = "/home/spatola";
+    #     # programs.bash.enable = true;
 
-        home.packages = [
-            pkgs.neovim
-        ];
+    #     home.packages = [
+    #         pkgs.neovim
+    #     ];
 
-  };
 
-        programs.bash.enable = true;
-
-        # The state version is required and should stay at the version you
-        # originally installed.
-        home.stateVersion = "23.11";
-    };
+    #     # The state version is required and should stay at the version you
+    #     # originally installed.
+    #     home.stateVersion = "23.11";
+    # };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

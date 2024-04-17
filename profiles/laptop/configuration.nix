@@ -7,8 +7,7 @@
 {
     imports =
         [ # Include the results of the hardware scan.
-        ./hardware-configuration.nix
-        <home-manager/nixos>
+            ../../system/hardware-configuration.nix
         ];
 
     # Bootloader.
@@ -47,21 +46,21 @@
     # programs.sway.enable = true;
 
     # needed for wayland
-    security.polkit.enable = true;
-    hardware.opengl.enable = true;  # when using QEMU KVM
+    # security.polkit.enable = true;
+    # hardware.opengl.enable = true;  # when using QEMU KVM
 
     # Enable the X11 windowing system.
-    # services.xserver.enable = true;
+    services.xserver.enable = true;
 
     # # Enable the GNOME Desktop Environment.
-    # services.xserver.displayManager.gdm.enable = true;
-    # services.xserver.desktopManager.gnome.enable = true;
+    services.xserver.displayManager.gdm.enable = true;
+    services.xserver.desktopManager.gnome.enable = true;
 
     # # Configure keymap in X11
-    # services.xserver = {
-    #     layout = "us";
-    #     xkbVariant = "";
-    # };
+    services.xserver = {
+        layout = "us";
+        xkbVariant = "";
+    };
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
@@ -83,8 +82,8 @@
         #media-session.enable = true;
     };
 
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
+    Enable touchpad support (enabled default in most desktopManager).
+    services.xserver.libinput.enable = true;
 
     # enable programms
 
@@ -105,63 +104,18 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
-	    pkgs.vscode
-        bat
-        git
+        vim
         wget
-        curl
+        zsh
+        git
+        cryptsetup
+        home-manager
+        wpa_supplicant
+        vscode
     ];
 
     # hardware changes
     hardware.bluetooth.enable = true;
-
-    # enable flakes
-    # nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-    # Home Manager
-    home-manager.users.spatola = { pkgs, ... }: {
-
-        # prerequisits
-        home.username = "spatola";
-        home.homeDirectory = "/home/spatola";
-        # programs.bash.enable = true;
-
-        home.packages = [
-            pkgs.neovim
-        ];
-
-
-
-        # let home manager work with your programms
-
-        
-        programs.home-manager.enable = true;
-
-        programs.bash = {
-            enable = true;
-            shellAliases  = {
-                nixsave = "git commit -am 'nixos: save' && git push";
-                nixbuild = "sudo cp ./configuration.nix /etc/nixos/configuration.nix && sudo nixos-rebuild switch";
-                nixsb = "nixsave && nixbuild";
-            };
-        };
-
-        programs.git = {
-            enable = true;
-            userName = "MassimiIiano";
-            userEmail = "massimiliano.mola.bzs@gmail.com";
-            aliases = {
-                pu = "push";
-                co = "checkout";
-                br = "branch";
-                cm = "commit";
-            };
-        };
-
-        # The state version is required and should stay at the version you
-        # originally installed.
-        home.stateVersion = "23.11";
-    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

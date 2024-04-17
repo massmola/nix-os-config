@@ -10,23 +10,54 @@
     };
 
     user = {
-      wm = "myprland";
+      username = "spatola";
+      description = "Spatola";
+      wm = "hyprland";
+      wmType = "wayland";
     };
 
     # configure lib
     lib = inputs.nixpkgs-stable.lib;
 
+    pkgs = import inputs.nixpkgs-stable {
+        system = system.system;
+        config = {
+          allowUnfree = true;
+          allowUnfreePredicate = (_: true);
+        };
+      };
+
     # configure home-manager
     home-manager = inputs.home-manager-stable;
   in 
   {
-    homeConfigurations = {};
+    homeConfigurations = {
+      user = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [
+          (./. + "/profiles" + ("/" + system.profile) + "/home.nix") # load home.nix from selected PROFILE
+        ];
+        extraSpecialArgs = {
+          inherit system;
+          inherit user;
+          inherit inputs;
+        };
+      };
+    };
+    
     nixosConfigurations = {
       system = lib.nixosSystem {
         system = system.system;
         modules = [
-          (./. + "/profiles" + ("/" + system.profile) + "/configuration.nix")        
+          (./. + "/profiles" + ("/" + system.profile) + "/configuration.nix")
         ];
+
+        specialArgs = {
+          # pass config variables from above
+          inherit system;
+          inherit user;
+          inherit inputs;
+        };
       };
     };
   };
@@ -41,11 +72,11 @@
     home-manager-stable.url = "github:nix-community/home-manager/release-23.11";
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-    plugin_name = {
-        url = "github:maintener/plugin_name";
-        inputs.hyprland.follows = "hyprland"; # IMPORTANT
-    };
+    # hyprland.url = "github:hyprwm/Hyprland";
+    # plugin_name = {
+    #     url = "github:maintener/plugin_name";
+    #     inputs.hyprland.follows = "hyprland"; # IMPORTANT
+    # };
   
   };
 

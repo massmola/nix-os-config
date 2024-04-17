@@ -6,12 +6,14 @@
 
 {
     imports =
-        [ # Include the results of the hardware scan.
+        [   
             ../../system/hardware-configuration.nix
-            # (./. + "../../../system/wm"+("/"+user.wm)+".nix")
-            ../../hyprland.nix
-            
         ];
+
+    # hardware
+    hardware.bluetooth.enable = true;
+    hardware.opengl.enable = true;
+
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
@@ -45,21 +47,11 @@
         LC_TIME = "en_GB.UTF-8";
     };
 
-    # wayland
-    # programs.sway.enable = true;
+    # Enable the GNOME Desktop Environment.
+    # services.xserver.displayManager.gdm.enable = true;
+    # services.xserver.desktopManager.gnome.enable = true;
 
-    # needed for wayland
-    # security.polkit.enable = true;
-    # hardware.opengl.enable = true;  # when using QEMU KVM
-
-    # Enable the X11 windowing system.
-    services.xserver.enable = true;
-
-    # # Enable the GNOME Desktop Environment.
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
-
-    # # Configure keymap in X11
+    # Configure keymap in X11
     services.xserver = {
         layout = "us";
         xkbVariant = "";
@@ -67,18 +59,7 @@
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
-
-    # Enable sound with pipewire.
-    sound.enable = true;
-    hardware.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        jack.enable = true;
-    };
+    services.avahi.enable = true;
 
     # Enable touchpad support (enabled default in most desktopManager).
     services.xserver.libinput.enable = true;
@@ -89,7 +70,7 @@
     users.users.${user.username} = {
         isNormalUser = true;
         description = user.description;
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [
             pkgs.firefox
             pkgs.direnv
@@ -110,11 +91,106 @@
         home-manager
         wpa_supplicant
         vscode
+        # Wayland
+        wayland waydroid
+            (sddm-chili-theme.override {
+            themeConfig = {
+                # ScreenWidth = 1920;
+                # ScreenHeight = 1080;
+                blur = true;
+            };})
+        # CPU printing
+        cups-filters
+        # docker
+        docker
+        docker-compose
+        lazydocker
     ];
 
-    # hardware changes
-    hardware.bluetooth.enable = true;
+    # Pipewire
+    security.rtkit.enable = true;
+    services.pipewire = {
+        enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        pulse.enable = true;
+        jack.enable = true;
+    };
+
+    # dbus
+    services.dbus = {
+        enable = true;
+        packages = [ pkgs.dconf ];
+    };
+
+    programs.dconf = {
+        enable = true;
+    };
+
+    # Fonts
+    fonts.packages = with pkgs; [
+        (nerdfonts.override { fonts = [ "Inconsolata" ]; })
+        powerline
+        inconsolata
+        inconsolata-nerdfont
+        iosevka
+        font-awesome
+        ubuntu_font_family
+        terminus_font
+    ];
+
+    # Configure xwayland
+    services.xserver = {
+        enable = true;
+        xkb = {
+            layout = "us";
+            variant = "";
+            options = "caps:escape";
+        };
+        displayManager.sddm = {
+            enable = true;
+            wayland.enable = true;
+            enableHidpi = true;
+            # theme = "chili";
+        };
+    };
+
+    # HYPRLAND
+      # Security
+    security = {
+        pam.services.swaylock = {
+        text = ''
+            auth include login
+        '';
+        };
+    #    pam.services.gtklock = {};
+        pam.services.login.enableGnomeKeyring = true;
+    };
+
+    services.gnome.gnome-keyring.enable = true;
+
+    # programs = {
+    #     hyprland = {
+    #         enable = true;
+    #         xwayland = {
+    #             enable = true;
+    #         };
+    #         portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    #     };
+    # };
+
+    # Docker
+    virtualisation.docker = {
+        enable = true;
+        enableOnBoot = true;
+        storageDriver = "btrfs";
+        autoPrune.enable = true;
+        rootless = {
+            enable = true;
+            setSocketVariable = true;
+        };
+        
+    };
 
     system.stateVersion = "23.11"; # Did you read the comment?
-
 }

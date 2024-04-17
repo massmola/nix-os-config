@@ -12,7 +12,7 @@
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
   };
 
-  outputs = { self, nixpkgs }@inputs: 
+  outputs = { self, nixpkgs, ... }@inputs: 
   let 
     # configure system
     systemSettings = {

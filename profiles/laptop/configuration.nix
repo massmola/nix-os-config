@@ -76,15 +76,14 @@
         LC_TIME = "en_GB.UTF-8";
     };
 
-    # Enable the GNOME Desktop Environment.
-    # services.xserver.displayManager.gdm.enable = true;
-    # services.xserver.desktopManager.gnome.enable = true;
+    services = {
+        xserver = {
+            layout = "us";
+            xkbVariant = "";
+        };
 
-    # Configure keymap in X11
-    services.xserver = {
-        layout = "us";
-        xkbVariant = "";
     };
+    # Configure keymap in X11
 
     # Enable CUPS to print documents.
     services.printing.enable = true;

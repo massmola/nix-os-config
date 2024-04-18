@@ -12,7 +12,10 @@
 
     # hardware
     hardware.bluetooth.enable = true;
-    hardware.opengl.enable = true;
+    hardware.opengl = {
+        enable = true;
+        driSupport32Bit = true;
+    };
 
 
     # Bootloader.
@@ -70,7 +73,7 @@
     users.users.${user.username} = {
         isNormalUser = true;
         description = user.description;
-        extraGroups = [ "networkmanager" "wheel" "docker" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" "input" ];
         packages = with pkgs; [
             pkgs.firefox
             pkgs.direnv
@@ -105,6 +108,14 @@
         docker
         docker-compose
         lazydocker
+        # for hyprland
+        waybar # bar
+        dunst # notification deamon
+        swww # screensharing
+        kitty # terminal
+        rofi-wayland    # launcher
+        # games
+        bastet
     ];
 
     # Pipewire
@@ -140,6 +151,9 @@
     ];
 
     # Configure xwayland
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
     services.xserver = {
         enable = true;
         xkb = {
@@ -169,15 +183,15 @@
 
     services.gnome.gnome-keyring.enable = true;
 
-    # programs = {
-    #     hyprland = {
-    #         enable = true;
-    #         xwayland = {
-    #             enable = true;
-    #         };
-    #         portalPackage = pkgs.xdg-desktop-portal-hyprland;
-    #     };
-    # };
+    programs = {
+        hyprland = {
+            enable = true;
+            xwayland = {
+                enable = true;
+            };
+            portalPackage = pkgs.xdg-desktop-portal-hyprland;
+        };
+    };
 
     # Docker
     virtualisation.docker = {
@@ -194,3 +208,4 @@
 
     system.stateVersion = "23.11"; # Did you read the comment?
 }
+

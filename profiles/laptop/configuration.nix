@@ -84,12 +84,10 @@
     };
 
     services = {
+        gvfs.enable = true;
         xserver = {
             layout = "us";
             xkbVariant = "";
-        };
-        gvfs.enable = true;
-        xserver = {
             enable = true;
             libinput.enable = true; # touchpad support
             displayManager.startx.enable = true;

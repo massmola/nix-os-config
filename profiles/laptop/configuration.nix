@@ -8,7 +8,7 @@
     imports =
         [   
             ./hardware-configuration.nix
-            ./home.nix
+            ./gnome.nix
         ];
 
     # hardware

@@ -41,15 +41,17 @@
   {
     nixosConfigurations = {
       "marvinos" = lib.nixosSystem {
+
         system = system.system;
+
         modules = [
-          (./. + "/profiles" + ("/" + system.profile) + "/configuration.nix")
+          (./. + "/profiles" + ("/" + system.profile) )
         ];
 
-      specialArgs = {
-        inherit system;
-        inherit user;
-        inherit inputs;
+        specialArgs = {
+          inherit system;
+          inherit user;
+          inherit inputs;
         };
       };
     };

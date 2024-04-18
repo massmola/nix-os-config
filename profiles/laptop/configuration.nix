@@ -128,17 +128,6 @@
         bastet
     ];
 
-    # VScode
-    programs.vscode = {
-        enable = true;
-        extensions = with pkgs.vscode-extensions; [
-            # bbenoist.nix
-            # ms-python.python
-            # ms-azuretools.vscode-docker
-            # ms-vscode-remote.remote-ssh
-        ];
-    };
-
     # Pipewire
     security.rtkit.enable = true;
     services.pipewire = {
@@ -172,7 +161,7 @@
     ];
 
     # Configure xwayland
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+#    environment.sessionVariables.NIXOS_OZONE_WL = "1";
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 

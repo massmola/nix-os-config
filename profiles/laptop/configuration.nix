@@ -81,7 +81,7 @@
             layout = "us";
             xkbVariant = "";
         };
-
+        gvfs.enable = true;
     };
     # Configure keymap in X11
 

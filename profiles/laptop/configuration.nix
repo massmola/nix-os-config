@@ -2,13 +2,22 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, user, system, ... }:
+{ inputs, config, pkgs, user, system, ... }:
 
 {
     imports =
         [   
             ../../system/hardware-configuration.nix
+            inputs.home-manager-stable.nixosModules.home-manager
+            # ./home.nix
         ];
+
+    home-manager = {
+        extraSpecialArgs = {inherit inputs;};
+        users = {
+            spatola = import ./home.nix;
+        };
+    };
 
     # hardware
     hardware.bluetooth.enable = true;
@@ -16,6 +25,9 @@
         enable = true;
         driSupport32Bit = true;
     };
+
+    # nix flake
+    nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
     # Bootloader.
@@ -74,6 +86,7 @@
         isNormalUser = true;
         description = user.description;
         extraGroups = [ "networkmanager" "wheel" "docker" "input" ];
+        home-manager.enable = true;
         packages = with pkgs; [
             pkgs.firefox
             pkgs.direnv

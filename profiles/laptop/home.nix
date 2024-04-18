@@ -1,12 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = user.username;
-  home.homeDirectory = "/home/"+user.username;
+  home.username = "spatola";
+  home.homeDirectory = "/home/spatola";
 
-  # programs.home-manager.enable = true;
   #   wayland.windowManager.hyprland.settings = {
   #   decoration = {
   #     shadow_offset = "0 5";
@@ -22,5 +21,20 @@
   #     "$mod ALT, mouse:272, resizewindow"
   #   ];
 
+  
+  programs.git = {
+    enable = true;
+    userName = "assimiIiano";
+    userEmail = "massimiliano.mola.bzs@gmail.com";
+    aliases = {
+      pu = "push";
+      cm = "commit -m";
+      st = "status";
+      co = "checkout";
+    };
+  };
+
+
   home.stateVersion = "23.11"; 
-};
+  programs.home-manager.enable = true;
+}

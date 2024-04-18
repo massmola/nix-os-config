@@ -16,6 +16,7 @@
       gnome-extension-manager
       nautilus-open-any-terminal
       # morewaita-icon-theme
+      gnome.epiphany
       bibata-cursors
       rubik
       lexend

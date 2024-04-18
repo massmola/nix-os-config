@@ -9,7 +9,7 @@
         [   
             ./hardware-configuration.nix
             ./gnome.nix
-            ./laptop.nix
+            # ./laptop.nix
         ];
 
     # hardware
@@ -62,7 +62,6 @@
     time.timeZone = "Europe/Rome";
 
     # Select internationalisation properties.
-
     i18n.defaultLocale = "en_US.UTF-8";
     i18n.extraLocaleSettings = {
         LC_ADDRESS = "en_US.UTF-8";
@@ -83,26 +82,23 @@
         ];
     };
 
-    # services = {
-    #     gvfs.enable = true;
-    #     xserver = {
-    #         layout = "us";
-    #         xkbVariant = "";
-    #         enable = true;
-    #         libinput.enable = true; # touchpad support
-    #         displayManager.startx.enable = true;
-    #         desktopManager.gnome = {
-    #             enable = true;
-    #             extraGSettingsOverridePackages = [
-    #             pkgs.nautilus-open-any-terminal
-    #             ];
-    #         };
-    #     };
-    # };
+    services = {
+        gvfs.enable = true;
+        xserver = {
+            enable = true;
+            libinput.enable = true; # touchpad support
+            displayManager.startx.enable = true;
+            desktopManager.gnome = {
+                enable = true;
+                extraGSettingsOverridePackages = [
+                    pkgs.nautilus-open-any-terminal
+                ];
+            };
+        };
+    };
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
-    services.avahi.enable = true;
 
     # Enable touchpad support (enabled default in most desktopManager).
 
@@ -125,9 +121,12 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+        curl
         vim
         wget
         git
+        fish
+        gh
         cryptsetup
         # home-manager
         wpa_supplicant
@@ -170,20 +169,20 @@
     };
 
     # dbus
-    services.dbus = {
-        enable = true;
-        packages = [ pkgs.dconf ];
-    };
-
-    # services.greetd = {
+    # services.dbus = {
     #     enable = true;
-    #     settings = {
-    #         default_session = {
-    #             command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
-    #             user = "greeter";
-    #         };  
-    #     };
+    #     packages = [ pkgs.dconf ];
     # };
+
+    services.greetd = {
+        enable = true;
+        settings = {
+            default_session = {
+                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
+                user = "greeter";
+            };  
+        };
+    };
 
     programs.dconf = {
         enable = true;
@@ -206,32 +205,32 @@
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-    services.xserver = {
-        enable = true;
-        xkb = {
-            layout = "us";
-            variant = "";
-            options = "caps:escape";
-        };
-        displayManager.sddm = {
-            enable = true;
-            wayland.enable = true;
-            enableHidpi = true;
-            # theme = "chili";
-        };
-    };
+    # services.xserver = {
+    #     enable = true;
+    #     xkb = {
+    #         layout = "us";
+    #         variant = "";
+    #         options = "caps:escape";
+    #     };
+    #     displayManager.sddm = {
+    #         enable = true;
+    #         wayland.enable = true;
+    #         enableHidpi = true;
+    #         # theme = "chili";
+    #     };
+    # };
 
     # HYPRLAND
       # Security
-    security = {
-        pam.services.swaylock = {
-        text = ''
-            auth include login
-        '';
-        };
-    #    pam.services.gtklock = {};
-        pam.services.login.enableGnomeKeyring = true;
-    };
+    # security = {
+    #     pam.services.swaylock = {
+    #     text = ''
+    #         auth include login
+    #     '';
+    #     };
+    # #    pam.services.gtklock = {};
+    #     pam.services.login.enableGnomeKeyring = true;
+    # };
 
     services.gnome.gnome-keyring.enable = true;
 

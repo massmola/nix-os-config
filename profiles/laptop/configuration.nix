@@ -206,20 +206,20 @@
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-    services.xserver = {
-        enable = true;
-        xkb = {
-            layout = "us";
-            variant = "";
-            options = "caps:escape";
-        };
-        displayManager.sddm = {
-            enable = true;
-            wayland.enable = true;
-            enableHidpi = true;
-            # theme = "chili";
-        };
-    };
+    # services.xserver = {
+    #     enable = true;
+    #     xkb = {
+    #         layout = "us";
+    #         variant = "";
+    #         options = "caps:escape";
+    #     };
+    #     displayManager.sddm = {
+    #         enable = true;
+    #         wayland.enable = true;
+    #         enableHidpi = true;
+    #         # theme = "chili";
+    #     };
+    # };
 
     # HYPRLAND
       # Security
@@ -255,7 +255,6 @@
         #     enable = true;
         #     setSocketVariable = true;
         # };
-        
     };
 
     system.stateVersion = "23.11"; 

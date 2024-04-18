@@ -41,11 +41,11 @@
   {
     nixosConfigurations = {
       "marvinos" = lib.nixosSystem {
-
+        
         system = system.system;
 
         modules = [
-          (./. + "/profiles" + ("/" + system.profile) )
+          (./. + "/profiles" + ("/" + system.profile) + "/configuration.nix")
         ];
 
         specialArgs = {

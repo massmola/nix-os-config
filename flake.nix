@@ -19,11 +19,11 @@
     # configure lib
     lib = inputs.nixpkgs-stable.lib;
 
-    pkgs = import inputs.nixpkgs-stable {
+    pkgs = import inputs.nixpkgs {
       system = system.system;
       config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
+        allowUnfree = true;
+        allowUnfreePredicate = (_: true);
       };
     };
 
@@ -48,8 +48,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-23.11";
 
     home-manager-unstable.url = "github:nix-community/home-manager/master";
     home-manager-unstable.inputs.nixpkgs.follows = "nixpkgs";

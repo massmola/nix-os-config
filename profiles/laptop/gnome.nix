@@ -21,6 +21,7 @@
       lexend
       gnome.nautilus-python
       twitter-color-emoji
+      zsh
     ];
 
     gnome.excludePackages =
@@ -34,7 +35,6 @@
       ++ (with pkgs.gnome; [
         cheese # webcam tool
         gnome-music
-        epiphany # web browser
         geary # email reader
         evince # document viewer
         # gnome-characters

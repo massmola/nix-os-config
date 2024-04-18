@@ -91,7 +91,6 @@
     environment.systemPackages = with pkgs; [
         vim
         wget
-        zsh
         git
         cryptsetup
         # home-manager

@@ -8,16 +8,16 @@
     imports =
         [   
             ../../system/hardware-configuration.nix
-            inputs.home-manager-stable.nixosModules.home-manager
+#            inputs.home-manager-stable.nixosModules.home-manager
             # ./home.nix
         ];
 
-    home-manager = {
-        extraSpecialArgs = {inherit inputs;};
-        users = {
-            spatola = import ./home.nix;
-        };
-    };
+#   home-manager = {
+#        extraSpecialArgs = {inherit inputs;};
+#        users = {
+#            spatola = import ./home.nix;
+#        };
+#    };
 
     # hardware
     hardware.bluetooth.enable = true;
@@ -86,7 +86,6 @@
         isNormalUser = true;
         description = user.description;
         extraGroups = [ "networkmanager" "wheel" "docker" "input" ];
-        home-manager.enable = true;
         packages = with pkgs; [
             pkgs.firefox
             pkgs.direnv

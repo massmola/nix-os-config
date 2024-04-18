@@ -15,7 +15,7 @@
     systemPackages = with pkgs; [
       gnome-extension-manager
       nautilus-open-any-terminal
-      morewaita-icon-theme
+      # morewaita-icon-theme
       bibata-cursors
       rubik
       lexend

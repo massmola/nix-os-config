@@ -40,7 +40,7 @@
   in 
   {
     nixosConfigurations = {
-      system = lib.nixosSystem {
+      "marvinos" = lib.nixosSystem {
         system = system.system;
         modules = [
           (./. + "/profiles" + ("/" + system.profile) + "/configuration.nix")

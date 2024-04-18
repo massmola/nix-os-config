@@ -13,4 +13,4 @@ git commit -m "Commit on $(date)"
 git push
 
 # Rebuld NixOS
-sudo nixos-rebuild switch --flake ./#system
+sudo nixos-rebuild switch --flake ./#marvinos

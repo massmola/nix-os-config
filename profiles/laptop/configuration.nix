@@ -83,22 +83,22 @@
         ];
     };
 
-    services = {
-        gvfs.enable = true;
-        xserver = {
-            layout = "us";
-            xkbVariant = "";
-            enable = true;
-            libinput.enable = true; # touchpad support
-            displayManager.startx.enable = true;
-            desktopManager.gnome = {
-                enable = true;
-                extraGSettingsOverridePackages = [
-                pkgs.nautilus-open-any-terminal
-                ];
-            };
-        };
-    };
+    # services = {
+    #     gvfs.enable = true;
+    #     xserver = {
+    #         layout = "us";
+    #         xkbVariant = "";
+    #         enable = true;
+    #         libinput.enable = true; # touchpad support
+    #         displayManager.startx.enable = true;
+    #         desktopManager.gnome = {
+    #             enable = true;
+    #             extraGSettingsOverridePackages = [
+    #             pkgs.nautilus-open-any-terminal
+    #             ];
+    #         };
+    #     };
+    # };
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
@@ -207,18 +207,18 @@
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
     services.xserver = {
-        # enable = true;
+        enable = true;
         xkb = {
             layout = "us";
             variant = "";
             options = "caps:escape";
         };
-        # displayManager.sddm = {
-        #     enable = true;
-        #     wayland.enable = true;
-        #     enableHidpi = true;
-        #     # theme = "chili";
-        # };
+        displayManager.sddm = {
+            enable = true;
+            wayland.enable = true;
+            enableHidpi = true;
+            # theme = "chili";
+        };
     };
 
     # HYPRLAND

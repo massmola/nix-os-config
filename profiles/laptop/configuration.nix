@@ -207,7 +207,7 @@
     # Docker
     virtualisation.docker = {
         enable = true;
-        # enableOnBoot = true;
+        enableOnBoot = true;
         # storageDriver = "btrfs";
         # autoPrune.enable = true;
         # rootless = {
@@ -217,6 +217,6 @@
         
     };
 
-    system.stateVersion = "23.11"; # Did you read the comment?
+    system.stateVersion = "23.11"; 
 }
 

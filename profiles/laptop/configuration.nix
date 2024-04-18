@@ -22,6 +22,17 @@
     # nix flake
     nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
+            auto-optimise-store = true;
+        substituters = [
+            "https://hyprland.cachix.org"
+            "https://nix-gaming.cachix.org"
+            # Nixpkgs-Wayland
+            "https://cache.nixos.org"
+            "https://nixpkgs-wayland.cachix.org"
+            "https://nix-community.cachix.org"
+            # Nix-community
+            "https://nix-community.cachix.org"
+        ];
     };
 
     # Bootloader.

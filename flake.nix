@@ -3,6 +3,9 @@
 
   outputs = { self, nixpkgs, ... }@inputs: 
   let 
+
+    inherit (self) inputs;
+    inherit (inputs) nixpkgs home-manager;
     # configure system
     system = {
         system = "x86_64-linux";

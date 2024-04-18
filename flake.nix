@@ -27,8 +27,6 @@
       };
     };
 
-    # configure home-manager
-    home-manager = inputs.home-manager-stable;
   in 
   {
     nixosConfigurations = {

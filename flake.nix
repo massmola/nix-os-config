@@ -87,5 +87,4 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  };
 }

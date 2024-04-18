@@ -22,17 +22,17 @@
     # nix flake
     nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
-        auto-optimise-store = true;
-        substituters = [
-            "https://hyprland.cachix.org"
-            "https://nix-gaming.cachix.org"
-            # Nixpkgs-Wayland
-            "https://cache.nixos.org"
-            "https://nixpkgs-wayland.cachix.org"
-            "https://nix-community.cachix.org"
-            # Nix-community
-            "https://nix-community.cachix.org"
-        ];
+        # auto-optimise-store = true;
+        # substituters = [
+        #     "https://hyprland.cachix.org"
+        #     "https://nix-gaming.cachix.org"
+        #     # Nixpkgs-Wayland
+        #     "https://cache.nixos.org"
+        #     "https://nixpkgs-wayland.cachix.org"
+        #     "https://nix-community.cachix.org"
+        #     # Nix-community
+        #     "https://nix-community.cachix.org"
+        # ];
         trusted-public-keys = [
             "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
             "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="

@@ -15,14 +15,12 @@
     systemPackages = with pkgs; [
       gnome-extension-manager
       nautilus-open-any-terminal
-      # morewaita-icon-theme
-      gnome.epiphany
+      morewaita-icon-theme
       bibata-cursors
       rubik
       lexend
       gnome.nautilus-python
       twitter-color-emoji
-      zsh
     ];
 
     gnome.excludePackages =
@@ -36,6 +34,7 @@
       ++ (with pkgs.gnome; [
         cheese # webcam tool
         gnome-music
+        epiphany # web browser
         geary # email reader
         evince # document viewer
         # gnome-characters

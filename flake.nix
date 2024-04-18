@@ -1,65 +1,14 @@
 {
-  description = "spatola's config";
+  description = "end_4's NixOS flake";
 
-  outputs = { self, nixpkgs, ... }@inputs: 
-  let 
-
-    inherit (self) inputs;
-    inherit (inputs) nixpkgs home-manager;
-    # configure system
-    system = {
-        system = "x86_64-linux";
-        profile = "laptop";
-    };
-
-    user = {
-      username = "spatola";
-      description = "Spatola";
-      wm = "hyprland";
-      wmType = "wayland";
-    };
-
-    # configure lib
-    lib = inputs.nixpkgs.lib;
-
-    pkgs = import inputs.nixpkgs {
-      system = system.system;
-      config = {
-        allowUnfree = true;
-        allowUnfreePredicate = (_: true);
-      };
-    };
-
-    homeDir = ./homes;
-    hm = home-manager.nixosModules.home-manager;
-    homes = [
-      homeDir
-      hm
-    ];
-
-  in 
-  {
-    nixosConfigurations = {
-      "marvinos" = lib.nixosSystem {
-        
-        system = system.system;
-
-        modules = [
-          (./. + "/profiles" + ("/" + system.profile) + "/configuration.nix")
-        ]
-        ++ homes;
-
-        specialArgs = {
-          inherit system;
-          inherit user;
-          inherit inputs;
-        };
-      };
-    };
+  outputs = { self, impurity, ... }: {
+    # editing flake.nix triggers certain utilities such as direnv
+    # to reload - editing host configurations do not require a direnv
+    # reload, so lets move hosts out of the way
+    nixosConfigurations = import ./hosts { inherit self; };
   };
-
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

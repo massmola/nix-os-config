@@ -9,6 +9,7 @@
         [   
             ./hardware-configuration.nix
             ./gnome.nix
+            ./laptop.nix
         ];
 
     # hardware

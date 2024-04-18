@@ -10,13 +10,6 @@
             ./hardware-configuration.nix
         ];
 
-#   home-manager = {
-#        extraSpecialArgs = {inherit inputs;};
-#        users = {
-#            spatola = import ./home.nix;
-#        };
-#    };
-
     # hardware
     hardware.bluetooth.enable = true;
     hardware.opengl = {

@@ -83,7 +83,7 @@
     users.users.${user.username} = {
         isNormalUser = true;
         description = user.description;
-        extraGroups = [ "networkmanager" "wheel" "docker" "input" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [
             pkgs.firefox
             pkgs.direnv
@@ -206,13 +206,13 @@
     # Docker
     virtualisation.docker = {
         enable = true;
-        enableOnBoot = true;
-        storageDriver = "btrfs";
-        autoPrune.enable = true;
-        rootless = {
-            enable = true;
-            setSocketVariable = true;
-        };
+        # enableOnBoot = true;
+        # storageDriver = "btrfs";
+        # autoPrune.enable = true;
+        # rootless = {
+        #     enable = true;
+        #     setSocketVariable = true;
+        # };
         
     };
 

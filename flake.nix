@@ -17,7 +17,7 @@
     };
 
     # configure lib
-    lib = inputs.nixpkgs-stable.lib;
+    lib = inputs.nixpkgs.lib;
 
     pkgs = import inputs.nixpkgs {
       system = system.system;

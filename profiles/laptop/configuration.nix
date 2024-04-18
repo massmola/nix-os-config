@@ -82,17 +82,42 @@
         ];
     };
 
-    services = {
-        gvfs.enable = true;
-        xserver = {
-            enable = true;
-            libinput.enable = true; # touchpad support
-            displayManager.startx.enable = true;
-            desktopManager.gnome = {
-                enable = true;
-                extraGSettingsOverridePackages = [
-                    pkgs.nautilus-open-any-terminal
-                ];
+  services = {
+    envfs.enable = true;
+    greetd = {
+      enable = true;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
+          user = "greeter";
+        };
+      };
+    };
+    gvfs.enable = true;
+    xserver = {
+      enable = true;
+      displayManager.startx.enable = true;
+      desktopManager.gnome = {
+        enable = true;
+        extraGSettingsOverridePackages = [
+          pkgs.nautilus-open-any-terminal
+        ];
+      };
+    };
+  };
+
+    systemd = {
+        user.services.polkit-gnome-authentication-agent-1 = {
+            description = "polkit-gnome-authentication-agent-1";
+            wantedBy = [ "graphical-session.target" ];
+            wants = [ "graphical-session.target" ];
+            after = [ "graphical-session.target" ];
+            serviceConfig = {
+                Type = "simple";
+                ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+                Restart = "on-failure";
+                RestartSec = 1;
+                TimeoutStopSec = 10;
             };
         };
     };

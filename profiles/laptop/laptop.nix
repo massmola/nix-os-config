@@ -1,3 +1,4 @@
+{ config, pkgs, ... }:
 {
  systemd.services.battery-charge-threshold =
     let

@@ -27,6 +27,13 @@
       };
     };
 
+    homeDir = self + /homes;
+    hm = home-manager.nixosModules.home-manager;
+    homes = [
+      homeDir
+      hm
+    ];
+
   in 
   {
     nixosConfigurations = {

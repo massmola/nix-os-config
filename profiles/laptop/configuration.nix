@@ -76,7 +76,7 @@
     users.users.${user.username} = {
         isNormalUser = true;
         description = user.description;
-        extraGroups = [ "networkmanager" "wheel" "docker" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" "video" "input" "uinput" "libvirtd" ];
         packages = with pkgs; [
             pkgs.firefox
             pkgs.direnv
@@ -94,7 +94,7 @@
         zsh
         git
         cryptsetup
-        home-manager
+        # home-manager
         wpa_supplicant
         vscode
         # Wayland
@@ -140,15 +140,15 @@
         packages = [ pkgs.dconf ];
     };
 
-    services.greetd = {
-        enable = true;
-        settings = {
-            default_session = {
-            command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
-            user = "greeter";
-            };
-        };
-    };
+    # services.greetd = {
+    #     enable = true;
+    #     settings = {
+    #         default_session = {
+    #             command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --remember --cmd Hyprland";
+    #             user = "greeter";
+    #         };  
+    #     };
+    # };
 
     programs.dconf = {
         enable = true;

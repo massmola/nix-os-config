@@ -30,7 +30,7 @@
       };
     };
 
-    homeDir = self + /homes;
+    homeDir = ./homes;
     hm = home-manager.nixosModules.home-manager;
     homes = [
       homeDir
@@ -46,7 +46,8 @@
 
         modules = [
           (./. + "/profiles" + ("/" + system.profile) + "/configuration.nix")
-        ];
+        ]
+        ++ homes;
 
         specialArgs = {
           inherit system;

@@ -128,6 +128,17 @@
         bastet
     ];
 
+    # VScode
+    programs.vscode = {
+        enable = true;
+        extensions = with pkgs.vscode-extensions; [
+            bbenoist.nix
+            ms-python.python
+            ms-azuretools.vscode-docker
+            ms-vscode-remote.remote-ssh
+        ];
+    };
+
     # Pipewire
     security.rtkit.enable = true;
     services.pipewire = {

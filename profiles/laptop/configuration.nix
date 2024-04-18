@@ -202,8 +202,8 @@
 
     # Configure xwayland
 #    environment.sessionVariables.NIXOS_OZONE_WL = "1";
-    xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    # xdg.portal.enable = true;
+    # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
     # services.xserver = {
     #     enable = true;
@@ -234,15 +234,15 @@
 
     services.gnome.gnome-keyring.enable = true;
 
-    programs = {
-        hyprland = {
-            enable = true;
-            xwayland = {
-                enable = true;
-            };
-            portalPackage = pkgs.xdg-desktop-portal-hyprland;
-        };
-    };
+    # programs = {
+    #     hyprland = {
+    #         enable = true;
+    #         xwayland = {
+    #             enable = true;
+    #         };
+    #         portalPackage = pkgs.xdg-desktop-portal-hyprland;
+    #     };
+    # };
 
     # Docker
     virtualisation.docker = {

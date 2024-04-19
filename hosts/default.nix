@@ -4,6 +4,7 @@
   ...
 }: let
   inherit (self) inputs;
+  # hm-module = inputs.h
 in {
   # all my hosts are named after saturn moons btw
 
@@ -14,6 +15,7 @@ in {
       [
         {networking.hostName = "marvin";}
         ./marvin
+
       ];
     specialArgs = {inherit inputs;};
   };

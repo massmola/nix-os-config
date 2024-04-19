@@ -8,5 +8,6 @@
     firefox
     ngrok
     ghidra
+    bastet
   ];
 }

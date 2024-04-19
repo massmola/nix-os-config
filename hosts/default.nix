@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (self) inputs;
-  docker = ../system/core/docker.nix;
+  docker = ../sytem/core/docker.nix;
   # hm-module = inputs.h
 in {
   # all my hosts are named after saturn moons btw

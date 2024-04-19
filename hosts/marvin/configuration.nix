@@ -84,12 +84,7 @@
     isNormalUser = true;
     description = user.description;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      ngrok
-      ghidra
-    #  thunderbird
-    ];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -102,11 +97,8 @@
     wget
     netcat
     curl
-    vscode
     git
-    gh
     bat
-    python3
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

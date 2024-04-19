@@ -4,5 +4,6 @@
     ./bluetooth.nix
     ./local.nix
     ./users.nix
+    ./system.nix
   ];
 }

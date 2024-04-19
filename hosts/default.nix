@@ -18,7 +18,7 @@
       inherit inputs;
       inherit self;
     };
-    users.sioodmy = {
+    users.${user.username} = {
       imports = [../home];
 
       _module.args.theme = import ../theme;

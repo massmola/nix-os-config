@@ -3,7 +3,7 @@
   self,
   ...
 }: let
-
+  inherit (self) inputs;
 in {
   # all my hosts are named after saturn moons btw
 

@@ -12,7 +12,7 @@
   };
   
   # system inports
-  core = ../sytem/core;
+  core = ../system/core;
 
   # home manager
   home-manager = {

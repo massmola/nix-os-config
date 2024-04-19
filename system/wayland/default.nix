@@ -8,7 +8,6 @@
     variables = {
       NIXOS_OZONE_WL = "1";
       __GL_GSYNC_ALLOWED = "0";
-      __GL_VRR_ALLOWED = "0";
       DISABLE_QT5_COMPAT = "0";
       GDK_BACKEND = "wayland,x11";
       ANKI_WAYLAND = "1";

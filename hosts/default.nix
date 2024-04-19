@@ -34,7 +34,7 @@ in {
       [
         {networking.hostName = "marvin";}
         ./marvin
-        docker
+        core
       ];
     specialArgs = {
       inherit inputs;

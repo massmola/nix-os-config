@@ -15,7 +15,7 @@
   core = ../system/core;
 
   # home manager
-  home-manager = {
+  hm = {
     useUserPackages = true;
     useGlobalPkgs = true;
     extraSpecialArgs = {
@@ -39,6 +39,7 @@ in {
         {networking.hostName = "marvin";}
         ./marvin
         core
+        hm
       ];
     specialArgs = {
       inherit inputs;

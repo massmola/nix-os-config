@@ -10,7 +10,19 @@
     username = "spatola";
     description = "Spatola";
   };
-  # hm-module = inputs.h
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit self;
+    };
+    users.sioodmy = {
+      imports = [../home];
+
+      _module.args.theme = import ../theme;
+    };
+  };
 in {
   # all my hosts are named after saturn moons btw
 

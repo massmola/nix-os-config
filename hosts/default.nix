@@ -13,15 +13,18 @@
   
   # system inports
   core = ../system/core;
+  hmModule = inputs.home-manager.nixosModules.home-manager;
 
   # home manager
-  hm = {
+  home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
+
     extraSpecialArgs = {
       inherit inputs;
       inherit self;
     };
+
     users.${user.username} = {
       imports = [../home];
 
@@ -39,7 +42,8 @@ in {
         {networking.hostName = "marvin";}
         ./marvin
         core
-        hm
+        hmModule
+        {inherit home-manager;}
       ];
     specialArgs = {
       inherit inputs;

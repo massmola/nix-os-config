@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Navigate to your repository directory
-cd ~/Documents/nix-configuration 
-
 # Add all files to the staging area
 git add .
 

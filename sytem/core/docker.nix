@@ -1,5 +1,5 @@
 {nixpkgs, self, user, ...}:
 {
   virtualisation.docker.enable = true;
-  users.users.spatola.extraGroups = [ "docker" ];
+  users.users.${user.username}.extraGroups = [ "docker" ];
 }

@@ -86,6 +86,8 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
+      ngrok
+      ghidra
     #  thunderbird
     ];
   };
@@ -98,10 +100,12 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
+    netcat
     curl
     vscode
     git
     bat
+    python3
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -83,6 +83,7 @@
     curl
     git
     bat
+    xclip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -1,10 +1,10 @@
 {
   nixpkgs,
   self,
-  inputs,
+  # inputs,
   ...
 }: let
-  # inherit (self) inputs;
+  inherit (self) inputs;
   docker = ../sytem/core/docker.nix;
   # hm-module = inputs.h
 in {

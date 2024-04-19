@@ -12,6 +12,8 @@
       "*.elc"
       "auto-save-list"
       ".direnv/"
+      ".venv/"
+      ".vscode/"
       "node_modules"
       "result"
       "result-*"

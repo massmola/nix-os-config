@@ -11,6 +11,6 @@
         "pics"
         "vids"
         "other"
-      ]
+      ];
   };
 }

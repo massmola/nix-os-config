@@ -4,8 +4,8 @@
   ...
 }:
 {
+  config.home.stateVersion = "22.11";
   imports = [
     ./packages.nix
-  ]
-  config.home.stateVersion = "22.05";
+  ];
 }

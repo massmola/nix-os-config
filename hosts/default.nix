@@ -6,6 +6,10 @@
 }: let
   inherit (self) inputs;
   docker = ../sytem/core/docker.nix;
+  user = {
+    username = "spatola";
+    description = "Spatola";
+  };
   # hm-module = inputs.h
 in {
   # all my hosts are named after saturn moons btw
@@ -19,7 +23,10 @@ in {
         ./marvin
         docker
       ];
-    specialArgs = {inherit inputs;};
+    specialArgs = {
+      inherit inputs;
+      inherit user;
+    };
   };
 
   # thinkpad

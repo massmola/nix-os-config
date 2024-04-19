@@ -1,13 +1,7 @@
 {
   description = "spatola's config";
 
-  outputs = { self, nixpkgs, ... }@inputs: 
-  let 
-    user = {
-      username = "spatola";
-      description = "Spatola";
-    };
-  in 
+  outputs = { self, nixpkgs, ... }@inputs:  
   {
     nixosConfigurations = import ./hosts inputs;
   };

@@ -104,6 +104,7 @@
     curl
     vscode
     git
+    gh
     bat
     python3
   ];

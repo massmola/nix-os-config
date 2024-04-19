@@ -9,7 +9,7 @@
     };
   in 
   {
-    nixosConfigurations = import ./hosts {inputs = inputs;};
+    nixosConfigurations = import ./hosts {inputs};
   };
 
   inputs = {

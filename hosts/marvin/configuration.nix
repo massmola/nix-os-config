@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, user, ... }:
 
 {
   imports =
@@ -80,7 +80,7 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.spatola = {
+  users.users.${user.username} = {
     isNormalUser = true;
     description = "spatola";
     extraGroups = [ "networkmanager" "wheel" ];

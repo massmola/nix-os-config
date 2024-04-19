@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
 
   services = {
     # for desktop environments

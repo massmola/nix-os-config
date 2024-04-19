@@ -13,6 +13,7 @@
   
   # system inports
   core = ../system/core;
+  touchpad = ../system/core/touchpad.nix
   hmModule = inputs.home-manager.nixosModules.home-manager;
 
   # home manager
@@ -42,6 +43,7 @@ in {
         {networking.hostName = "marvin";}
         ./marvin
         core
+        touchpad
         hmModule
         {inherit home-manager;}
       ];

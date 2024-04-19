@@ -32,6 +32,14 @@
     oomd.enableRootSlice = true;
   };
 
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
+    };
+  };
+
   # system-wide programs
   environment.systemPackages = with pkgs; [
     wget

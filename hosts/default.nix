@@ -5,11 +5,14 @@
   ...
 }: let
   inherit (self) inputs;
-  docker = ../sytem/core/docker.nix;
+  # system inports
+  core = ../sytem/core/;
+
   user = {
     username = "spatola";
     description = "Spatola";
   };
+  
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;

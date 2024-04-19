@@ -41,6 +41,7 @@
       d = "diff";
       st = "status";
       br = "branch";
+      
       # df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}";
       # hist = ''
       #   log --pretty=format:"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)" --graph --date=relative --decorate --all'';

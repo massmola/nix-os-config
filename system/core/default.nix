@@ -5,5 +5,6 @@
     ./local.nix
     ./users.nix
     ./system.nix
+    ./bootloader.nix
   ];
 }

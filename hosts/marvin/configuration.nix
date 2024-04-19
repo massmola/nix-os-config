@@ -9,9 +9,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -21,9 +18,6 @@
 
   # Enable fakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-
-
 
 
   # Enable the X11 windowing system.

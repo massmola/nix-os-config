@@ -10,5 +10,9 @@
     ngrok
     ghidra
     bastet
+    dconf
+    gimp
+    libreoffice-fresh
+    transmission-gtk # torrent client
   ];
 }

@@ -2,7 +2,7 @@
 {
   services.xserver.libinput = {
     enable = true;
-    tapping = true;
+    touchpad.tapping = true;
   };
 
 }

@@ -6,13 +6,11 @@
 }: let
   inherit (self) inputs;
   # system inports
-  core = ../sytem/core/;
-
+  core = ../sytem/core;
   user = {
     username = "spatola";
     description = "Spatola";
   };
-  
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;

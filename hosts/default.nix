@@ -39,7 +39,7 @@ in {
         {networking.hostName = "marvin";}
         ./marvin
         core
-        hm
+        # hm
       ];
     specialArgs = {
       inherit inputs;

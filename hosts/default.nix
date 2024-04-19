@@ -22,6 +22,7 @@
     useGlobalPkgs = true;
 
     extraSpecialArgs = {
+      inherit user;
       inherit inputs;
       inherit self;
     };

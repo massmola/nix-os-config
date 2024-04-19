@@ -13,7 +13,7 @@
   
   # system inports
   core = ../system/core;
-  touchpad = ../system/core/touchpad.nix
+  touchpad = ../system/core/touchpad.nix;
   hmModule = inputs.home-manager.nixosModules.home-manager;
 
   # home manager

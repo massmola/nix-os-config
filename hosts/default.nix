@@ -1,42 +1,67 @@
-{ self, ... }:
-let
-  inherit (self) inputs;
-  inherit (inputs) nixpkgs home-manager;
-
-  # set the entrypoint for home-manager configurations
-  homeDir = self + /homes;
-  # create an alias for the home-manager nixos module
-  hm = home-manager.nixosModules.home-manager;
-
-  # if a host uses home-manager, then it can simply import this list
-  homes = [
-    homeDir
-    hm
-  ];
-  impurity = inputs.impurity;
-in
 {
-  "CirnOS" = nixpkgs.lib.nixosSystem {
-    specialArgs = { inherit inputs; };
+  nixpkgs,
+  self,
+  ...
+}: let
+
+in {
+  # all my hosts are named after saturn moons btw
+
+  # desktop
+  marvin = nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
     modules =
       [
-        {
-          # Impurity
-          imports = [ impurity.nixosModules.impurity ];
-          impurity.configRoot = self;
-          impurity.enable = true;
-        }
-
-        ./CirnOS # this imports your entire host configuration in one swoop
-
-        # this part is basically the same as putting configuration in your
-        # configuration.nix, but is done on the topmost level for your convenience
-        {
-          networking.hostName = "CirnOS";
-          _module.args = { username = "spatola"; };
-        }
+        {networking.hostName = "marvin";}
+        ./marvin
       ]
-      ++ homes; # imports the home-manager related configurations
+      ++ shared;
+    specialArgs = {inherit inputs;};
   };
-  "CirnOS-impure" = self.nixosConfigurations."CirnOS".extendModules { modules = [{ impurity.enable = true; }]; };
+
+  # thinkpad
+  calypso = nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
+    modules =
+      [
+        {networking.hostName = "calypso";}
+        ./calypso
+        wayland
+        hmModule
+        bootloader
+        impermanence
+        hw.lenovo-thinkpad-x1-7th-gen
+        {inherit home-manager;}
+      ]
+      ++ shared;
+    specialArgs = {inherit inputs;};
+  };
+
+  # x86 home server
+  prometheus = nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
+    modules =
+      [
+        {networking.hostName = "prometheus";}
+        bootloader
+        ./prometheus
+      ]
+      ++ shared;
+    specialArgs = {inherit inputs;};
+  };
+
+  
+  iapetus = nixpkgs.lib.nixosSystem {
+    system = "aarch64";
+    modules =
+      [
+        {networking.hostName = "iapetus";}
+        hw.raspberry-pi-4
+        server
+        inputs.schizosearch.nixosModules.default
+        ./iapetus
+      ]
+      ++ shared;
+    specialArgs = {inherit inputs;};
+  };
 }

@@ -50,9 +50,6 @@
     xclip
   ];
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # compress half of the ram to use as swap
   zramSwap = {
     enable = lib.mkDefault false;

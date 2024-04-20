@@ -14,5 +14,6 @@
     gimp
     libreoffice-fresh
     transmission-gtk # torrent client
+    discord
   ];
 }

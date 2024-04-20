@@ -22,7 +22,7 @@ with lib; let
   };
 in {
   imports = [
-    # ./config.nix 
+    ./config.nix 
     # ./binds.nix 
     # ./rules.nix
   ];

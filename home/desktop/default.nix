@@ -1,10 +1,10 @@
 {...}: {
   imports = [
     ./tofi
-    ./foot.nix
-    ./zathura.nix
-    ./dunst.nix
-    ./gtk.nix
-    ./waybar
+    # ./foot.nix
+    # ./zathura.nix
+    # ./dunst.nix
+    # ./gtk.nix
+    # ./waybar
   ];
 }

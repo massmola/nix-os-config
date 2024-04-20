@@ -5,5 +5,6 @@
     ./zathura.nix
     ./dunst.nix
     ./gtk.nix
+    ./waybar
   ];
 }

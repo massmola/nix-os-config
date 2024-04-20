@@ -5,7 +5,7 @@
     ./zathura.nix
     ./dunst.nix
     ./gtk.nix
-    ./hyprland
+    # ./hyprland
     # ./waybar
   ];
 }

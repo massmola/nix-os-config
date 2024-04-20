@@ -52,6 +52,7 @@
     wl-clipboard # Wayland clipboard manager
     # pkgs.wireguard 
     pkgs.wireguard-tools
+    filezilla
   ];
 
   # compress half of the ram to use as swap

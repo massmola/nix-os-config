@@ -15,5 +15,6 @@
     libreoffice-fresh
     transmission-gtk # torrent client
     discord
+    docker-compose
   ];
 }

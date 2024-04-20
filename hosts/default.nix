@@ -45,8 +45,8 @@ in {
         ./marvin
         core
         touchpad
-        # hmModule
-        # {inherit home-manager;}
+        hmModule
+        {inherit home-manager;}
       ];
     specialArgs = {
       inherit inputs;

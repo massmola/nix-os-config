@@ -1,3 +1,11 @@
+# FILEPATH: /home/spatola/nix/home/desktop/tofi/default.nix
+
+# This Nix expression defines the configuration for the Tofi application.
+# Tofi is a command-line tool that allows users to select and copy emojis.
+# The configuration includes the installation of the Tofi package and a custom shell script called "tofi-emoji".
+# The "tofi-emoji" script reads a file containing emojis, prompts the user to select an emoji, copies it to the clipboard, and displays a notification.
+# The configuration also sets various properties for the Tofi user interface, such as the size, font, colors, and padding.
+
 {
   pkgs,
   theme,

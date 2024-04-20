@@ -8,5 +8,6 @@
   imports = [
     ./packages.nix
     ./cli
+    ./desktop
   ];
 }

@@ -15,13 +15,13 @@
 
   services = {
     xserver = {
-      enable = true;
+      # enable = true;
       # displayManager.sddm = {
       #   enable = true;
       #   wayland = true;
       # };
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    # displayManager.gdm.enable = true;
+    # desktopManager.gnome.enable = true;
     };
     # mullvad-vpn.enable = true;
     # greetd = {

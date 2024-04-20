@@ -36,6 +36,8 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  boot.extraModulePackages = [ config.boot.kernelPackages.wireguard ];
+environment.systemPackages = [ pkgs.wireguard pkgs.wireguard-tools ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

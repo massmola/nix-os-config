@@ -6,5 +6,6 @@
     ./users.nix
     ./system.nix
     ./bootloader.nix
+    ./security.nix
   ];
 }

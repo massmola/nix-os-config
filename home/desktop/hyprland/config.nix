@@ -45,7 +45,7 @@ in {
         sensitivity = 0.0;
         touchpad = {
           clickfinger_behavior = true;
-          tap-to-click = ture;
+          tap-to-click = true;
           scroll_factor = 0.5;
         };
       };

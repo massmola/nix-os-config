@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./tofi
-    # ./foot.nix
+    ./foot.nix
     # ./zathura.nix
     # ./dunst.nix
     # ./gtk.nix

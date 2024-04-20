@@ -93,14 +93,6 @@ in {
           on-click = "wlogout &";
           format = "";
         };
-        clock = {
-          format = ''
-            {:%H
-            %M}'';
-          tooltip-format = ''
-            <big>{:%Y %B}</big>
-            <tt><small>{calendar}</small></tt>'';
-        };
         backlight = {
           format = "{icon}";
           format-icons = ["" "" "" "" "" "" "" "" ""];

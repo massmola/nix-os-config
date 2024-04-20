@@ -11,18 +11,18 @@ in {
 
       # This configuration sets up the "exec-once" list, which contains a series of commands to be executed once during system startup.
 
-      exec-once = [
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+      # exec-once = [
+        # "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         # This command updates the activation environment for D-Bus, setting the WAYLAND_DISPLAY and XDG_CURRENT_DESKTOP variables for systemd.
 
         # set cursor for HL itself
-        "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
+        # "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
         # This command sets the cursor for the Hyprland application, using the values of the "pointer.name" and "pointer.size" variables.
 
         # foot terminal server
-        "${lib.optionalString config.programs.foot.server.enable ''run-as-service 'foot --server''}"
+        # "${lib.optionalString config.programs.foot.server.enable ''run-as-service 'foot --server''}"
         # This command starts the foot terminal server as a service, if enabled in the configuration.
-      ];
+      # ];
 
       # Gestures Configuration
       # - workspace_swipe: Enables workspace switching through swipe gestures.
@@ -41,32 +41,13 @@ in {
       };
 
       input = {
-        # keyboard layout
-        kb_layout = "en";
-        kb_options = "caps:escape";
         follow_mouse = 1;
         sensitivity = 0.0;
         touchpad = {
           clickfinger_behavior = true;
-          tap-to-click = false;
+          tap-to-click = ture;
           scroll_factor = 0.5;
         };
-      };
-
-      general = {
-        # gaps
-        gaps_in = 6;
-        gaps_out = 11;
-
-        # border thiccness
-        border_size = 2;
-
-        # active border color
-        "col.active_border" = "rgb(${accent})";
-        "col.inactive_border" = "rgb(${surface0})";
-
-        # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
-        apply_sens_to_raw = 0;
       };
 
       decoration = {
@@ -84,12 +65,6 @@ in {
           contrast = 0.7;
           brightness = 0.8;
         };
-
-        # shadow config
-        drop_shadow = "no";
-        shadow_range = 20;
-        shadow_render_power = 5;
-        "col.shadow" = "rgba(292c3cee)";
       };
 
       misc = {
@@ -138,23 +113,6 @@ in {
       };
 
       "$kw" = "dwindle:no_gaps_when_only";
-
-      workspace = [
-        "1, monitor:eDP-1"
-        "2, monitor:eDP-1"
-        "3, monitor:eDP-1"
-        "4, monitor:eDP-1"
-        "5, monitor:eDP-1"
-        "6, monitor:DP-2"
-        "7, monitor:DP-2"
-        "8, monitor:DP-2"
-        "9, monitor:DP-2"
-      ];
-      monitor = [
-        ",highrr,auto,1"
-        "eDP-1,1920x1080,0x0,1"
-        "DP-2,1920x1080@144,0x-1080,1"
-      ];
     };
   };
 }

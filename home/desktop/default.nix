@@ -4,7 +4,7 @@
     ./foot.nix
     ./zathura.nix
     ./dunst.nix
-    # ./gtk.nix
+    ./gtk.nix
     # ./waybar
   ];
 }

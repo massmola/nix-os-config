@@ -43,6 +43,7 @@
   environment.systemPackages = with pkgs; [
     wget
     netcat
+    kitty
     curl
     git 
     bat # cat clone with wings

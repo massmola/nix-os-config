@@ -7,7 +7,7 @@
   config.home.stateVersion = "22.11";
   imports = [
     inputs.nix-index-db.hmModules.nix-index
-    hyprland.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
 
     ./packages.nix
     ./cli

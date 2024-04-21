@@ -19,14 +19,15 @@
   # Enable fakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  services.displayManager = {
+    sddm.enable = true;
+  };
   services.xserver = { 
     # Enable the X11 windowing system.
     enable = true;
 
     # Enable the GNOME Desktop Environment.
-    displayManager = {
-      sddm.enable = true;
-    };
+
     desktopManager.gnome.enable = true;
 
     # Configure keymap in X11

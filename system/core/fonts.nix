@@ -10,4 +10,6 @@
     dina-font
     proggyfonts
   ];
+
+  fonts.fontDir.enable = true;
 }

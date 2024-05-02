@@ -54,8 +54,7 @@
     pkgs.wireguard-tools
     filezilla
     # login theme
-    liblo 
-    pyxdg
+    (python3.withPackages (pkgs: with pkgs; [ pip setuptools wheel ]))
     (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme
   ];
 

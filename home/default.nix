@@ -10,7 +10,7 @@
     inputs.hyprland.homeManagerModules.default
 
     ./packages.nix
+    ./desktop
     # ./cli
-    # ./desktop
   ];
 }

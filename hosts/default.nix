@@ -55,21 +55,4 @@ in {
       inherit user;
     };
   };
-
-  # thinkpad
-  # calypso = nixpkgs.lib.nixosSystem {
-  #   system = "x86_64-linux";
-  #   modules =
-  #     [
-  #       {networking.hostName = "calypso";}
-  #       ./calypso
-  #       wayland
-  #       hmModule
-  #       bootloader
-  #       impermanence
-  #       hw.lenovo-thinkpad-x1-7th-gen
-  #       {inherit home-manager;}
-  #     ];
-  #   specialArgs = {inherit inputs;};
-  # };
 }

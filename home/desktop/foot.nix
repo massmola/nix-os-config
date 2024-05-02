@@ -1,3 +1,7 @@
+# This Nix expression defines the configuration for the 'foot' terminal emulator.
+# It specifies various settings such as the terminal font, colors, scrollback lines,
+# key bindings, mouse behavior, and more.
+
 {
   pkgs,
   theme,

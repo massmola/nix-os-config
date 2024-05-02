@@ -1,3 +1,6 @@
+# This Nix expression configures the Zathura PDF viewer.
+# It enables Zathura and sets various options for its appearance and behavior.
+
 _: {
   programs.zathura = {
     enable = true;

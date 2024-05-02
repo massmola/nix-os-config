@@ -1,5 +1,3 @@
-# FILEPATH: /home/spatola/Documents/nix/home/rice/gtk.nix
-
 # This Nix expression defines the configuration for GTK, Qt, and XDG settings.
 # It specifies the theme, icon theme, font, and additional configurations for GTK.
 # It also sets up the packages and cursor for the home environment.

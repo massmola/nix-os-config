@@ -29,17 +29,9 @@
     opengl.enable = true;
   };
 
-
-
-
-  # xdg.portal = {
+  # programs.hyprland = {
   #   enable = true;
-  #   config.common.default = "*";
-  #   extraPortals = [
-  #     pkgs.xdg-desktop-portal-gtk
-  #     pkgs.xdg-desktop-portal-hyprland
-  #   ];
-  # };
+  # }
 
   sound = {
     enable = true;

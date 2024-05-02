@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     wireshark
     burpsuite
-    python3
     gh
     vscode
     firefox

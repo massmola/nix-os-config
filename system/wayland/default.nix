@@ -2,7 +2,7 @@
   imports = [
     ./fonts.nix
     ./services.nix
-    # ./pipewire.nix
+    ./pipewire.nix
   ];
   # environment = {
   #   variables = {

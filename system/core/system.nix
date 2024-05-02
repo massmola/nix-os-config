@@ -66,8 +66,15 @@
   };
 
   programs = {
-    # ensure that your programs are linked against the exact versions of libraries they were built with
-    # nix-ld.enable = true;
+    # enable steam
+    steam.enable = true;
+    programs.steam.gamescopeSession.enable = true; # enable gamescope for steam
+    environment.systemPackages = with pkgs; [
+      mangohud # display fps and other info
+    ];
+
+    # enable gamemode
+    programs.gamemode.enable = true;
   
     java = {
       enable = true;

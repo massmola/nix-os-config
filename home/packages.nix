@@ -15,5 +15,6 @@
     transmission-gtk # torrent client
     discord
     docker-compose
+    protonup
   ];
 }

@@ -50,7 +50,6 @@
     bat # cat clone with wings
     xclip # command line interface to the X11 clipboard
     wl-clipboard # Wayland clipboard manager
-    # pkgs.wireguard 
     pkgs.wireguard-tools
     filezilla
     pkgs.wireguard-tools 

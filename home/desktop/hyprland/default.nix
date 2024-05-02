@@ -18,7 +18,7 @@ with lib; let
   # };
 in {
   imports = [
-    ./binds.nix 
+    # ./binds.nix 
     # ./config.nix 
     # ./rules.nix
   ];

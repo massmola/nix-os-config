@@ -4,14 +4,7 @@
   inputs,
   theme,
   ...
-}:
-with lib; let
-  # mkService = lib.recursiveUpdate {
-  #   Unit.PartOf = ["graphical-session.target"];
-  #   Unit.After = ["graphical-session.target"];
-  #   Install.WantedBy = ["graphical-session.target"];
-  # };
-in {
+}:{
 
   wayland.windowManager.hyprland.enable = true;
   

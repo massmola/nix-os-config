@@ -46,6 +46,7 @@
     kitty
     curl
     git 
+    du-dust
     unzip
     bat # cat clone with wings
     xclip # command line interface to the X11 clipboard

@@ -54,7 +54,6 @@
     pkgs.wireguard-tools
     filezilla
     # login theme
-    qttools
     python3
     liblo
     which

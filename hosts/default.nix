@@ -46,6 +46,7 @@ in {
         ./marvin
         core
         touchpad
+        wayland
         hmModule
         {inherit home-manager;}
       ];

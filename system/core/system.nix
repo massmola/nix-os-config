@@ -54,7 +54,12 @@
     pkgs.wireguard-tools
     filezilla
     # login theme
-    (python3.withPackages (pkgs: with pkgs; [ pip setuptools wheel ]))
+    qtbase
+    qttools
+    python3
+    liblo
+    which
+    wrapQtAppsHook
     (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme
   ];
 

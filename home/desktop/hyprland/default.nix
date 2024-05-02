@@ -23,23 +23,23 @@ in {
     # ./rules.nix
   ];
   home.packages = with pkgs;
-  with inputs.hyprcontrib.packages.${pkgs.system}; [
-    libnotify
-    wf-recorder
-    brightnessctl
-    pamixer
-    python39Packages.requests
-    slurp
-    grim
-    hyprpicker
-    swappy
-    grimblast
-    hyprpicker
-    wl-clip-persist
-    wl-clipboard
-    pngquant
-    cliphist
-  ];
+  # with inputs.hyprcontrib.packages.${pkgs.system}; [
+    # libnotify
+    # wf-recorder
+    # brightnessctl
+    # pamixer
+    # python39Packages.requests
+    # slurp
+    # grim
+    # hyprpicker
+    # swappy
+    # grimblast
+    # hyprpicker
+    # wl-clip-persist
+    # wl-clipboard
+    # pngquant
+    # cliphist
+  # ];
 
   wayland.windowManager.hyprland = {
     enable = true;

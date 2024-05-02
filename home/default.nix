@@ -9,8 +9,8 @@
     inputs.nix-index-db.hmModules.nix-index
     inputs.hyprland.homeManagerModules.default
 
-    ./packages.nix
-    ./cli
-    ./desktop
+    # ./packages.nix
+    # ./cli
+    # ./desktop
   ];
 }

@@ -70,10 +70,10 @@
   programs = {
     # enable steam
     steam.enable = true;
-    programs.steam.gamescopeSession.enable = true; # enable gamescope for steam
+    steam.gamescopeSession.enable = true; # enable gamescope for steam
 
     # enable gamemode
-    programs.gamemode.enable = true;
+    gamemode.enable = true;
   
     java = {
       enable = true;

@@ -53,6 +53,7 @@
     pkgs.wireguard-tools
     filezilla
     pkgs.wireguard-tools 
+    (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme
   ];
 
   # compress half of the ram to use as swap

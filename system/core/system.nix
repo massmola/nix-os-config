@@ -50,9 +50,14 @@
     bat # cat clone with wings
     xclip # command line interface to the X11 clipboard
     wl-clipboard # Wayland clipboard manager
+    # for cyberchallenge
     pkgs.wireguard-tools
     filezilla
-    pkgs.wireguard-tools 
+    # login theme
+    pyqt5 
+    liblo 
+    pyliblo 
+    pyxdg
     (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme
   ];
 

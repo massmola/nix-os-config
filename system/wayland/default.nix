@@ -1,8 +1,8 @@
 {...}: {
   imports = [
-    ./fonts.nix
-    ./services.nix
-    ./pipewire.nix
+    # ./fonts.nix
+    # ./services.nix
+    # ./pipewire.nix
   ];
   # environment = {
   #   variables = {

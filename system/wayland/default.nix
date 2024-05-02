@@ -31,7 +31,7 @@
 
   programs.hyprland = {
     enable = true;
-  }
+  };
 
   sound = {
     enable = true;

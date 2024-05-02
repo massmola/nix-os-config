@@ -14,6 +14,7 @@
     xserver = { 
       # Enable the X11 windowing system.
       enable = true;
+      videoDrivers = [ "amdgpu" ];
 
       # Enable the GNOME Desktop Environment.
 

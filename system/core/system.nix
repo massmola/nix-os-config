@@ -55,9 +55,8 @@
     filezilla
     # login theme
     python3
-    liblo
-    which
     (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme
+    libsForQt5.qt5.qtgraphicaleffects
   ];
 
   # compress half of the ram to use as swap

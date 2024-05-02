@@ -22,8 +22,8 @@ with lib; let
   };
 in {
   imports = [
+    ./binds.nix 
     # ./config.nix 
-    # ./binds.nix 
     # ./rules.nix
   ];
   home.packages = with pkgs;

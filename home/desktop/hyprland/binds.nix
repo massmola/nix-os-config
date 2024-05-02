@@ -10,6 +10,7 @@ in {
     bind =
       [
         "${mod},MINUS,killactive"
+        "${mod}, Q, exex, kitty"
         "${mod}, F, exec, firefox"
 
         "${mod},H,movefocus,l"

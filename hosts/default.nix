@@ -14,6 +14,7 @@
   # system inports
   core = ../system/core;
   touchpad = ../system/core/touchpad.nix;
+  wayland = ../system/wayland;
   hmModule = inputs.home-manager.nixosModules.home-manager;
 
   # home manager

@@ -28,6 +28,6 @@
       glib-networking.enable = true;
       gnome-keyring.enable = true;
     };
-  }
+  };
   
 }

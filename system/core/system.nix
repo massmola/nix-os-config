@@ -53,6 +53,7 @@
     # pkgs.wireguard 
     pkgs.wireguard-tools
     filezilla
+    pkgs.wireguard-tools 
   ];
 
   # compress half of the ram to use as swap

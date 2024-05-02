@@ -24,7 +24,6 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = [ 
     # pkgs.wireguard 
-    pkgs.wireguard-tools 
   ];
 
   # This value determines the NixOS release from which the default

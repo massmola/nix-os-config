@@ -55,7 +55,6 @@
     filezilla
     # login theme
     liblo 
-    pyliblo 
     pyxdg
     (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme
   ];

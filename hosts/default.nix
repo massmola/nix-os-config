@@ -35,9 +35,8 @@
     };
   };
 in {
-  # all my hosts are named after saturn moons btw
 
-  # desktop
+  # laptop
   marvin = nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
     modules =

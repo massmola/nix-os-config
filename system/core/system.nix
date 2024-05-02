@@ -57,7 +57,6 @@
     python3
     liblo
     which
-    wrapQtAppsHook
     (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme
   ];
 

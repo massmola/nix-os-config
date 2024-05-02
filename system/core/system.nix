@@ -54,7 +54,6 @@
     pkgs.wireguard-tools
     filezilla
     # login theme
-    pyqt5 
     liblo 
     pyliblo 
     pyxdg

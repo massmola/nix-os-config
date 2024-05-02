@@ -22,9 +22,6 @@
     background-color: #414559;
   }
 
-  #pulseaudio {
-    color: #a6d189;
-  }
   #network {
     color: #8caaee;
   }

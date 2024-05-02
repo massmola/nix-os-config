@@ -57,6 +57,8 @@
     python3
     (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme
     libsForQt5.qt5.qtgraphicaleffects
+    # for games
+    mangohud # display fps and other info
   ];
 
   # compress half of the ram to use as swap
@@ -69,9 +71,6 @@
     # enable steam
     steam.enable = true;
     programs.steam.gamescopeSession.enable = true; # enable gamescope for steam
-    environment.systemPackages = with pkgs; [
-      mangohud # display fps and other info
-    ];
 
     # enable gamemode
     programs.gamemode.enable = true;

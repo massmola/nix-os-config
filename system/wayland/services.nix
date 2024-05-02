@@ -22,19 +22,11 @@
     xkb.layout = "us";
     xkb.variant = "";
 
-    gnome = {
-      glib-networking.enable = true;
-      gnome-keyring.enable = true;
-    };
   };
 
-  # services = {
-
-
-
-    # udisks2.enable = true;
-    # printing.enable = true;
-    # fstrim.enable = true;
-  # };
+  gnome = {
+    glib-networking.enable = true;
+    gnome-keyring.enable = true;
+  };
   
 }

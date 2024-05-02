@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./fonts.nix
-    # ./services.nix
+    ./services.nix
     # ./pipewire.nix
   ];
   # environment = {

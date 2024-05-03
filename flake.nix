@@ -4,7 +4,7 @@
   outputs = { self, nixpkgs, ... }@inputs:
   {
     nixosConfigurations = import ./hosts inputs;
-    homeConfigurations = import ./home inputs;
+    # homeConfigurations = import ./home inputs;
   };
 
   inputs = {

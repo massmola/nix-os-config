@@ -8,7 +8,7 @@
       description = "Spatola";
     };
   in{
-    nixosConfigurations = import ./hosts inputs user;
+    nixosConfigurations = import ./hosts {inherit inputs;};
     homeConfigurations = import ./home inputs;
   };
 

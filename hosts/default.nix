@@ -1,11 +1,11 @@
 {
   nixpkgs,
   self,
-  # inputs,
+  inputs,
   # user,
   ...
 }: let
-  inherit (self) inputs;
+  # inherit (self) inputs;
   # user info
   user = {
     username = "spatola";

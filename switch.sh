@@ -4,7 +4,7 @@
 git add .
 
 # Commit the changes with the current date and time as the message
-git commit -m "swotch: $(date)"
+git commit -m "switch osconfig: $(date)"
 
 # Push the changes to the remote repository
 git push

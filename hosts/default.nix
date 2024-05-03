@@ -1,6 +1,5 @@
 {
   nixpkgs,
-  self,
   inputs,
   # user,
   ...

@@ -1,7 +1,7 @@
 {
   nixpkgs,
   self,
-  inputs,
+  # inputs,
   # user,
   ...
 }: let

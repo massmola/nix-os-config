@@ -44,6 +44,7 @@
     wget
     netcat
     kitty
+    vscode
     curl
     git 
     du-dust

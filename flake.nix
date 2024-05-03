@@ -9,7 +9,7 @@
     };
   in{
     nixosConfigurations = import ./hosts {inherit inputs nixpkgs user;};
-    homeConfigurations = import ./home inputs;
+    homeConfigurations = import ./home {inherit inputs nixpkgs user;};
   };
 
   inputs = {

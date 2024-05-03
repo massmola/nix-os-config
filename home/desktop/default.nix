@@ -2,10 +2,9 @@
   imports = [
     ./gtk.nix
     ./zathura.nix
+    ./hyprland
     # ./tofi
-    # ./foot.nix
     # ./dunst.nix
-    # ./hyprland
     # ./waybar
   ];
 }

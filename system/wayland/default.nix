@@ -19,9 +19,6 @@
       # Enables Wayland support for the Anki application.
       ANKI_WAYLAND = "1";
 
-      # Disables atomic mode setting for WLR DRM.
-      WLR_DRM_NO_ATOMIC = "1";
-
       # Enables automatic scaling of screen elements in Qt applications.
       QT_AUTO_SCREEN_SCALE_FACTOR = "1";
 

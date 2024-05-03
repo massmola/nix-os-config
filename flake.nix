@@ -3,12 +3,11 @@
 
   outputs = { self, nixpkgs, ... }@inputs:
   let 
-    user = {
-      username = "spatola";
-      description = "Spatola";
-    };
+      user = {
+    username = "spatola";
+    description = "Spatola";
+  };
   in {
-
     nixosConfigurations = import ./hosts inputs;
     homeConfigurations = import ./home inputs;
   };

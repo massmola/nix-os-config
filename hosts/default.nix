@@ -1,15 +1,15 @@
 {
   nixpkgs,
   inputs,
-  # user,
+  user,
   ...
 }: let
   # inherit (self) inputs;
   # user info
-  user = {
-    username = "spatola";
-    description = "Spatola";
-  };
+  # user = {
+  #   username = "spatola";
+  #   description = "Spatola";
+  # };
   
   # system inports
   core = ../system/core;

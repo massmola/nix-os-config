@@ -1,16 +1,18 @@
 {
-  inputs,
   config,
+  inputs,
+  user,
   ...
 }:
 {
-  config.home.stateVersion = "22.11";
-  imports = [
-    # inputs.nix-index-db.hmModules.nix-index
-    # inputs.hyprland.homeManagerModules.default
+  home.username = user.username;
 
+  imports = [
     # ./desktop
     # ./packages.nix
     # ./cli
   ];
+
+  config.home.stateVersion = "22.11";
+  programs.home-manager.enable = true;
 }

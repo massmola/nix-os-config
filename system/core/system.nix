@@ -49,6 +49,7 @@
     curl
     git 
     du-dust
+    home-manager
     unzip
     bat # cat clone with wings
     xclip # command line interface to the X11 clipboard

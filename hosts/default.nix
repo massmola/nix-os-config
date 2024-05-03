@@ -1,39 +1,40 @@
 {
   nixpkgs,
   self,
-  # inputs,
+  inputs,
+  user,
   ...
 }: let
   inherit (self) inputs;
   # user info
-  user = {
-    username = "spatola";
-    description = "Spatola";
-  };
+  # user = {
+  #   username = "spatola";
+  #   description = "Spatola";
+  # };
   
   # system inports
   core = ../system/core;
   touchpad = ../system/core/touchpad.nix;
   wayland = ../system/wayland;
-  hmModule = inputs.home-manager.nixosModules.home-manager;
+  # hmModule = inputs.home-manager.nixosModules.home-manager;
 
   # home manager
-  home-manager = {
-    useUserPackages = true;
-    useGlobalPkgs = true;
+  # home-manager = {
+  #   useUserPackages = true;
+  #   useGlobalPkgs = true;
 
-    extraSpecialArgs = {
-      inherit user;
-      inherit inputs;
-      inherit self;
-    };
+  #   extraSpecialArgs = {
+  #     inherit user;
+  #     inherit inputs;
+  #     inherit self;
+  #   };
 
-    users.${user.username} = {
-      imports = [../home];
+  #   users.${user.username} = {
+  #     imports = [../home];
 
-      _module.args.theme = import ../theme;
-    };
-  };
+  #     _module.args.theme = import ../theme;
+  #   };
+  # };
 in {
 
   # laptop
@@ -46,8 +47,7 @@ in {
         core
         touchpad
         wayland
-        hmModule
-        {inherit home-manager;}
+        # hmModule
       ];
     specialArgs = {
       inherit inputs;

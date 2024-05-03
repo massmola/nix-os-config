@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk
@@ -11,5 +12,6 @@
     proggyfonts
   ];
 
-  fonts.fontDir.enable = true;
+  # Enable the user fonts directory (e.g so vscode can use them)
+  fonts.fontDir.enable = true; 
 }

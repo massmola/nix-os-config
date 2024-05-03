@@ -39,27 +39,6 @@
       );
   };
   
-  # home.packages = with pkgs;
-  # with inputs.hyprcontrib.packages.${pkgs.system}; [
-    # libnotify
-    # wf-recorder
-    # brightnessctl
-    # pamixer
-    # python39Packages.requests
-    # slurp
-    # grim
-    # hyprpicker
-    # swappy
-    # grimblast
-    # hyprpicker
-    # wl-clip-persist
-    # wl-clipboard
-    # pngquant
-    # cliphist
-  # ];
-
-
-  
   # fake a tray to let apps start
   # https://github.com/nix-community/home-manager/issues/2064
   # systemd.user.targets.tray = {

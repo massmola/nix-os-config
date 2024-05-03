@@ -4,5 +4,4 @@
   #   enable = true;
   #   touchpad.tapping = true;
   # };
-
 }

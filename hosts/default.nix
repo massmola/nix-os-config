@@ -1,15 +1,17 @@
 { nixpkgs, inputs, user, ... }: 
 let
-
-  core = ../system/core;
-  touchpad = ../system/core/touchpad.nix;
-  wayland = ../system/wayland;
+  # modules to include in different systems
+  core = ../system/core;                    # core features for every system
+  touchpad = ../system/core/touchpad.nix;   # touchpad configuration
+  wayland = ../system/wayland;              # wayland configuration
 
 in {
 
   # os config for marvin (my laptop)
   marvin = nixpkgs.lib.nixosSystem {
+    
     system = "x86_64-linux";
+
     modules =
       [
         {networking.hostName = "marvin";}
@@ -18,6 +20,7 @@ in {
         touchpad
         wayland
       ];
+    
     specialArgs = {
       inherit inputs;
       inherit user;

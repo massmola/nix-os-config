@@ -45,6 +45,7 @@
     netcat
     kitty
     vscode
+    firefox
     curl
     git 
     du-dust

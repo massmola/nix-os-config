@@ -71,7 +71,7 @@
     waybar                        # status bar
     meson                         # build system
     wofi                          # app launcher 
-    dunst   
+    dunst                         # notification daemon
 
     # fixes hyprland
     wayland-protocols             

@@ -5,7 +5,7 @@
   # user,
   ...
 }: let
-  inherit (self) inputs;
+  inherit (self) inputs user;
   # user info
   user = {
     username = "spatola";

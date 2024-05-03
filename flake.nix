@@ -3,8 +3,8 @@
 
   outputs = { self, nixpkgs, ... }@inputs:
   {
-    nixosConfigurations = import ./hosts inputs;
-    # homeConfigurations = import ./home inputs;
+    nixosConfigurations = import ./hosts {inherit inputs};
+    homeConfigurations = import ./home inputs;
   };
 
   inputs = {

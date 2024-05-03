@@ -19,7 +19,8 @@
       noto-fonts-cjk
       noto-fonts-emoji
       jetbrains-mono
-      (nerdfonts.override {fonts = ["Iosevka" "JetBrainsMono"];})
+      nerdfonts
+      meslo-lgs-nf
     ];
 
     # enableDefaultPackages = false;

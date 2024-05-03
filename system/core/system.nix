@@ -41,26 +41,43 @@
 
   # system-wide programs
   environment.systemPackages = with pkgs; [
-    wget
-    netcat
-    kitty
-    vscode
-    firefox
-    curl
-    git 
-    du-dust
-    home-manager
-    unzip
-    bat # cat clone with wings
-    xclip # command line interface to the X11 clipboard
-    wl-clipboard # Wayland clipboard manager
-    # for cyberchallenge
-    pkgs.wireguard-tools
-    filezilla
-    # login theme
-    python3
-    (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme
-    libsForQt5.qt5.qtgraphicaleffects
+    # utilities
+    firefox       # web browser
+    unzip         # extract files from .zip archives
+    home-manager  # manage user configuration
+    du-dust       # disk usage
+    bat           # cat clone with wings
+
+    # for development
+    wget            # download files from the web
+    curl            # transfer data with URLs
+    netcat          # networking utility
+    kitty           # terminal emulator
+    vscode          # code editor
+    git             # version control
+    xclip           # command line interface to the X11 clipboard
+    wl-clipboard    # Wayland clipboard manager
+    wireguard-tools # VPN
+    filezilla       # FTP client
+    python3         
+
+    # style
+    (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme # sddm theme
+    libsForQt5.qt5.qtgraphicaleffects     # qt5 effects (necessary for theme)
+    swww                          # for wallpapers
+    xdg-desktop-portal-gtk        # for gtk file picker
+    xdg-desktop-portal-hyprland   # for qt file picker
+    xwayland                      # for x11 apps
+    waybar                        # status bar
+    meson                         # build system
+    wofi                          # app launcher 
+    dunst   
+
+    # fixes hyprland
+    wayland-protocols             
+    wayland-utils                 
+    wlroots                       
+
     # for games
     mangohud # display fps and other info
   ];

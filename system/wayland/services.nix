@@ -1,8 +1,6 @@
 {pkgs, ...}: {
-  systemd.user.services = { 
-
-  };
-
+  
+  # use sddm for login
   services.displayManager = {
     sddm = {
       enable = true;
@@ -12,17 +10,18 @@
 
   services = {
     xserver = { 
-      # Enable the X11 windowing system.
       enable = true;
-      videoDrivers = [ "amdgpu" ];
+      videoDrivers = [ "amdgpu" ];  # 
 
       # Enable the GNOME Desktop Environment.
       desktopManager.gnome.enable = true;
 
-      # Configure keymap in X11
+      # Configure keymap
       xkb.layout = "us";
       xkb.variant = "";
     };
+
+    # Configuration for the GNOME services in Wayland environment.
     gnome = {
       glib-networking.enable = true;
       gnome-keyring.enable = true;

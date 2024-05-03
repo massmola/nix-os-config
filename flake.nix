@@ -3,12 +3,16 @@
 
   outputs = { self, nixpkgs, ... }@inputs: 
   let
+    
     user = {
       username = "spatola";
       description = "Spatola";
     };
-  in{
+
+  in {
+    
     nixosConfigurations = import ./hosts {inherit inputs nixpkgs user;};
+  
   };
 
   inputs = {

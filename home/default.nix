@@ -1,8 +1,9 @@
 {
+  user,
  ...
 }:
 {
-  homeConfiguration.spatola = home-manager.lib.homeManagerConfiguration {
+  homeConfiguration.${user.username} = home-manager.lib.homeManagerConfiguration {
 
   };
 }

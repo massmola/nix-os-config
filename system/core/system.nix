@@ -7,17 +7,19 @@
       RuntimeMaxUse=10M
     '';
 
-  openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = null; # Allows all users by default. Can be [ "user1" "user2" ]
-      UseDns = true;
-      X11Forwarding = false;
-      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+    # Configuration for the OpenSSH server.
+    openssh = {
+      enable = true;  # Enable the OpenSSH server.
+      ports = [ 22 ];  # Specify the ports to listen on.
+      settings = {
+        PasswordAuthentication = true;  # Allow password authentication.
+        AllowUsers = null;  # Allow all users by default. Can be set to a list of specific users.
+        UseDns = true;  # Use DNS to resolve client hostnames.
+        X11Forwarding = false;  # Disable X11 forwarding.
+        PermitRootLogin = "prohibit-password";  # Specify the root login behavior.Options: "yes", "without-password", "prohibit-password","forced-commands-only", "no"
+      };
     };
-  };
+
     # manage disk drives and related devices
     udisks2.enable = true;
   };

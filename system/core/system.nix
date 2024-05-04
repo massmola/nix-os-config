@@ -95,7 +95,8 @@
     steam.enable = true;
     steam.gamescopeSession.enable = true; # enable gamescope for steam
 
-    programs.ssh.startAgent = true;
+    ssh.startAgent = true;
+    ssh.addKeysToAgent = "yes";
 
     # enable gamemode
     gamemode.enable = true;

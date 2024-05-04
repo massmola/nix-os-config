@@ -32,7 +32,6 @@
   environment.systemPackages = with pkgs; [
     # utilities
     firefox       # web browser
-    chromium
     unzip         # extract files from .zip archives
     home-manager  # manage user configuration
     du-dust       # disk usage

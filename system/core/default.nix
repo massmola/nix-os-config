@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./docker.nix
+    ./virtualisation.nix
     ./bluetooth.nix
     ./local.nix
     ./users.nix

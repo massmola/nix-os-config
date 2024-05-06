@@ -65,7 +65,8 @@
     # fixes hyprland
     wayland-protocols             
     wayland-utils                 
-    wlroots                       
+    wlroots      
+    brightnessctl                 
 
     # for games
     mangohud # display fps and other info

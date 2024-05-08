@@ -44,6 +44,7 @@
       XDG_SESSION_TYPE = "wayland";
 
       # Specifies the video driver to use for SDL (Simple DirectMedia Layer), which is Wayland in this case.
+      SDL_VIDEODRIVEVER="wayland";
       SDL_VIDEODRIVER = "wayland";
 
       # Specifies the backend to use for Clutter, a graphical toolkit, which is Wayland in this case.

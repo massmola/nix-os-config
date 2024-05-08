@@ -2,6 +2,8 @@
 
   fonts = {
     packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+      ubuntu_font_family
       material-icons
       material-design-icons
       roboto
@@ -16,13 +18,22 @@
       jost
       dejavu_fonts
       iosevka-bin
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
       jetbrains-mono
       nerdfonts
       meslo-lgs-nf
+      liberation_ttf
+      mplus-outline-fonts.githubRelease
+      dina-font
+      proggyfonts
     ];
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Ubuntu" ];
+        sansSerif = [ "Ubuntu" ];
+        monospace = [ "FiraCode" ];
+    };
+  };
   };
   
 }

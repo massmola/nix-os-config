@@ -80,8 +80,12 @@
 
   programs = {
     # enable steam
-    steam.enable = true;
-    steam.gamescopeSession.enable = true; # enable gamescope for steam
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true; # enable gamescope for steam
+      remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    };
 
     ssh.startAgent = true;
     # ssh.addKeysToAgent = "yes";

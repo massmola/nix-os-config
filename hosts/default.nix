@@ -7,7 +7,7 @@ let
 
 in {
 
-  # os config for marvin (my laptop)
+  # laptop
   marvin = nixpkgs.lib.nixosSystem {
     
     system = "x86_64-linux";
@@ -26,4 +26,25 @@ in {
       inherit user;
     };
   };
+
+  # workstation
+  trillion = nixpkgs.lib.nixosSystem {
+    
+    system = "x86_64-linux";
+
+    modules =
+      [
+        {networking.hostName = "trillion";}
+        ./trillion
+        core
+        wayland
+      ];
+    
+    specialArgs = {
+      inherit inputs;
+      inherit user;
+    };
+  };
+
+
 }

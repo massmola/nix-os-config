@@ -13,4 +13,5 @@ git commit -m "nixos switch $1: $2"
 git push
 
 # Rebuld NixOS
+nix flake update
 sudo nixos-rebuild switch --flake ./#$1 

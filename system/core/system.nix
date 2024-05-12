@@ -36,6 +36,7 @@
     home-manager  # manage user configuration
     du-dust       # disk usage
     bat           # cat clone with wings
+    htop          # interactive process viewer
 
     # for development
     wget            # download files from the web

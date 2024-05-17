@@ -50,6 +50,7 @@
     wireguard-tools # VPN
     filezilla       # FTP client
     python3         
+    gnumake42       # make
 
     # style
     (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme # sddm theme

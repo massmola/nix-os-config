@@ -1,12 +1,12 @@
 {pkgs, ...}: {
   
   # use sddm for login
-  services.displayManager = {
-    sddm = {
-      enable = true;
-      theme = "sugar-candy";
-    };
-  };
+  # services.displayManager = {
+  #   sddm = {
+  #     enable = true;
+  #     theme = "sugar-candy";
+  #   };
+  # };
 
   services = {
     xserver = { 
@@ -16,7 +16,7 @@
         enable = true;  
         wayland = true; 
       };
-      
+
     desktopManager.gnome.enable = true; 
 
       # Configure keymap

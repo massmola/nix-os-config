@@ -18,19 +18,7 @@
 
       # Enables Wayland support for the Anki application.
       ANKI_WAYLAND = "1";
-
-      # Enables automatic scaling of screen elements in Qt applications.
-      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-
-      # Specifies the Qt platform plugin to use, which can be either Wayland or XCB.
-      QT_QPA_PLATFORM = "wayland;xcb";
-
-      # Enables compatibility with Qt.
-      DISABLE_QT_COMPAT = "0";
-
-      # Disables window decorations for Qt applications running on Wayland.
-      QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-
+      
       # Enables Wayland support for Mozilla applications.
       MOZ_ENABLE_WAYLAND = "1";
 
@@ -57,10 +45,4 @@
     driSupport = true;
     driSupport32Bit = true;
   };
-
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
 }

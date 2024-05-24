@@ -12,8 +12,12 @@
     xserver = { 
       enable = true;
 
-      # Enable the GNOME Desktop Environment.
-      desktopManager.gnome.enable = true;
+      displayManager.gdm = {
+        enable = true;  
+        wayland = true; 
+      };
+      
+    desktopManager.gnome.enable = true; 
 
       # Configure keymap
       xkb.layout = "us";

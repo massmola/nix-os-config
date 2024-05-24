@@ -65,10 +65,10 @@
     dunst                         # notification daemon
 
     # fixes hyprland
-    wayland-protocols             
-    wayland-utils                 
-    wlroots      
-    brightnessctl                 
+    grim # screenshot functionality
+    slurp # screenshot functionality
+    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+    mako # notification system developed by swaywm maintainer               
 
     # for games
     mangohud # display fps and other info
@@ -94,6 +94,12 @@
 
     # enable gamemode
     gamemode.enable = true;
+
+
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+    };
   
     # enables java
     java = {

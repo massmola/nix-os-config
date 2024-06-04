@@ -71,7 +71,7 @@
     mako # notification system developed by swaywm maintainer               
 
     # for games
-    mutter 
+    # mutter 
     mangohud # display fps and other info
   ];
 

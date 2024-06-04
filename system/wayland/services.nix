@@ -26,7 +26,7 @@
 
     # Configuration for the GNOME services in Wayland environment.
     gnome = {
-      gnome.sessionPath = [ mutter gnome-shell nautilus ];
+      # gnome.sessionPath = [ mutter gnome-shell nautilus ];
       glib-networking.enable = true;
       gnome-keyring.enable = true;
     };

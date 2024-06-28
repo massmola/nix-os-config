@@ -41,7 +41,7 @@
     # for development
     wget            # download files from the web
     curl            # transfer data with URLs
-    netcat          # networking utility
+    netcat          # networking utility  
     kitty           # terminal emulator
     vscode          # code editor
     git             # version control

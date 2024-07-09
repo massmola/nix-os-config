@@ -7,10 +7,10 @@ nix flake update
 git pull
 
 # Add all files to the staging area
-git add .
+git add -A
 
 # Commit the changes with the current date and time as the message
-git commit -m "nixos switch $1: $2"
+git commit -m "switch $1 at $(date): $2"
 
 # Push the changes to the remote repository
 git push

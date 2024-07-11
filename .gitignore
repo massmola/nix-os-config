@@ -1,1 +1,4 @@
 # **/hardware-configuration.nix
+
+flake.lock
+

@@ -17,8 +17,8 @@ in {
         {networking.hostName = "marvin";}
         ./marvin
         core
-        touchpad
         wayland
+        touchpad
       ];
     
     specialArgs = {

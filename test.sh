@@ -10,4 +10,4 @@ git commit -m "test nix: $(date)"
 git push
 
 # Rebuld NixOS
-sudo nixos-rebuild switch --flake ./#marvin
+sudo nixos-rebuild switch --flake ./#$1

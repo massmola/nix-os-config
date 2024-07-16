@@ -1,4 +1,4 @@
 # **/hardware-configuration.nix
 
-*.lock
+# *.lock
 

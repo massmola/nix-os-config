@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # update the flake dependencies
-nix flake update -f
+nix flake update
 
 # get up to date
 git pull

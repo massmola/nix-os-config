@@ -1,4 +1,19 @@
 {pkgs, ...}: {
-  # Enable the user fonts directory (e.g so vscode can use them)
-  fonts.fontDir.enable = true; 
+
+   fonts = {
+    packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+      ubuntu_font_family
+      work-sans
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Ubuntu" ];
+        sansSerif = [ "Ubuntu" ];
+        monospace = [ "FiraCode" ];
+      };
+    };
+  };
+
 }

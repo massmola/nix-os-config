@@ -1,12 +1,13 @@
 {...}: {
   imports = [
-    ./virtualisation.nix
     ./bluetooth.nix
+    ./bootloader.nix
+    ./fonts.nix
     ./local.nix
     ./users.nix
-    ./system.nix
-    ./bootloader.nix
     ./security.nix
-    ./fonts.nix
+    ./services.nix
+    ./system.nix
+    ./virtualisation.nix
   ];
 }

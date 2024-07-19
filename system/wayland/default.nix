@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./pkgs.nix
     ./fonts.nix
     ./services.nix
     ./pipewire.nix

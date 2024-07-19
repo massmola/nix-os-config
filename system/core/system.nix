@@ -54,8 +54,7 @@
     gnumake42       # make
     aria2           # download manager
 
-    # style
-    swww                          # for wallpapers         
+      
                       
   ];
 

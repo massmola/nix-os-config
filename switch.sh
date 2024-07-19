@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 
-# update the flake dependencies
-# nix flake update
+set -e
 
-# get up to date
 git pull
 
+sudo nixos-rebuild switch --flake ./#$1 
+
+# Rebuld NixOS
+gen=$(nixos-rebuild list-generations | grep current)
 # Add all files to the staging area
 git add -A
-
 # Commit the changes with the current date and time as the message
-git commit -m "switch $1 at $(date): $2"
+git commit -m "switch $1: $2, $gen"
 
 # Push the changes to the remote repository
 git push
-
-# Rebuld NixOS
-sudo nixos-rebuild switch --flake ./#$1 

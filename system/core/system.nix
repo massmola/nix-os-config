@@ -52,34 +52,11 @@
     filezilla       # FTP client
     python3         
     gnumake42       # make
+    aria2           # download manager
 
     # style
-    (callPackage ./sugar-candy.nix{}).sddm-sugar-candy-theme # sddm theme
-    libsForQt5.qt5.qtgraphicaleffects     # qt5 effects (necessary for theme)
-    swww                          # for wallpapers
-    xdg-desktop-portal-gtk        # for gtk file picker
-    xdg-desktop-portal-hyprland   # for qt file picker
-    xwayland                      # for x11 apps
-    waybar                        # status bar
-    meson                         # build system
-    wofi                          # app launcher 
-    dunst                         # notification daemon
-
-    # fixes hyprland
-    grim # screenshot functionality
-    slurp # screenshot functionality
-    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
-    mako # notification system developed by swaywm maintainer               
-    dunst   
-
-    # fixes hyprland
-    wayland-protocols             
-    wayland-utils                 
-    wlroots                       
-
-    # for games
-    # mutter 
-    mangohud # display fps and other info
+    swww                          # for wallpapers         
+                      
   ];
 
   # compress half of the ram to use as swap

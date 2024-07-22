@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 set -e
+gen=$(nixos-rebuild list-generations | grep current)
 
+git add -A
+git commit -m "switch $1: $2, $gen"
 git pull
 
-gen=$(nixos-rebuild list-generations | grep current)
 # Add all files to the staging area
-git add -A
 # Commit the changes with the current date and time as the message
-git commit -m "switch $1: $2, $gen"
 
 sudo nixos-rebuild switch --flake ./#$1 
 

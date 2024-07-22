@@ -1,6 +1,7 @@
 {pkgs, ...} : {
     environment.systemPackages = with pkgs; [
         # style
-        swww    # for wallpapers   
+        swww    # for wallpapers  
+        vlc 
     ];
 }

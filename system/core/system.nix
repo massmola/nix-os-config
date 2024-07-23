@@ -31,8 +31,6 @@
   # system-wide programs
   environment.systemPackages = with pkgs; [
     # utilities
-    firefox       # web browser
-    tor-browser   # web browser
     unzip         # extract files from .zip archives
     home-manager  # manage user configuration
     du-dust       # disk usage
@@ -44,7 +42,6 @@
     curl            # transfer data with URLs
     netcat          # networking utility  
     kitty           # terminal emulator
-    vscode          # code editor
     git             # version control
     xclip           # command line interface to the X11 clipboard
     wl-clipboard    # Wayland clipboard manager

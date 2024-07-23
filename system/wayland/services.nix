@@ -7,7 +7,6 @@
       displayManager.gdm = {
         enable = true;  
         wayland = true; 
-        gnome3.enable = true;
       };
 
       desktopManager.gnome.enable = true;

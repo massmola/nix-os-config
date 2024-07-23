@@ -10,9 +10,7 @@
         gnome3.enable = true;
       };
 
-      desktopManager.gnome = {
-        enable = true
-      }; 
+      desktopManager.gnome.enable = true;
 
       # Configure keymap
       xkb.layout = "us";

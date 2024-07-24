@@ -7,6 +7,7 @@
         firefox       # web browser
         tor-browser   # web browser
         vscode          # code editor
+        warp-terminal  # terminal
 
 
         

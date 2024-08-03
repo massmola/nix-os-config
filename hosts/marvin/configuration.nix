@@ -61,7 +61,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -84,7 +84,23 @@
   users.users.spatola = {
     isNormalUser = true;
     description = "spatola";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ 
+      "wheel"
+      "gitea"
+      "docker"
+      "systemd-journal"
+      "vboxusers"
+      "audio"
+      "plugdev"
+      "wireshark"
+      "video"
+      "input"
+      "lp"
+      "networkmanager"
+      "power"
+      "nix"
+      "adbusers"
+    ];
     packages = with pkgs; [
       
     #  thunderbird

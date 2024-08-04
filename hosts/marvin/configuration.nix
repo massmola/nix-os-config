@@ -119,7 +119,35 @@
     vscode
     git
     bat
-    firefox
+
+    unzip         # extract files from .zip archives
+    home-manager  # manage user configuration
+    du-dust       # disk usage
+    bat           # cat clone with wings
+    htop          # interactive process viewer
+
+    wget            # download files from the web
+    curl            # transfer data with URLs
+    netcat          # networking utility  
+    kitty           # terminal emulator
+    git             # version control
+    xclip           # command line interface to the X11 clipboard
+    wl-clipboard    # Wayland clipboard manager
+    wireguard-tools # VPN
+    filezilla       # FTP client
+    python3         
+    gnumake42       # make
+    aria2           # download manager
+
+            
+    firefox       # web browser
+    tor-browser   # web browser
+    vscode          # code editor
+    warp-terminal  # terminal
+    
+    # style
+    swww    # for wallpapers  
+    vlc 
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

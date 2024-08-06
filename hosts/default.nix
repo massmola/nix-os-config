@@ -33,8 +33,6 @@ in {
       [
         {networking.hostName = "trillion";}
         ./trillion
-        core
-        wayland
       ];
     
     specialArgs = {

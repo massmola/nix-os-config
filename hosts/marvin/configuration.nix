@@ -142,6 +142,7 @@
             
     firefox       # web browser
     tor-browser   # web browser
+    thunderbird  # email client
     vscode          # code editor
     warp-terminal  # terminal
     

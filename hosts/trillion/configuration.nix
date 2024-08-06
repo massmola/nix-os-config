@@ -44,6 +44,8 @@
     LC_TIME = "it_IT.UTF-8";
   };
 
+  services.xserver.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 

@@ -125,6 +125,7 @@
     du-dust       # disk usage
     bat           # cat clone with wings
     htop          # interactive process viewer
+    efitools      # EFI tools
 
     wget            # download files from the web
     curl            # transfer data with URLs

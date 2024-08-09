@@ -63,16 +63,10 @@
     description = "spatola";
     extraGroups = [ 
       "wheel"
-      "gitea"
       "docker"
       "systemd-journal"
-      "vboxusers"
-      "audio"
       "plugdev"
-      "wireshark"
-      "video"
       "input"
-      "lp"
       "networkmanager"
       "power"
       "nix"
@@ -100,6 +94,7 @@
     wireguard-tools # VPN
     python3         
     aria2           # download manager
+    efitools
   ];
 
   programs.nix-ld.enable = true;

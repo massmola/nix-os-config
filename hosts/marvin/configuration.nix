@@ -144,6 +144,7 @@
     thunderbird  # email client
     vscode          # code editor
     warp-terminal  # terminal
+    telegram-desktop # chat
     
     # style
     swww    # for wallpapers  

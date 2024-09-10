@@ -83,20 +83,8 @@
     description = "spatola";
     extraGroups = [ 
       "wheel"
-      "gitea"
       "docker"
-      "systemd-journal"
-      "vboxusers"
-      "audio"
-      "plugdev"
-      "wireshark"
-      "video"
-      "input"
-      "lp"
       "networkmanager"
-      "power"
-      "nix"
-      "adbusers"
     ];
     packages = with pkgs; [
       

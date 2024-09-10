@@ -68,6 +68,11 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     jack.enable = true;
+
+    mediaSession = {
+      enable = true;
+      autoSpawn = true;
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).

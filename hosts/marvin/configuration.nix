@@ -161,6 +161,7 @@
     serviceConfig.Type = "simple";
   };
 
+  services.flatpak.enable = true;
   # Install the driver
   services.fprintd.enable = true;
   # If simply enabling fprintd is not enough, try enabling fprintd.tod...

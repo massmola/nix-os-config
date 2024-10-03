@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -88,7 +87,7 @@
       enable = true;
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
     };
-    
+
     home.stateVersion = "24.05";
   };
 

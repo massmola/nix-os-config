@@ -91,9 +91,10 @@
     vim 
     wget
     curl
-    vscode
     git
+    gh                    # github cli
     bat
+    docker-compose        # docker
 
     unzip         # extract files from .zip archives
     home-manager  # manage user configuration
@@ -127,8 +128,15 @@
     signal-desktop   # chat
     
     # style
-    swww    # for wallpapers  
+    swww            # for wallpapers  
     vlc 
+
+    # social
+    discord               # chat client
+
+    # gaming
+    bastet                # tetris
+    teams-for-linux       # microsoft teams
   ];
 
 

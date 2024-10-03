@@ -81,16 +81,6 @@
     hashedPassword = "$6$9qX8k0blae/Ev1Vj$Uu6ptnWrQhyo6OnmKHXCGScw5nRdnGbKlxGJ1gDmKqyyvxDzfvW4dy/2nF4cfuuoNktBRmONPsjwOpbWambVB/";        # Use hashed password or `password` for plain text
   };
 
-  programs.home-manager.enable = true;
-  home-manager.users.spatola = {
-    dconf = {
-      enable = true;
-      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    };
-
-    home.stateVersion = "24.05";
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   

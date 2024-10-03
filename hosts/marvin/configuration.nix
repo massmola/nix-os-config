@@ -169,7 +169,7 @@
 
   services.flatpak.enable = true;
 
-  hardware.video.hidpi.enable = true
+  hardware.video.hidpi.enable = true;
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];

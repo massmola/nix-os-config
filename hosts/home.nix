@@ -18,6 +18,17 @@
     # "Hello, world!" when run.
     hello
 
+    # Cybersecurity tools
+    wireshark             # network analysis
+    burpsuite             # web app pentesting
+    ngrok                 # tunneling
+
+    # Gaming tools
+    protonup             # proton updater
+
+    # Learning tools
+    obsidian             # note taking
+
     # It is sometimes useful to fine-tune packages, for example, by applying
     # overrides. You can do that directly here, just don't forget the
     # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -65,6 +76,52 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+  };
+
+  # Git configuration
+  programs.git = {
+    enable = true;
+    userName = "MassimiIano";
+    userEmail = "massimiliano.mola.bzs@gmail.com";
+    ignores = [
+      ".cache/"
+      ".DS_Store"
+      ".idea/"
+      "*.swp"
+      "*.elc"
+      "auto-save-list"
+      ".direnv/"
+      ".venv/"
+      ".vscode/"
+      "node_modules"
+      "result"
+      "result-*"
+    ];
+    
+    extraConfig = {
+      init = {defaultBranch = "main";};
+      delta = {
+        options.map-styles = "bold purple => syntax #ca9ee6, bold cyan => syntax #8caaee";
+        line-numbers = true;
+      };
+    };
+
+    aliases = {
+      essa = "push --force";
+      co = "checkout";
+      fuck = "commit --amend -m";
+      c = "commit -m";
+      ca = "commit -am";
+      forgor = "commit --amend --no-edit";
+      graph = "log --all --decorate --graph --oneline";
+      oops = "checkout --";
+      l = "log";
+      r = "rebase";
+      s = "status --short";
+      d = "diff";
+      st = "status";
+      br = "branch";
+    };
   };
 
   

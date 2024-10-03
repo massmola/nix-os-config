@@ -5,6 +5,8 @@
   dconf = {
     enable = true;
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    settings."org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
+    settings."org/gnome/desktop/interface".scaling-factor = 1.7;
   };
 
   # The home.packages option allows you to install Nix packages into your

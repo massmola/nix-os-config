@@ -74,9 +74,9 @@
     ];
   };
 
-  users.users.work = {
+  users.users.ict = {
     isNormalUser = true;
-    description = "work account";
+    description = "ICT";
     extraGroups = [ "wheel" "networkmanager" "docker"];  # Optional groups
     hashedPassword = "$6$9qX8k0blae/Ev1Vj$Uu6ptnWrQhyo6OnmKHXCGScw5nRdnGbKlxGJ1gDmKqyyvxDzfvW4dy/2nF4cfuuoNktBRmONPsjwOpbWambVB/";        # Use hashed password or `password` for plain text
   };

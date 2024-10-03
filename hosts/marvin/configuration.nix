@@ -52,6 +52,14 @@
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+
+  # Enable fractional scaling
+  environment.gnome.extraGSettingsOverrides = {
+    "org.gnome.mutter" = {
+      "experimental-features" = [ "scale-monitor-framebuffer" ];
+    };
+  };
+
   services.libinput.enable = true;
 
   # Enable CUPS to print documents.
@@ -94,7 +102,6 @@
     git
     gh                    # github cli
     bat
-    docker-compose        # docker
 
     unzip         # extract files from .zip archives
     home-manager  # manage user configuration

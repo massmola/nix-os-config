@@ -124,6 +124,7 @@
     vscode          # code editor
     warp-terminal  # terminal
     telegram-desktop # chat
+    signal-desktop   # chat
     
     # style
     swww    # for wallpapers  

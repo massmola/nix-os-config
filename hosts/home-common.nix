@@ -74,6 +74,10 @@
   #
   home.sessionVariables = {
     VSCODE_ENABLE_FEATURES = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
+    ELECTRON_ENABLE_LOGGING = "true";
+    ELECTRON_FORCE_ENABLE_WAYLAND = "true";
+    QT_QPA_PLATFORM = "wayland";
+    GDK_BACKEND = "wayland";
   };
 
   # Git configuration

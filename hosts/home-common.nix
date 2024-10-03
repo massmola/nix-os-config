@@ -1,9 +1,5 @@
-{ config, pkgs, ... }:
-
+{pkgs, config, ...}: 
 {
-  home.username = "spatola";
-  home.homeDirectory = "/home/spatola";
-
   nixpkgs.config.allowUnfree = true;
 
   dconf = {

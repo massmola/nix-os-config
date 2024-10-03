@@ -19,8 +19,8 @@ in {
         inputs.home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.spatola = import ./home.nix;
-          home-manager.users.ict = import ./home.nix;
+          home-manager.users.spatola = import ./home-spatola.nix;
+          home-manager.users.ict = import ./home-ict.nix;
 
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix

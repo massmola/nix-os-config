@@ -95,6 +95,7 @@
     gh                    # github cli
     bat
 
+    dconf
     unzip         # extract files from .zip archives
     home-manager  # manage user configuration
     du-dust       # disk usage

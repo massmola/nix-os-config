@@ -81,7 +81,8 @@
     hashedPassword = "$6$9qX8k0blae/Ev1Vj$Uu6ptnWrQhyo6OnmKHXCGScw5nRdnGbKlxGJ1gDmKqyyvxDzfvW4dy/2nF4cfuuoNktBRmONPsjwOpbWambVB/";        # Use hashed password or `password` for plain text
   };
 
-  home-manager.users.myuser = {
+  programs.home-manager.enable = true;
+  home-manager.users.spatola = {
     dconf = {
       enable = true;
       settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
@@ -131,8 +132,6 @@
     thunderbird  # email client
     vscode          # code editor
     warp-terminal  # terminal
-    telegram-desktop # chat
-    signal-desktop   # chat
     
     # style
     swww            # for wallpapers  
@@ -140,6 +139,8 @@
 
     # social
     discord               # chat client
+    telegram-desktop # chat
+    signal-desktop   # chat
 
     # gaming
     bastet                # tetris
@@ -156,13 +157,6 @@
     lxd.enable = true;
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # List services that you want to enable:
 

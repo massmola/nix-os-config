@@ -10,7 +10,7 @@ git commit -m "switch $1: $2, $gen"
 git pull
 
 # Rebuld NixOS
-sudo nixos-rebuild switch --flake ./#$1  
+sudo nixos-rebuild switch --flake ./#marvin
 
 # Push the changes to the remote repository
 git push

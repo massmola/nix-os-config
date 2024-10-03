@@ -75,7 +75,7 @@
   #  /etc/profiles/per-user/spatola/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    VSCODE_ENABLE_FEATURES = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   };
 
   # Git configuration

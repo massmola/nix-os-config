@@ -153,7 +153,7 @@
     ELECTRON_OZONE_PLATFORM_HINT="wayland";
     GDM_BACKEND = "drm";
     NIXOS_OZONE_WL = "1";
-    WARP_ENABLE_WAYLAND=1
+    WARP_ENABLE_WAYLAND= "1";
   };
 
 

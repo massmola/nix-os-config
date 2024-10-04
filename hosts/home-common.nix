@@ -83,6 +83,7 @@
     OZONE_PLATFORM= "wayland";
     QT_WAYLAND_FORCE_DPI= "96";
     WAYLAND_DISPLAY= "wayland-1";
+    ELECTRON_OZONE_PLATFORM_HINT="auto";
   };
 
   # Git configuration

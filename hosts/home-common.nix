@@ -73,19 +73,7 @@
   #  /etc/profiles/per-user/spatola/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    VSCODE_ENABLE_FEATURES = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
-    ELECTRON_ENABLE_LOGGING = "true";
-    ELECTRON_FORCE_ENABLE_WAYLAND = "true";
-    QT_QPA_PLATFORM = "wayland";
-    GDK_BACKEND = "wayland";
-    QT_SCALE_FACTOR = "1.7"; 
-    MOZ_ENABLE_WAYLAND = "1";
-    OZONE_PLATFORM= "wayland";
-    QT_WAYLAND_FORCE_DPI= "96";
-    WAYLAND_DISPLAY= "wayland-1";
-    ELECTRON_OZONE_PLATFORM_HINT="wayland";
-    GDM_BACKEND = "drm";
-    NIXOS_OZONE_WL = "1";
+
     
   };
 

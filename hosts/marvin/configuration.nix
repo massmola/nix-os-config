@@ -176,14 +176,17 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.flatpak.enable = true;
 
   # Start the driver at boot
-  systemd.services.fprintd = {
+  systemd.services = {
     wantedBy = [ "multi-user.target" ];
-    serviceConfig.Type = "simple";
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
   };
 
-  services.flatpak.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

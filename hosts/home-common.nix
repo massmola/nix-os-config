@@ -83,7 +83,9 @@
     OZONE_PLATFORM= "wayland";
     QT_WAYLAND_FORCE_DPI= "96";
     WAYLAND_DISPLAY= "wayland-1";
-    ELECTRON_OZONE_PLATFORM_HINT="auto";
+    ELECTRON_OZONE_PLATFORM_HINT="wayland";
+    GDM_BACKEND = "drm";
+    NIXOS_OZONE_WL = "1";
   };
 
   # Git configuration

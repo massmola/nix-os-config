@@ -149,11 +149,12 @@
     MOZ_ENABLE_WAYLAND = "1";
     OZONE_PLATFORM= "wayland";
     QT_WAYLAND_FORCE_DPI= "96";
-    WAYLAND_DISPLAY= "wayland-1";
+    # WAYLAND_DISPLAY= "wayland-1";
     ELECTRON_OZONE_PLATFORM_HINT="wayland";
-    GDM_BACKEND = "drm";
+    # GDM_BACKEND = "drm";
     NIXOS_OZONE_WL = "1";
     WARP_ENABLE_WAYLAND= "1";
+    WGPU_BACKEND = "vulkan";
   };
 
 

@@ -178,8 +178,7 @@
   services.openssh.enable = true;
   services.flatpak.enable = true;
 
-  # Start the driver at boot
-  systemd.services = {
+  systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.flatpak ];
     script = ''

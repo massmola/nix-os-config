@@ -185,7 +185,7 @@
       X11Forwarding = false;
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
-  }
+  };
   services.flatpak.enable = true;
 
   systemd.services.flatpak-repo = {

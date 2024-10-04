@@ -117,6 +117,11 @@
     gnumake42       # make
     aria2           # download manager
 
+    # Wayland
+    wayland
+    waylandProtocols
+    wlroots
+    libxkbcommon
             
     firefox-devedition-unwrapped
     firefox       # web browser

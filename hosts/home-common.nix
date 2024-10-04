@@ -82,6 +82,7 @@
     MOZ_ENABLE_WAYLAND = "1";
     OZONE_PLATFORM= "wayland";
     QT_WAYLAND_FORCE_DPI= "96";
+    WAYLAND_DISPLAY= "wayland-1";
   };
 
   # Git configuration

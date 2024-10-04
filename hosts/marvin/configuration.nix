@@ -118,9 +118,9 @@
     aria2           # download manager
 
     # Wayland
-    wayland
-    wlroots
+    libGL
     libxkbcommon
+    wayland
             
     firefox-devedition-unwrapped
     firefox       # web browser

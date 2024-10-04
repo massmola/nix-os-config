@@ -119,7 +119,6 @@
 
     # Wayland
     wayland
-    waylandProtocols
     wlroots
     libxkbcommon
             

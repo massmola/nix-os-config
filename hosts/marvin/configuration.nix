@@ -141,6 +141,8 @@
     # gaming
     bastet                # tetris
     teams-for-linux       # microsoft teams
+
+    wineWowPackages.stable
   ];
 
   environment.sessionVariables = {
@@ -186,6 +188,7 @@
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
+  
   services.flatpak.enable = true;
 
   systemd.services.flatpak-repo = {

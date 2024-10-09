@@ -145,6 +145,13 @@
     wineWowPackages.stable
   ];
 
+    # Ensure libwayland is available for warp-terminal
+  nixpkgs.config.packageOverrides = pkgs: {
+    warp-terminal = pkgs.warp-terminal.overrideAttrs (oldAttrs: {
+      buildInputs = oldAttrs.buildInputs ++ [ pkgs.wayland ];
+    });
+  };
+
   environment.sessionVariables = {
     VSCODE_ENABLE_FEATURES = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
     # ELECTRON_ENABLE_LOGGING = "true";
@@ -153,7 +160,7 @@
     GDK_BACKEND = "wayland";
     # QT_SCALE_FACTOR = "1.7"; 
     MOZ_ENABLE_WAYLAND = "1";
-    OZONE_PLATFORM= "wayland";
+    OZONE_PLATFORM = "wayland";
     # QT_WAYLAND_FORCE_DPI= "96";
     # WAYLAND_DISPLAY= "wayland-1";
     ELECTRON_OZONE_PLATFORM_HINT="wayland";
@@ -161,6 +168,7 @@
     NIXOS_OZONE_WL = "1";
     WARP_ENABLE_WAYLAND= "1";
     WGPU_BACKEND = "vulkan";
+    WINIT_UNIX_BACKEND= "wayland";
   };
 
 

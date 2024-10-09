@@ -116,11 +116,6 @@
     python3         
     gnumake42       # make
     aria2           # download manager
-
-    # Wayland
-    libGL
-    libxkbcommon
-    wayland
             
     firefox-devedition-unwrapped
     firefox       # web browser
@@ -166,7 +161,7 @@
     ELECTRON_OZONE_PLATFORM_HINT="wayland";
     # GDM_BACKEND = "drm";
     NIXOS_OZONE_WL = "1";
-    WARP_ENABLE_WAYLAND= "1";
+    # WARP_ENABLE_WAYLAND= "1";
     WGPU_BACKEND = "vulkan";
     WINIT_UNIX_BACKEND= "wayland";
   };

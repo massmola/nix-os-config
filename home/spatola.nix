@@ -3,10 +3,9 @@
 {
   home.username = "spatola";
   home.homeDirectory = "/home/spatola";
-
   
   imports = [
-    ./home-common.nix
+    ./common.nix
   ];
 
 }

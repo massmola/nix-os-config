@@ -1,4 +1,9 @@
+# --------------------------------------------------------------
+# This Home Manager configuration is shared between all hosts.
+# --------------------------------------------------------------
+
 {pkgs, config, ...}: 
+
 {
   nixpkgs.config.allowUnfree = true;
 

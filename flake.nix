@@ -1,39 +1,38 @@
 {
   description = "spatola's config";
 
-  outputs = { self, nixpkgs, ... }@inputs: 
-  let
+  outputs = { self, nixpkgs, ... }@inputs: {
     
-    user = {
-      username = "spatola";
-      description = "Spatola";
-    };
-
-  in {
-    
+    # NixOS Configuration
     nixosConfigurations.marvin = nixpkgs.lib.nixosSystem {
       
       system = "x86_64-linux";
 
       modules =
         [
+          # Name of the host
           {networking.hostName = "marvin";}
-          ./conf
+
+          # Main configuration file for NixOS
+          ./conf/configuration.nix
+
+          # User configuration with home-manager
           inputs.home-manager.nixosModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.spatola = import ./home/home-spatola.nix;
-            home-manager.users.ict = import ./home/home-ict.nix;
+
+            # Personal User Configuration
+            home-manager.users.spatola = import ./home/spatola.nix;
+
+            # Work User Configuration
+            home-manager.users.ict = import ./home/ict.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
           }
         ];
       
-      specialArgs = {
-        inherit inputs;
-        inherit user;
-      };
+      specialArgs = { inherit inputs; };
     };
   };
 

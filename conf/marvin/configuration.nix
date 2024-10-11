@@ -129,7 +129,7 @@
     vlc 
 
     # social
-    discord               # chat client
+    discord          # chat client
     telegram-desktop # chat
     signal-desktop   # chat
 

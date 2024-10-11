@@ -11,7 +11,7 @@
 
   in {
     
-    nixosConfigurations = import ./hosts {inherit inputs nixpkgs user;};
+    nixosConfigurations = import ./conf {inherit inputs nixpkgs user;};
   
   };
 

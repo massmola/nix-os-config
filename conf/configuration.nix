@@ -115,7 +115,7 @@
     filezilla       # FTP client
     python3         
     python3Packages.pytest
-    python.pkgs.pip
+    python3Packages.pip
     gnumake42       # make
     aria2           # download manager
             

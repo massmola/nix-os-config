@@ -93,6 +93,8 @@
     curl
     git
     gh                    # github cli
+    glab                  # giglab cli
+    powershell            # powershell for linux
     bat
 
     dconf
@@ -115,7 +117,6 @@
     filezilla       # FTP client
     python3         
     python3Packages.pytest
-    python3Packages.pip
     gnumake42       # make
     aria2           # download manager
             

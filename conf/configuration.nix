@@ -150,8 +150,6 @@
     });
   };
 
-  hardware.pulseaudio.enable = true;
-
 
   environment.sessionVariables = {
     VSCODE_ENABLE_FEATURES = "--enable-features=UseOzonePlatform --ozone-platform=wayland";

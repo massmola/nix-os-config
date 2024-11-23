@@ -139,6 +139,8 @@
     # gaming
     bastet                # tetris
     teams-for-linux       # microsoft teams
+    ghidra
+    postman
 
     wineWowPackages.stable
   ];

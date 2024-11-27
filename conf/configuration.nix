@@ -140,7 +140,7 @@
     bastet                # tetris
     teams-for-linux       # microsoft teams
     ghidra
-    postman
+    lutris
 
     wineWowPackages.stable
   ];

@@ -119,13 +119,15 @@
     python3Packages.pytest
     gnumake42       # make
     aria2           # download manager
-            
+
     firefox-devedition-unwrapped
     firefox       # web browser
     tor-browser   # web browser
     thunderbird  # email client
     vscode          # code editor
     warp-terminal  # terminal
+
+    openconnect     # cisco vpn for work
     
     # style
     swww            # for wallpapers  

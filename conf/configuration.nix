@@ -127,7 +127,7 @@
     vscode          # code editor
     warp-terminal  # terminal
 
-    openconnect     # cisco vpn for work
+    openconnect_openssl     # cisco vpn for work
     
     # style
     swww            # for wallpapers  

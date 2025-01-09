@@ -198,9 +198,11 @@
 
 
   nix.gc = {
-    enable = true;
-    dates = [ "weekly" ]; # You can change to "daily", "monthly", or a specific schedule.
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 15d";
   };
+
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "weekly" ];
 

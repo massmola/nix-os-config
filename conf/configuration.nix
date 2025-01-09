@@ -196,6 +196,11 @@
   
   services.flatpak.enable = true;
 
+
+  services.nix-gc = {
+    enable = true;
+    dates = [ "weekly" ]; # You can change to "daily", "monthly", or a specific schedule.
+  };
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play

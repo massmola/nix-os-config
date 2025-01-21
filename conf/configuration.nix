@@ -141,7 +141,6 @@
     # gaming
     bastet                # tetris
     teams-for-linux       # microsoft teams
-    ghidra
     lutris
 
     wineWowPackages.stable

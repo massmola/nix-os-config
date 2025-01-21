@@ -202,7 +202,7 @@
     dates = "weekly";
     options = "--delete-older-than 15d";
   };
-
+ 
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "weekly" ];
 

@@ -15,6 +15,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "marvin";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  
+  # run executables
+  programs.nix-ld.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

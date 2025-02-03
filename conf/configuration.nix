@@ -87,7 +87,7 @@
   programs.nix-ld.enable = true;  
 programs.nix-ld.libraries = options.programs.nix-ld.libraries.default ++ (with pkgs; [ libglvnd  ]);
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # $ nix search wget 
   environment.systemPackages = with pkgs; [
     vim 
     wget

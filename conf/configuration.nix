@@ -121,10 +121,9 @@
     gnumake42       # make
     aria2           # download manager
 
-    firefox-devedition-unwrapped
+    cloudflared     # cloudflare tunnel (for remote notebooks)
     firefox       # web browser
     tor-browser   # web browser
-    thunderbird  # email client
     vscode          # code editor
     warp-terminal  # terminal
 

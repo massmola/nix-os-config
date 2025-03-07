@@ -5,7 +5,7 @@
 {pkgs, config, ...}: 
 
 {
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   dconf = {
     enable = true;

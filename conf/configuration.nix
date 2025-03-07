@@ -125,9 +125,8 @@
     firefox       # web browser
     tor-browser   # web browser
     vscode          # code editor
-    warp-terminal  # terminal
+    (pkgs.warp-terminal.override { waylandSupport = true; })  # terminal
 
-    # openconnect_openssl     # cisco vpn for work
     
     # style
     swww            # for wallpapers  
@@ -145,13 +144,6 @@
 
     wineWowPackages.stable
   ];
-
-    # Ensure libwayland is available for warp-terminal
-  nixpkgs.config.packageOverrides = pkgs: {
-    warp-terminal = pkgs.warp-terminal.overrideAttrs (oldAttrs: {
-      buildInputs = oldAttrs.buildInputs or [] ++ [ pkgs.wayland pkgs.wayland-protocols pkgs.libxkbcommon pkgs.mesa ];
-    });
-  };
 
 
   environment.sessionVariables = {

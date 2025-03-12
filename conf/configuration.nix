@@ -59,7 +59,7 @@
       HandlePowerKey=suspend
       IdleAction=suspend
       IdleActionSec=30min
-    '';
+    ''; 
     lidSwitch = "suspend";
     powerKey = "poweroff";
     rebootKey = "reboot";

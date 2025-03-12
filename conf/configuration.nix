@@ -5,24 +5,26 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "marvin";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable fakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -53,18 +55,6 @@
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-    # Enable power management in lock screen
-  services.logind = {
-    extraConfig = ''
-      HandlePowerKey=suspend
-      IdleAction=suspend
-      IdleActionSec=30min
-    ''; 
-    lidSwitch = "suspend";
-    powerKey = "poweroff";
-    rebootKey = "reboot";
-  };
-
   services.libinput.enable = true;
 
   # Enable CUPS to print documents.
@@ -77,88 +67,90 @@
   users.users.spatola = {
     isNormalUser = true;
     description = "spatola";
-    extraGroups = [ 
+    extraGroups = [
       "wheel"
       "docker"
       "networkmanager"
     ];
     packages = with pkgs; [
-      
+
     ];
   };
 
   users.users.ict = {
     isNormalUser = true;
     description = "ICT";
-    extraGroups = [ "wheel" "networkmanager" "docker"];  # Optional groups
-    hashedPassword = "$6$9qX8k0blae/Ev1Vj$Uu6ptnWrQhyo6OnmKHXCGScw5nRdnGbKlxGJ1gDmKqyyvxDzfvW4dy/2nF4cfuuoNktBRmONPsjwOpbWambVB/";        # Use hashed password or `password` for plain text
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "docker"
+    ]; # Optional groups
+    hashedPassword = "$6$9qX8k0blae/Ev1Vj$Uu6ptnWrQhyo6OnmKHXCGScw5nRdnGbKlxGJ1gDmKqyyvxDzfvW4dy/2nF4cfuuoNktBRmONPsjwOpbWambVB/"; # Use hashed password or `password` for plain text
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  programs.nix-ld.enable = true;  
+  programs.nix-ld.enable = true;
   # programs.nix-ld.libraries = options.programs.nix-ld.libraries.default ++ (with pkgs; [ libglvnd  ]);
   # List packages installed in system profile. To search, run:
-  # $ nix search wget 
+  # $ nix search wget
   environment.systemPackages = with pkgs; [
     # essentials
-    vim 
-    gh                    # github cli
-    glab                  # giglab cli
-    powershell            # powershell for linux
+    vim
+    gh # github cli
+    glab # giglab cli
+    powershell # powershell for linux
     bat
 
     # system
 
     dconf
-    unzip         # extract files from .zip archives
-    home-manager  # manage user configuration
-    du-dust       # disk usage
-    bat           # cat clone with wings
-    htop          # interactive process viewer
-    efitools      # EFI tools
+    unzip # extract files from .zip archives
+    home-manager # manage user configuration
+    du-dust # disk usage
+    bat # cat clone with wings
+    htop # interactive process viewer
+    efitools # EFI tools
     libfprint
 
     # devtools
-    wget            # download files from the web
-    curl            # transfer data with URLs
-    netcat          # networking utility  
-    kitty           # terminal emulator
-    git             # version control
-    xclip           # command line interface to the X11 clipboard
-    wl-clipboard    # Wayland clipboard manager
+    wget # download files from the web
+    curl # transfer data with URLs
+    netcat # networking utility
+    kitty # terminal emulator
+    git # version control
+    xclip # command line interface to the X11 clipboard
+    wl-clipboard # Wayland clipboard manager
     wireguard-tools # VPN
-    filezilla       # FTP client
-    python3         
+    filezilla # FTP client
+    python3
     python3Packages.pytest
-    gnumake42       # make
-    aria2           # download manager
-    vscode          # code editor
-    nixfmt-rfc-style     # nix formatter
+    gnumake42 # make
+    aria2 # download manager
+    vscode # code editor
+    nixfmt-rfc-style # nix formatter
 
-    cloudflared     # cloudflare tunnel (for remote notebooks)
-    firefox       # web browser
-    tor-browser   # web browser
-    (pkgs.warp-terminal.override { waylandSupport = true; })  # terminal
+    cloudflared # cloudflare tunnel (for remote notebooks)
+    firefox # web browser
+    tor-browser # web browser
+    (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
 
-    
     # style
-    swww            # for wallpapers  
-    vlc 
+    swww # for wallpapers
+    vlc
 
     # social
-    discord          # chat client
+    discord # chat client
     telegram-desktop # chat
-    signal-desktop   # chat
+    signal-desktop # chat
 
     # gaming
-    bastet                # tetris
-    teams-for-linux       # microsoft teams
+    bastet # tetris
+    teams-for-linux # microsoft teams
     lutris
 
     wineWowPackages.stable
   ];
-
 
   environment.sessionVariables = {
     VSCODE_ENABLE_FEATURES = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
@@ -166,13 +158,12 @@
     GDK_BACKEND = "wayland";
     MOZ_ENABLE_WAYLAND = "1";
     OZONE_PLATFORM = "wayland";
-    ELECTRON_OZONE_PLATFORM_HINT="wayland";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
     NIXOS_OZONE_WL = "1";
     WGPU_BACKEND = "vulkan";
     WINIT_UNIX_BACKEND = "wayland";
     SDL_VIDEODRIVER = "wayland";
   };
-
 
   virtualisation = {
     # docker
@@ -183,11 +174,10 @@
     lxd.enable = true;
   };
 
-
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh ={
+  services.openssh = {
     enable = true;
     ports = [ 22 ];
     settings = {
@@ -198,16 +188,15 @@
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
-  
-  services.flatpak.enable = true;
 
+  services.flatpak.enable = true;
 
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 15d";
   };
- 
+
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "weekly" ];
 
@@ -218,6 +207,10 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  programs.bash.shellAliases = {
+    ll = "ls -lah";
+  };
+
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.flatpak ];
@@ -225,7 +218,6 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ];

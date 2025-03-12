@@ -2,13 +2,13 @@
 # This Home Manager configuration is shared between all hosts.
 # --------------------------------------------------------------
 
-{pkgs, config, ...}: 
+{ pkgs, config, ... }:
 
 {
   dconf = {
     enable = true;
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    settings."org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
+    settings."org/gnome/mutter".experimental-features = [ "scale-monitor-framebuffer" ];
     settings."org/gnome/desktop/interface".scaling-factor = 1.7;
   };
 
@@ -20,15 +20,15 @@
     hello
 
     # Cybersecurity tools
-    wireshark             # network analysis
-    burpsuite             # web app pentesting
-    ngrok                 # tunneling
+    wireshark # network analysis
+    burpsuite # web app pentesting
+    ngrok # tunneling
 
     # Gaming tools
-    protonup             # proton updater
+    protonup # proton updater
 
     # Learning tools
-    obsidian             # note taking
+    obsidian # note taking
 
     # You can also create simple shell scripts directly inside your
     # configuration. For example, this adds a command 'my-hello' to your
@@ -53,7 +53,6 @@
     # '';
   };
 
-
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
   # Manager then you have to manually source 'hm-session-vars.sh' located at
@@ -71,7 +70,6 @@
   #
   home.sessionVariables = {
 
-    
   };
 
   # Git configuration
@@ -93,9 +91,11 @@
       "result"
       "result-*"
     ];
-    
+
     extraConfig = {
-      init = {defaultBranch = "main";};
+      init = {
+        defaultBranch = "main";
+      };
       delta = {
         options.map-styles = "bold purple => syntax #ca9ee6, bold cyan => syntax #8caaee";
         line-numbers = true;
@@ -120,7 +120,13 @@
     };
   };
 
-  
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      "nix develp jupiter" = "nix develop github:massmola/nix-flakes";
+    };
+  };
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

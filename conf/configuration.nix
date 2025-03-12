@@ -89,14 +89,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget 
   environment.systemPackages = with pkgs; [
+    # essentials
     vim 
-    wget
-    curl
-    git
     gh                    # github cli
     glab                  # giglab cli
     powershell            # powershell for linux
     bat
+
+    # system
 
     dconf
     unzip         # extract files from .zip archives
@@ -107,6 +107,7 @@
     efitools      # EFI tools
     libfprint
 
+    # devtools
     wget            # download files from the web
     curl            # transfer data with URLs
     netcat          # networking utility  
@@ -120,11 +121,12 @@
     python3Packages.pytest
     gnumake42       # make
     aria2           # download manager
+    vscode          # code editor
+    nixpkgs-fmt     # nix formatter
 
     cloudflared     # cloudflare tunnel (for remote notebooks)
     firefox       # web browser
     tor-browser   # web browser
-    vscode          # code editor
     (pkgs.warp-terminal.override { waylandSupport = true; })  # terminal
 
     

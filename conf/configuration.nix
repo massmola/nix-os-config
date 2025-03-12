@@ -122,8 +122,7 @@
     gnumake42       # make
     aria2           # download manager
     vscode          # code editor
-    nixpkgs-fmt     # nix formatter
-    nixfmt          # nix formatter
+    nixfmt-rfc-style     # nix formatter
 
     cloudflared     # cloudflare tunnel (for remote notebooks)
     firefox       # web browser

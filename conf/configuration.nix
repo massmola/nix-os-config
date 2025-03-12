@@ -123,6 +123,7 @@
     aria2           # download manager
     vscode          # code editor
     nixpkgs-fmt     # nix formatter
+    nixfmt          # nix formatter
 
     cloudflared     # cloudflare tunnel (for remote notebooks)
     firefox       # web browser

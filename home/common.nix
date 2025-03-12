@@ -122,9 +122,9 @@
 
   programs.bash = {
     enable = true;
-    shellAliases = {
-      "nix develp jupiter" = "nix develop github:massmola/nix-flakes";
-    };
+    # shellAliases = {
+    #   "nix develp jupiter" = "nix develop github:massmola/nix-flakes";
+    # };
   };
 
   # This value determines the Home Manager release that your configuration is

@@ -122,9 +122,11 @@
 
   programs.bash = {
     enable = true;
-    shellAliases = {
-      "develop" = "nix develop github:massmola/nix-flakes";
-    };
+    initExtra = ''
+      develop() {
+        nix develop "github:massmola/nix-flakes#$1"
+      }
+    '';
   };
 
   # This value determines the Home Manager release that your configuration is

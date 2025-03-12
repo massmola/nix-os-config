@@ -53,6 +53,18 @@
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+    # Enable power management in lock screen
+  services.logind = {
+    extraConfig = ''
+      HandlePowerKey=suspend
+      IdleAction=suspend
+      IdleActionSec=30min
+    '';
+    lidSwitch = "suspend";
+    powerKey = "poweroff";
+    rebootKey = "reboot";
+  };
+
   services.libinput.enable = true;
 
   # Enable CUPS to print documents.

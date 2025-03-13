@@ -4,10 +4,25 @@ set -e
 
 gen=$(nixos-rebuild list-generations | grep current)
 
+# Check if the user has provided a commit message
+if [ -z "$1" ]; then
+    echo "No commit message provided. Using default message."
+    set -- "No message provided" "$2"
+fi
+
+# Check if the user has provided a issue number
+if [ ! -z "$2" ]; then
+    echo "No issue number provided. not linking commit to an issue."
+    set -- "$1" " #$2"
+else
+    # If no second argument, just use the first argument as is
+    set -- "$1" ""
+fi
+
 # Add all files to the staging area
 # Commit the changes with the current date and time as the message
 git add -A
-git commit -m "switch marvin, #$2: $1, $gen"
+git commit -m "switch marvin$2: $1, $gen"
 git pull
 
 # Rebuld NixOS

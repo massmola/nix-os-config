@@ -157,6 +157,7 @@
       # nerd-fonts.fira-code
       fira-code
     ];
+    fontconfig.enable = true;
 
     fontDir.enable = true;
 

@@ -158,6 +158,8 @@
       fira-code
     ];
 
+    fontDir.enable = true;
+
     fontconfig = {
       defaultFonts = {
         monospace = [ "FiraCode Nerd Font Mono" ];

@@ -129,6 +129,16 @@
     '';
   };
 
+    programs.vscode = {
+    enable = true;
+    userSettings = {
+      "editor.fontFamily" = "'FiraCode Nerd Font', 'monospace'";
+      "editor.fontLigatures" = true;
+      "editor.fontSize" = 14;
+      "terminal.integrated.fontFamily" = "'FiraCode Nerd Font'";
+    };
+  };
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

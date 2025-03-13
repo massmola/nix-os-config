@@ -168,7 +168,7 @@
           "Ubuntu"
           "Vazirmatn"
         ];
-        monospace = [ "FiraCode Nerd Font Mono" ];
+        monospace = [ "FiraCode" ];
       };
     };
   };

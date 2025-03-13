@@ -154,7 +154,8 @@
 
   fonts = {
     packages = with pkgs; [
-      nerd-fonts.fira-code
+      # nerd-fonts.fira-code
+      fira-code
     ];
 
     fontconfig = {

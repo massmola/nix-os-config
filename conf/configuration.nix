@@ -157,20 +157,6 @@
       # nerd-fonts.fira-code
       fira-code
     ];
-
-    fontconfig = {
-      defaultFonts = {
-        serif = [
-          "Liberation Serif"
-          "Vazirmatn"
-        ];
-        sansSerif = [
-          "Ubuntu"
-          "Vazirmatn"
-        ];
-        monospace = [ "FiraCode" "Fira Code" ];
-      };
-    };
   };
 
   environment.sessionVariables = {

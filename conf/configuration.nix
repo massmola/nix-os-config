@@ -168,7 +168,7 @@
           "Ubuntu"
           "Vazirmatn"
         ];
-        monospace = [ "FiraCode" ];
+        monospace = [ "FiraCode" "Fira Code" ];
       };
     };
   };

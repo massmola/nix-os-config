@@ -117,7 +117,6 @@
     wget # download files from the web
     curl # transfer data with URLs
     netcat # networking utility
-    kitty # terminal emulator
     git # version control
     xclip # command line interface to the X11 clipboard
     wl-clipboard # Wayland clipboard manager
@@ -129,6 +128,7 @@
     aria2 # download manager
     vscode # code editor
     nixfmt-rfc-style # nix formatter
+    nerd-fonts.fira-code # font
 
     cloudflared # cloudflare tunnel (for remote notebooks)
     firefox # web browser
@@ -156,6 +156,20 @@
     packages = with pkgs; [
       nerd-fonts.fira-code
     ];
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [
+          "Liberation Serif"
+          "Vazirmatn"
+        ];
+        sansSerif = [
+          "Ubuntu"
+          "Vazirmatn"
+        ];
+        monospace = [ "FiraCode Nerd Font Mono" ];
+      };
+    };
   };
 
   environment.sessionVariables = {

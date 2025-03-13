@@ -123,8 +123,8 @@
     wl-clipboard # Wayland clipboard manager
     wireguard-tools # VPN
     filezilla # FTP client
-    python3
-    python3Packages.pytest
+    # python3
+    # python3Packages.pytest
     gnumake42 # make
     aria2 # download manager
     vscode # code editor

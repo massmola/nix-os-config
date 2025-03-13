@@ -157,6 +157,12 @@
       # nerd-fonts.fira-code
       fira-code
     ];
+
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "FiraCode Nerd Font Mono" ];
+      };
+    };
   };
 
   environment.sessionVariables = {

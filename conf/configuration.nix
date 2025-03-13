@@ -152,6 +152,12 @@
     wineWowPackages.stable
   ];
 
+  fonts = {
+    packages = with pkgs; [
+      nerd-fonts.fira-code
+    ];
+  };
+
   environment.sessionVariables = {
     VSCODE_ENABLE_FEATURES = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
     QT_QPA_PLATFORM = "wayland";

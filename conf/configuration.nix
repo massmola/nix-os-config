@@ -128,7 +128,6 @@
     aria2 # download manager
     vscode # code editor
     nixfmt-rfc-style # nix formatter
-    nerd-fonts.fira-code # font
 
     cloudflared # cloudflare tunnel (for remote notebooks)
     firefox # web browser

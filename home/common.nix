@@ -16,9 +16,13 @@
       "org/gnome/mutter".experimental-features = [ "scale-monitor-framebuffer" ];
       "org/gnome/desktop/interface".scaling-factor = 1.7;
 
+      "org/gnome/desktop/interface" = {
+        font-name = "Cantarell 11"; # Change to your preferred font
+        document-font-name = "Sans 11";
+        monospace-font-name = "Fira Code 12";
+      };
 
-
-    }
+    };
   };
 
   # The home.packages option allows you to install Nix packages into your

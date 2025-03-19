@@ -154,6 +154,11 @@
     SDL_VIDEODRIVER = "wayland";
   };
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.droid-sans-mono
+  ];
+
   virtualisation = {
     # docker
     docker.enable = true;
@@ -176,17 +181,21 @@
     };
   };
 
+  # Enable Flatpak
   services.flatpak.enable = true;
 
+  # remove old nixos generations
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 15d";
   };
 
+  # reduces disk space usage
   nix.optimise.automatic = true;
   nix.optimise.dates = [ "weekly" ];
 
+  # Install steam
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
@@ -194,6 +203,7 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  # Adds the standard flathub repository
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.flatpak ];

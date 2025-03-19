@@ -7,9 +7,18 @@
 {
   dconf = {
     enable = true;
-    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-    settings."org/gnome/mutter".experimental-features = [ "scale-monitor-framebuffer" ];
-    settings."org/gnome/desktop/interface".scaling-factor = 1.7;
+
+    settings = {
+      # Enables dark mode
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+
+      # Enables fractional scaling and sets it on 1.7 for my 2k monitor
+      "org/gnome/mutter".experimental-features = [ "scale-monitor-framebuffer" ];
+      "org/gnome/desktop/interface".scaling-factor = 1.7;
+
+
+
+    }
   };
 
   # The home.packages option allows you to install Nix packages into your
@@ -120,6 +129,7 @@
     };
   };
 
+  # adds the develop shortkut to access my development shells
   programs.bash = {
     enable = true;
     initExtra = ''

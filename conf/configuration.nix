@@ -117,6 +117,7 @@
     filezilla # FTP client
     gnumake42 # make
     aria2 # download manager
+    direnv
     # vscode # code editor
     nixfmt-rfc-style # nix formatter
 

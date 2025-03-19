@@ -159,8 +159,9 @@
   fonts = {
     fontconfig.enable = true;
     packages = with pkgs; [
-      nerd-fonts.fira-code
-      nerd-fonts.droid-sans-mono
+      # nerd-fonts.fira-code
+      # nerd-fonts.droid-sans-mono
+      fira-code
     ];
   };
 

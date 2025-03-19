@@ -143,17 +143,17 @@
     '';
   };
 
-  # programs.vscode = {
-  #   enable = true;
-  #   profiles.default.userSettings = {
-  #     "editor.fontFamily" = "'FiraCode Nerd Font', 'Fira Code', 'monospace'";
-  #     "editor.fontLigatures" = true;
-  #     "editor.fontSize" = 14;
-  #     "terminal.integrated.fontFamily" = "'FiraCode Nerd Font'";
-  #     "terminal.integrated.fontSize" = 14;
-  #     "workbench.fontAliasing" = "antialiased";
-  #   };
-  # };
+  programs.vscode = {
+    enable = true;
+    profiles.default.userSettings = {
+      "editor.fontFamily" = "'FiraCode Nerd Font', 'Fira Code', 'monospace'";
+      "editor.fontLigatures" = true;
+      "editor.fontSize" = 14;
+      "terminal.integrated.fontFamily" = "'FiraCode Nerd Font'";
+      "terminal.integrated.fontSize" = 14;
+      "workbench.fontAliasing" = "antialiased";
+    };
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

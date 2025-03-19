@@ -141,18 +141,7 @@
     wineWowPackages.stable
   ];
 
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscode;
-    profiles.default.userSettings = {
-      "editor.fontFamily" = "'FiraCode Nerd Font Mono'";
-      "editor.fontLigatures" = true;
-      "editor.fontSize" = 14;
-      "terminal.integrated.fontFamily" = "'FiraCode Nerd Font Mono'";
-      "terminal.integrated.fontSize" = 14;
-      "workbench.fontAliasing" = "antialiased";
-    };
-  };
+
 
   environment.sessionVariables = {
     VSCODE_ENABLE_FEATURES = "--enable-features=UseOzonePlatform --ozone-platform=wayland";

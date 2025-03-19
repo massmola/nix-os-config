@@ -90,39 +90,38 @@
   environment.systemPackages = with pkgs; [
     # essentials
     vim
-    gh # github cli
-    glab # giglab cli
-    powershell # powershell for linux
+    gh          # github cli
+    glab        # giglab cli
+    powershell  # powershell for linux
     bat
 
     # system
 
     dconf
-    unzip # extract files from .zip archives
-    home-manager # manage user configuration
-    du-dust # disk usage
-    bat # cat clone with wings
-    htop # interactive process viewer
-    efitools # EFI tools
+    unzip         # extract files from .zip archives
+    home-manager  # manage user configuration
+    du-dust       # disk usage
+    bat           # cat clone with wings
+    htop          # interactive process viewer
+    efitools      # EFI tools
     libfprint
 
     # devtools
-    wget # download files from the web
-    curl # transfer data with URLs
-    netcat # networking utility
-    git # version control
-    xclip # command line interface to the X11 clipboard
-    wl-clipboard # Wayland clipboard manager
-    wireguard-tools # VPN
-    filezilla # FTP client
-    gnumake42 # make
-    aria2 # download manager
-    direnv
-    # vscode # code editor
-    nixfmt-rfc-style # nix formatter
+    wget              # download files from the web
+    curl              # transfer data with URLs
+    netcat            # networking utility
+    git               # version control
+    xclip             # command line interface to the X11 clipboard
+    wl-clipboard      # Wayland clipboard manager
+    wireguard-tools   # VPN
+    filezilla         # FTP client
+    gnumake42         # make
+    aria2             # download manager
+    direnv            # environment switcher (mainly for vscode enviroments)
+    nixfmt-rfc-style  # nix formatter
 
-    firefox # web browser
-    tor-browser # web browser
+    firefox           # web browser
+    tor-browser       # web browser
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
 
     # style
@@ -135,8 +134,8 @@
     signal-desktop # chat
 
     # gaming
-    bastet # tetris
-    teams-for-linux # microsoft teams
+    bastet              # tetris
+    teams-for-linux     # microsoft teams
     lutris
 
     wineWowPackages.stable
@@ -159,11 +158,7 @@
 
   fonts = {
     fontconfig.enable = true;
-    packages = with pkgs; [
-      nerd-fonts.fira-code
-      # nerd-fonts.droid-sans-mono
-      # fira
-    ];
+    packages = with pkgs; [ nerd-fonts.fira-code ];
   };
 
   virtualisation = {

@@ -150,6 +150,8 @@
       "editor.fontLigatures" = true;
       "editor.fontSize" = 14;
       "terminal.integrated.fontFamily" = "'FiraCode Nerd Font'";
+      "terminal.integrated.fontSize" = 14;
+      "workbench.fontAliasing" = "antialiased";
     };
   };
 

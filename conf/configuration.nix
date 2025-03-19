@@ -158,12 +158,6 @@
     fontconfig.enable = true;
 
     fontDir.enable = true;
-
-    fontconfig = {
-      defaultFonts = {
-        monospace = [ "FiraCode Nerd Font Mono" ];
-      };
-    };
   };
 
   environment.sessionVariables = {

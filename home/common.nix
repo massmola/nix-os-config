@@ -145,7 +145,7 @@
 
   programs.vscode = {
     enable = true;
-    userSettings = {
+    profiles.default.userSettings = {
       "editor.fontFamily" = "'FiraCode Nerd Font', 'monospace'";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 14;

@@ -93,7 +93,7 @@
     gh          # github cli
     glab        # giglab cli
     powershell  # powershell for linux
-    bat
+    bat         # cat clone with wings
 
     # system
 

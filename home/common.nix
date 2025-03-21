@@ -28,14 +28,11 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # Adds the 'hello' command to your environment. It prints a friendly
-    # "Hello, world!" when run.
-    hello
-
     # Cybersecurity tools
     wireshark # network analysis
     burpsuite # web app pentesting
     ngrok # tunneling
+    # swww # wallpapers
 
     # Gaming tools
     protonup # proton updater
@@ -86,72 +83,76 @@
   };
 
   # Git configuration
-  programs.git = {
-    enable = true;
-    userName = "MassimiIano";
-    userEmail = "massimiliano.mola.bzs@gmail.com";
-    ignores = [
-      ".cache/"
-      ".DS_Store"
-      ".idea/"
-      "*.swp"
-      "*.elc"
-      "auto-save-list"
-      ".direnv/"
-      ".venv/"
-      ".vscode/"
-      "node_modules"
-      "result"
-      "result-*"
-    ];
+  programs = {
+    git = {
+      enable = true;
+      userName = "MassimiIano";
+      userEmail = "massimiliano.mola.bzs@gmail.com";
+      ignores = [
+        ".cache/"
+        ".DS_Store"
+        ".idea/"
+        "*.swp"
+        "*.elc"
+        "auto-save-list"
+        ".direnv/"
+        ".venv/"
+        ".vscode/"
+        "node_modules"
+        "result"
+        "result-*"
+      ];
 
-    extraConfig = {
-      init = {
-        defaultBranch = "main";
+      extraConfig = {
+        init = {
+          defaultBranch = "main";
+        };
+        delta = {
+          options.map-styles = "bold purple => syntax #ca9ee6, bold cyan => syntax #8caaee";
+          line-numbers = true;
+        };
       };
-      delta = {
-        options.map-styles = "bold purple => syntax #ca9ee6, bold cyan => syntax #8caaee";
-        line-numbers = true;
+
+      aliases = {
+        essa = "push --force";
+        co = "checkout";
+        fuck = "commit --amend -m";
+        c = "commit -m";
+        ca = "commit -am";
+        forgor = "commit --amend --no-edit";
+        graph = "log --all --decorate --graph --oneline";
+        oops = "checkout --";
+        l = "log";
+        r = "rebase";
+        s = "status --short";
+        d = "diff";
+        st = "status";
+        br = "branch";
       };
     };
 
-    aliases = {
-      essa = "push --force";
-      co = "checkout";
-      fuck = "commit --amend -m";
-      c = "commit -m";
-      ca = "commit -am";
-      forgor = "commit --amend --no-edit";
-      graph = "log --all --decorate --graph --oneline";
-      oops = "checkout --";
-      l = "log";
-      r = "rebase";
-      s = "status --short";
-      d = "diff";
-      st = "status";
-      br = "branch";
+    # adds the develop shortkut to access my development shells
+    bash = {
+      enable = true;
+      initExtra = ''
+        develop() {
+          nix develop "github:massmola/nix-flakes#$1"
+        }
+      '';
     };
-  };
 
-  # adds the develop shortkut to access my development shells
-  programs.bash = {
-    enable = true;
-    initExtra = ''
-      develop() {
-        nix develop "github:massmola/nix-flakes#$1"
-      }
-    '';
-  };
+    swww.enable = true
 
-  programs.vscode = {
-    enable = true;
-    profiles.default.userSettings = {
-      "editor.fontFamily" = "'FiraCode Nerd Font', 'Fira Code', 'monospace'";
-      "editor.fontLigatures" = true;
-      "editor.fontSize" = 14;
-      "terminal.integrated.fontFamily" = "'FiraCode Nerd Font'";
-      "terminal.integrated.fontSize" = 14;
-      "workbench.fontAliasing" = "antialiased";
+    vscode = {
+      enable = true;
+      profiles.default.userSettings = {
+        "editor.fontFamily" = "'FiraCode Nerd Font', 'Fira Code', 'monospace'";
+        "editor.fontLigatures" = true;
+        "editor.fontSize" = 14;
+        "terminal.integrated.fontFamily" = "'FiraCode Nerd Font'";
+        "terminal.integrated.fontSize" = 14;
+        "workbench.fontAliasing" = "antialiased";
+      };
     };
   };
 

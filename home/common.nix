@@ -32,7 +32,7 @@
     wireshark # network analysis
     burpsuite # web app pentesting
     ngrok # tunneling
-    # swww # wallpapers
+    swww # wallpapers
 
     # Gaming tools
     protonup # proton updater
@@ -140,8 +140,6 @@
         }
       '';
     };
-
-    swww.enable = true;
 
     vscode = {
       enable = true;

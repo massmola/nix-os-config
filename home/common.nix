@@ -141,7 +141,7 @@
       '';
     };
 
-    swww.enable = true
+    swww.enable = true;
 
     vscode = {
       enable = true;

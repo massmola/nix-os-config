@@ -82,12 +82,6 @@
 
   };
 
-  systemd.user.services.swww-gif-wallpaper = {
-    description = "Set animated GIF as wallpaper with swww";
-    wantedBy = [ "default.target" ];
-    serviceConfig.ExecStart = "${pkgs.swww}/bin/swww img ../assets/wallpapers/confy-distopia.gif";
-  };
-
   # Git configuration
   programs = {
     git = {

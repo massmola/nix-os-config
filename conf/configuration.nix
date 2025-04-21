@@ -122,6 +122,7 @@
 
     firefox           # web browser
     tor-browser       # web browser
+    brave
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
 
     # style
@@ -183,8 +184,6 @@
     };
   };
 
-  # Enable Flatpak
-  services.flatpak.enable = true;
 
   # remove old nixos generations
   nix.gc = {
@@ -203,15 +202,6 @@
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
-
-  # Adds the standard flathub repository
-  systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    '';
   };
 
   # This value determines the NixOS release from which the default

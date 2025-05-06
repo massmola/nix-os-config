@@ -162,7 +162,7 @@
     packages = with pkgs; [ nerd-fonts.fira-code ];
   };
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   virtualisation = {
     # docker

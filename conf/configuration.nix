@@ -163,7 +163,7 @@
   };
 
   hardware.graphics.enable = true;
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.driSupport32Bit = true;
 
   virtualisation = {
     # docker

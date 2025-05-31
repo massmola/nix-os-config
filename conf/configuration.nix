@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -14,7 +10,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "marvin";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable fakes
   nix.settings.experimental-features = [
@@ -65,9 +60,6 @@
       "docker"
       "networkmanager"
     ];
-    packages = with pkgs; [
-
-    ];
   };
 
   users.users.ict = {
@@ -77,16 +69,15 @@
       "wheel"
       "networkmanager"
       "docker"
-    ]; # Optional groups
+    ]; 
     hashedPassword = "$6$9qX8k0blae/Ev1Vj$Uu6ptnWrQhyo6OnmKHXCGScw5nRdnGbKlxGJ1gDmKqyyvxDzfvW4dy/2nF4cfuuoNktBRmONPsjwOpbWambVB/"; # Use hashed password or `password` for plain text
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
-  # programs.nix-ld.libraries = options.programs.nix-ld.libraries.default ++ (with pkgs; [ libglvnd  ]);
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+
+  # Programs
   environment.systemPackages = with pkgs; [
     # essentials
     vim
@@ -96,7 +87,6 @@
     bat         # cat clone with wings
 
     # system
-
     dconf
     unzip         # extract files from .zip archives
     home-manager  # manage user configuration
@@ -126,24 +116,23 @@
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
 
     # style
-    swww # for wallpapers
-    vlc
+    swww      # for wallpapers
+    vlc       # media player 
 
     # social
-    discord # chat client
-    telegram-desktop # chat
-    signal-desktop # chat
+    discord           # chat client
+    telegram-desktop  # chat
+    signal-desktop    # chat
 
     # gaming
     bastet              # tetris
     teams-for-linux     # microsoft teams
-    lutris
 
     wineWowPackages.stable
   ];
 
 
-
+  # environment variables
   environment.sessionVariables = {
     VSCODE_ENABLE_FEATURES = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
     QT_QPA_PLATFORM = "wayland";
@@ -162,29 +151,11 @@
     packages = with pkgs; [ nerd-fonts.fira-code ];
   };
 
+  # Enable OpenGL and Vulkan support
   hardware.graphics.enable = true;
 
-  virtualisation = {
-    # docker
-    docker.enable = true;
-
-    # waydroid
-    waydroid.enable = true;
-    lxd.enable = true;
-  };
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = true;
-      AllowUsers = [ "spatola" ];
-      UseDns = true;
-      X11Forwarding = false;
-      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
-    };
-  };
+  # docker
+  virtualisation.docker.enable = true;
 
 
   # remove old nixos generations
@@ -201,17 +172,10 @@
   # Install steam
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    remotePlay.openFirewall = true;                 # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true;            # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true;  # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
-
+  system.stateVersion = "23.11";
 }

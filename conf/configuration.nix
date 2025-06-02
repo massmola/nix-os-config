@@ -44,7 +44,7 @@
   # Enable the GNOME Desktop Environment.
   services.desktopManager.gnome.enable = true;
 
-  services.xserver.displayManager = {
+  services.displayManager = {
     gdm.wayland = true;
     gdm.enable = true;
   };

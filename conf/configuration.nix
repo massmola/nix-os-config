@@ -49,6 +49,7 @@
     gdm.enable = true;
   };
 
+  # touchpad and mouse support
   services.libinput.enable = true;
 
   # Enable CUPS to print documents.

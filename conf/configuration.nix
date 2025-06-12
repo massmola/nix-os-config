@@ -55,7 +55,7 @@
     enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  }
+  };
 
   # touchpad and mouse support
   services.libinput.enable = true;

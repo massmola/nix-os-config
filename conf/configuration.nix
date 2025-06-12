@@ -49,6 +49,26 @@
     gdm.enable = true;
   };
 
+  # audio
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+    # Configure realtime priority
+    config.pipewire = {
+      "context.properties" = {
+        "default.clock.rate" = 48000;
+        "default.clock.quantum" = 1024;
+        "default.clock.min-quantum" = 32;
+        "default.clock.max-quantum" = 8192;
+      };
+    };
+  };
   # touchpad and mouse support
   services.libinput.enable = true;
 
@@ -63,6 +83,7 @@
       "wheel"
       "docker"
       "networkmanager"
+      "audio"
     ];
   };
 
@@ -73,6 +94,7 @@
       "wheel"
       "networkmanager"
       "docker"
+      "audio"
     ]; 
     hashedPassword = "$6$9qX8k0blae/Ev1Vj$Uu6ptnWrQhyo6OnmKHXCGScw5nRdnGbKlxGJ1gDmKqyyvxDzfvW4dy/2nF4cfuuoNktBRmONPsjwOpbWambVB/"; # Use hashed password or `password` for plain text
   };

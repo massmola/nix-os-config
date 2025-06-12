@@ -50,9 +50,13 @@
   };
 
   # audio
-    security.rtkit.enable = true;
-    services.pipewire.enable = true;
-    
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  }
+
   # touchpad and mouse support
   services.libinput.enable = true;
 

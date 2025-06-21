@@ -2,7 +2,7 @@
 
 set -e
 
-gen=$(nixos-rebuild list-generations | grep current)
+gen=$(nix-env --list-generations | awk '/current/ {print}')
 
 # Check if the user has provided a commit message
 if [ -z "$1" ]; then

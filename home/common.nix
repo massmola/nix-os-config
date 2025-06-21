@@ -136,7 +136,11 @@
       enable = true;
       initExtra = ''
         develop() {
-          nix develop "github:massmola/nix-flakes#$1"
+          if [ -f "$HOME/.flakes/flake.nix" ]; then
+            nix develop "$HOME/.flakes#$1"
+          else
+            nix develop "github:massmola/nix-flakes#$1"
+          fi
         }
       '';
     };

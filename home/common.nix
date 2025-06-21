@@ -147,43 +147,7 @@
 
     vscode = {
       enable = true;
-      profiles.default.userSettings = {
-        "editor.fontFamily" = "'FiraCode Nerd Font', sans-serif";
-        "editor.fontLigatures" = true;
-        "editor.fontSize" = 14;
-        "terminal.integrated.fontFamily" = "'FiraCode Nerd Font Mono', monospace";
-        "terminal.integrated.fontSize" = 14;
-        "workbench.fontAliasing" = "antialiased";
-        "dev.containers.defaultExtensions" = [
-          "GitHub.copilot"
-          "GitHub.copilot-chat"
-          "aaron-bond.better-comments"
-          "eamodio.gitlens"
-        ];
-        "remote.SSH.defaultExtensions" = [
-          "GitHub.copilot"
-          "GitHub.copilot-chat"
-          "aaron-bond.better-comments"
-        ];
-        "settingsSync.ignoredExtensions" = [
-          "jamesottaway.nix-develop"
-          "ms-vscode.js-debug-companion"
-          "dbaeumer.vscode-eslint"
-          "ms-python.vscode-pylance"
-          "ms-python.python"
-          "ms-python.debugpy"
-          "afractal.node-essentials"
-        ];
-        "explorer.confirmDragAndDrop" = false;
-        "files.autoSave" = "afterDelay";
-        "explorer.confirmDelete" = false;
-        "workbench.sideBar.location" = "right";
-        "workbench.iconTheme" = "material-icon-theme";
-        "workbench.colorTheme" = "One Dark Pro Darker";
-        "workbench.settings.applyToAllProfiles" = [
-          "editor.fontFamily"
-        ];
-      };
+      profiles.default.userSettings = builtins.fromJSON (builtins.readFile ./vscode_settings.json);
     };
   };
 

@@ -123,6 +123,7 @@
     aria2             # download manager
     direnv            # environment switcher (mainly for vscode enviroments)
     nixfmt-rfc-style  # nix formatter
+    openslssl
 
     firefox           # web browser
     tor-browser       # web browser

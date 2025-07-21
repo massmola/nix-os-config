@@ -115,7 +115,6 @@
     curl              # transfer data with URLs
     netcat            # networking utility
     git               # version control
-    xclip             # command line interface to the X11 clipboard
     wl-clipboard      # Wayland clipboard manager
     wireguard-tools   # VPN
     filezilla         # FTP client
@@ -138,10 +137,6 @@
     discord           # chat client
     telegram-desktop  # chat
     signal-desktop    # chat
-
-    # gaming
-    bastet              # tetris
-    teams-for-linux     # microsoft teams
 
     wineWowPackages.stable
   ];

@@ -166,6 +166,7 @@
 
   # docker
   virtualisation.docker.enable = true;
+  virtualisation.waydroid.enable = true;
 
 
   # remove old nixos generations

@@ -126,7 +126,7 @@
 
     firefox           # web browser
     tor-browser       # web browser
-    (libreoffice.override { enableGnome = true; }) // { suid = true; }
+    libreoffice
     brave
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
 

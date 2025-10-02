@@ -190,7 +190,6 @@
   };
 
   programs.mtr.enable = true;
-  services.mtr-exporter.enable = true;
 
   system.stateVersion = "23.11";
 }

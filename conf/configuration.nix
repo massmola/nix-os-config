@@ -189,5 +189,8 @@
     localNetworkGameTransfers.openFirewall = true;  # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  programs.mtr.enable = true;
+  services.mtr-exporter.enable = true;
+
   system.stateVersion = "23.11";
 }

@@ -64,8 +64,7 @@
   services.printing.enable = true;
 
 
-  # Enable Wireshark for network analysis
-  services.udev = { extraRules = '' SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640" ''; };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spatola = {
     isNormalUser = true;
@@ -95,6 +94,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
+  # Enable Wireshark for network analysis
+  programs.wireshark.enable = true;
 
   # Programs
   environment.systemPackages = with pkgs; [

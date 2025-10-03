@@ -63,6 +63,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+
+  # Enable Wireshark for network analysis
+  services.udev = { extraRules = '' SUBSYSTEM=="usbmon", GROUP="wireshark", MODE="0640" ''; };
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spatola = {
     isNormalUser = true;
@@ -194,4 +197,5 @@
   programs.mtr.enable = true;
 
   system.stateVersion = "23.11";
+
 }

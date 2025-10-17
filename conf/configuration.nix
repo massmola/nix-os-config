@@ -129,6 +129,7 @@
     direnv            # environment switcher (mainly for vscode enviroments)
     nixfmt-rfc-style  # nix formatter
     openssl           # cryptography toolkit  
+    busybox
 
     firefox           # web browser
     tor-browser       # web browser

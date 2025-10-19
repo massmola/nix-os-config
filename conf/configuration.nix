@@ -126,7 +126,7 @@
     filezilla         # FTP client
     gnumake42         # make
     aria2             # download manager
-    direnv            # environment switcher (mainly for vscode enviroments)
+    direnv            # environment switcher (mainly for vscoide enviroments)
     nixfmt-rfc-style  # nix formatter
     openssl           # cryptography toolkit  
     busybox
@@ -175,6 +175,15 @@
   # docker
   virtualisation.docker.enable = true;
   virtualisation.waydroid.enable = true;
+
+
+  # Create a swap file
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8 * 1024; # 8GB swap file
+    }
+  ];  
 
 
   # remove old nixos generations

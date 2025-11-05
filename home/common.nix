@@ -35,7 +35,7 @@
     swww # wallpapers
 
     # Gaming tools
-    protonup # proton updater
+    protonup-ng # proton updater
 
     # Learning tools
     obsidian # note taking

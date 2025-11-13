@@ -110,7 +110,7 @@
     dconf
     unzip         # extract files from .zip archives
     home-manager  # manage user configuration
-    du-dust       # disk usage
+    dust          # disk usage
     bat           # cat clone with wings
     htop          # interactive process viewer
     efitools      # EFI tools

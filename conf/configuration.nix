@@ -130,7 +130,7 @@
     nixfmt-rfc-style  # nix formatter
     openssl           # cryptography toolkit  
     busybox
-    # code-cursor       # vscode with ebetter ai 
+    code-cursor       # vscode with ebetter ai 
 
     firefox           # web browser
     tor-browser       # web browser

@@ -105,6 +105,7 @@
     glab        # giglab cli
     powershell  # powershell for linux
     bat         # cat clone with wings
+    gnome-sound-recorder  # audio recorder
 
     # system
     dconf

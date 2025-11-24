@@ -148,8 +148,6 @@
     discord           # chat client
     telegram-desktop  # chat
     signal-desktop    # chat
-
-    wineWowPackages.stable
   ];
 
 
@@ -177,7 +175,6 @@
 
   # docker
   virtualisation.docker.enable = true;
-  virtualisation.waydroid.enable = true;
 
 
   # Create a swap file

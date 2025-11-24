@@ -132,6 +132,7 @@
     openssl           # cryptography toolkit  
     busybox
     code-cursor       # vscode with ebetter ai 
+    antigravity-nix.packages.x86_64-linux.default
 
     firefox           # web browser
     tor-browser       # web browser

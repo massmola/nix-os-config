@@ -1,0 +1,23 @@
+name: iap
+channels:
+  - conda-forge
+  - ankurankan
+dependencies:
+  - python>=3.7
+  - gym
+  - joblib
+  - matplotlib
+  - nltk
+  - pandas
+  - pgmpy
+  - pip
+  - pyglet
+  - python-graphviz
+  - scikit-learn
+  - seaborn
+  - tensorflow
+  - z3-solver
+  - pip:
+    - wumpus[gym] @ git+https://gitlab.inf.unibz.it/iap2025/wumpus-tessaris.git@master
+    - jupyter
+    - unified-planning[enhsp]

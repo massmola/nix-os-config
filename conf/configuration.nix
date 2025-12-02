@@ -133,6 +133,7 @@
     busybox
     code-cursor       # vscode with ebetter ai 
     antigravity       # code editor
+    micromamba
 
     firefox           # web browser
     tor-browser       # web browser

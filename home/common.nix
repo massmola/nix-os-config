@@ -2,7 +2,7 @@
 # This Home Manager configuration is shared between all hosts.
 # --------------------------------------------------------------
 
-{ pkgs, config, ... }:
+{ pkgs, config, inputs, ... }:
 
 {
   dconf = {
@@ -39,7 +39,7 @@
 
     # Learning tools
     obsidian # note taking
-    conda # package manager
+    inputs.nixpkgs-stable.legacyPackages.${pkgs.system}.conda # package manager
 
     # You can also create simple shell scripts directly inside your
     # configuration. For example, this adds a command 'my-hello' to your

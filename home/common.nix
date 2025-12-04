@@ -86,8 +86,6 @@
   programs = {
     git = {
       enable = true;
-      userName = "MassimiIano";
-      userEmail = "massimiliano.mola.bzs@gmail.com";
       ignores = [
         ".cache/"
         ".DS_Store"
@@ -103,7 +101,12 @@
         "result-*"
       ];
 
-      extraConfig = {
+      settings = {
+        user = {
+          name = "MassimiIano";
+          email = "massimiliano.mola.bzs@gmail.com";
+        };
+
         init = {
           defaultBranch = "main";
         };
@@ -111,23 +114,23 @@
           options.map-styles = "bold purple => syntax #ca9ee6, bold cyan => syntax #8caaee";
           line-numbers = true;
         };
-      };
 
-      aliases = {
-        essa = "push --force";
-        co = "checkout";
-        fuck = "commit --amend -m";
-        c = "commit -m";
-        ca = "commit -am";
-        forgor = "commit --amend --no-edit";
-        graph = "log --all --decorate --graph --oneline";
-        oops = "checkout --";
-        l = "log";
-        r = "rebase";
-        s = "status --short";
-        d = "diff";
-        st = "status";
-        br = "branch";
+        alias = {
+          essa = "push --force";
+          co = "checkout";
+          fuck = "commit --amend -m";
+          c = "commit -m";
+          ca = "commit -am";
+          forgor = "commit --amend --no-edit";
+          graph = "log --all --decorate --graph --oneline";
+          oops = "checkout --";
+          l = "log";
+          r = "rebase";
+          s = "status --short";
+          d = "diff";
+          st = "status";
+          br = "branch";
+        };
       };
     };
 

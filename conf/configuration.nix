@@ -134,6 +134,7 @@
     code-cursor       # vscode with ebetter ai 
     antigravity       # code editor
     micromamba
+    python3
 
     firefox           # web browser
     tor-browser       # web browser

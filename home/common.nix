@@ -151,7 +151,6 @@
 
     vscode = {
       enable = true;
-      profiles.default.userSettings = builtins.fromJSON (builtins.readFile ./vscode_settings.json);
     };
   };
 

@@ -131,7 +131,8 @@
     nixfmt-rfc-style  # nix formatter
     openssl           # cryptography toolkit  
     busybox
-    code-cursor       # vscode with ebetter ai 
+    code-cursor       # vscode with better ai features
+    opencode          # code editor with open source ai features
     antigravity       # code editor
     micromamba
     python3

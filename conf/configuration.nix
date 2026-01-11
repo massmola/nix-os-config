@@ -136,6 +136,7 @@
     antigravity       # code editor
     micromamba
     python3
+    protege-distribution  # ontology editor
 
     firefox           # web browser
     tor-browser       # web browser

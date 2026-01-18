@@ -140,6 +140,7 @@
 
     firefox           # web browser
     tor-browser       # web browser
+    google-chrome
     libreoffice
     brave
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal

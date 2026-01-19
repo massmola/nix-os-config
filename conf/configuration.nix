@@ -140,6 +140,7 @@
     firefox           # web browser
     tor-browser       # web browser
     google-chrome
+    (pkgs.writeShellScriptBin "google-chrome" "exec ${pkgs.google-chrome}/bin/google-chrome-stable \"$@\"")
     pkgsStable.libreoffice
     brave
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal

@@ -2,6 +2,26 @@
 
 set -e
 
+# Parse arguments to extract --update
+args=()
+update=false
+for arg in "$@"; do
+    if [ "$arg" == "--update" ]; then
+        update=true
+    else
+        args+=("$arg")
+    fi
+done
+
+# Restore positional parameters without --update
+set -- "${args[@]}"
+
+# Update flake if requested
+if [ "$update" = true ]; then
+    echo "Updating flake..."
+    nix flake update
+fi
+
 gen=$(nix-env --list-generations | awk '/current/ {print}')
 
 # Check if the user has provided a commit message

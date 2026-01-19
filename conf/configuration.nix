@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgsStable, ... }:
 
 {
   imports = [
@@ -100,37 +100,36 @@
   # Programs
   environment.systemPackages = with pkgs; [
     # essentials
-    vim
+    pkgsStable.vim
     gh          # github cli
     glab        # giglab cli
     powershell  # powershell for linux
-    bat         # cat clone with wings
+    pkgsStable.bat         # cat clone with wings
     gnome-sound-recorder  # audio recorder
 
     # system
     dconf
-    unzip         # extract files from .zip archives
+    pkgsStable.unzip         # extract files from .zip archives
     home-manager  # manage user configuration
-    dust          # disk usage
-    bat           # cat clone with wings
-    htop          # interactive process viewer
-    efitools      # EFI tools
-    libfprint
+    pkgsStable.dust          # disk usage
+    pkgsStable.htop          # interactive process viewer
+    pkgsStable.efitools      # EFI tools
+    pkgsStable.libfprint
 
     # devtools
-    wget              # download files from the web
-    curl              # transfer data with URLs
-    netcat            # networking utility
-    git               # version control
-    wl-clipboard      # Wayland clipboard manager
-    wireguard-tools   # VPN
-    filezilla         # FTP client
-    gnumake42         # make
-    aria2             # download manager
+    pkgsStable.wget              # download files from the web
+    pkgsStable.curl              # transfer data with URLs
+    pkgsStable.netcat            # networking utility
+    pkgsStable.git               # version control
+    pkgsStable.wl-clipboard      # Wayland clipboard manager
+    pkgsStable.wireguard-tools   # VPN
+    pkgsStable.filezilla         # FTP client
+    pkgsStable.gnumake42         # make
+    pkgsStable.aria2             # download manager
     direnv            # environment switcher (mainly for vscoide enviroments)
-    nixfmt-rfc-style  # nix formatter
-    openssl           # cryptography toolkit  
-    busybox
+    pkgsStable.nixfmt-rfc-style  # nix formatter
+    pkgsStable.openssl           # cryptography toolkit  
+    pkgsStable.busybox
     code-cursor       # vscode with better ai features
     opencode          # code editor with open source ai features
     antigravity       # code editor
@@ -141,13 +140,13 @@
     firefox           # web browser
     tor-browser       # web browser
     google-chrome
-    libreoffice
+    pkgsStable.libreoffice
     brave
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
 
     # style
     swww      # for wallpapers
-    vlc       # media player 
+    pkgsStable.vlc       # media player 
 
     # social
     discord           # chat client

@@ -2,7 +2,7 @@
 # This Home Manager configuration is shared between all hosts.
 # --------------------------------------------------------------
 
-{ pkgs, config, inputs, ... }:
+{ pkgs, pkgsStable, config, inputs, ... }:
 
 {
   dconf = {
@@ -38,7 +38,7 @@
     protonup-ng # proton updater
 
     # Learning tools
-    obsidian # note taking
+    pkgsStable.obsidian # note taking
 
     # You can also create simple shell scripts directly inside your
     # configuration. For example, this adds a command 'my-hello' to your

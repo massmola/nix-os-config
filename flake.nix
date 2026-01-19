@@ -14,6 +14,14 @@
       nixosConfigurations.marvin = nixpkgs.lib.nixosSystem {
 
         system = "x86_64-linux";
+        
+        specialArgs = { 
+          inherit inputs;
+          pkgsStable = import nixpkgs-stable {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+        };
 
         modules = [
           # Name of the host
@@ -36,11 +44,15 @@
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs = { 
+              inherit inputs; 
+              pkgsStable = import nixpkgs-stable {
+                system = "x86_64-linux";
+                config.allowUnfree = true;
+              };
+            };
           }
         ];
-
-        specialArgs = { inherit inputs; };
       };
     };
 

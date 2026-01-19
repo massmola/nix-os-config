@@ -2,6 +2,9 @@
 
 set -e
 
+# Ask for sudo password upfront
+sudo -v
+
 # Parse arguments to extract --update
 args=()
 update=false

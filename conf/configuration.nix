@@ -126,24 +126,26 @@
     pkgsStable.filezilla         # FTP client
     pkgsStable.gnumake42         # make
     pkgsStable.aria2             # download manager
-    direnv            # environment switcher (mainly for vscoide enviroments)
+    direnv                       # environment switcher (mainly for vscoide enviroments)
     pkgsStable.nixfmt-rfc-style  # nix formatter
     pkgsStable.openssl           # cryptography toolkit  
-    pkgsStable.busybox
+    pkgsStable.busybox           # set of unix utilities
     code-cursor       # vscode with better ai features
     opencode          # code editor with open source ai features
     antigravity       # code editor
     micromamba
     python3
-    protege-distribution  # ontology editor
-
-    firefox           # web browser
+    protege-distribution         # ontology editor
+    (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
+    
+    # web browsers
+    brave
+    firefox           
     tor-browser       # web browser
     google-chrome
-    (pkgs.writeShellScriptBin "google-chrome" "exec ${pkgs.google-chrome}/bin/google-chrome-stable \"$@\"")
+    
+    # office
     pkgsStable.libreoffice
-    brave
-    (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
 
     # style
     swww      # for wallpapers

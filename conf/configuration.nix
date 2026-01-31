@@ -170,6 +170,8 @@
     WGPU_BACKEND = "vulkan";
     WINIT_UNIX_BACKEND = "wayland";
     SDL_VIDEODRIVER = "wayland";
+    CHROME_BIN = "/run/current-system/sw/bin/google-chrome-stable";
+    PUPPETEER_EXECUTABLE_PATH = "/run/current-system/sw/bin/google-chrome-stable";
   };
 
   fonts = {

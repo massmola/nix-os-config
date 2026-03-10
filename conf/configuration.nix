@@ -1,4 +1,9 @@
-{ config, pkgs, pkgsStable, ... }:
+{
+  config,
+  pkgs,
+  pkgsStable,
+  ...
+}:
 
 {
   imports = [
@@ -63,8 +68,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spatola = {
     isNormalUser = true;
@@ -87,7 +90,7 @@
       "docker"
       "wireshark"
       "audio"
-    ]; 
+    ];
     hashedPassword = "$6$9qX8k0blae/Ev1Vj$Uu6ptnWrQhyo6OnmKHXCGScw5nRdnGbKlxGJ1gDmKqyyvxDzfvW4dy/2nF4cfuuoNktBRmONPsjwOpbWambVB/"; # Use hashed password or `password` for plain text
   };
 
@@ -101,62 +104,62 @@
   environment.systemPackages = with pkgs; [
     # essentials
     pkgsStable.vim
-    gh          # github cli
-    glab        # giglab cli
-    powershell  # powershell for linux
-    pkgsStable.bat         # cat clone with wings
-    gnome-sound-recorder  # audio recorder
+    gh # github cli
+    glab # giglab cli
+    powershell # powershell for linux
+    pkgsStable.bat # cat clone with wings
+    gnome-sound-recorder # audio recorder
 
     # system
     dconf
-    pkgsStable.unzip         # extract files from .zip archives
-    home-manager  # manage user configuration
-    pkgsStable.dust          # disk usage
-    pkgsStable.htop          # interactive process viewer
-    pkgsStable.efitools      # EFI tools
+    pkgsStable.unzip # extract files from .zip archives
+    home-manager # manage user configuration
+    pkgsStable.dust # disk usage
+    pkgsStable.htop # interactive process viewer
+    pkgsStable.efitools # EFI tools
     pkgsStable.libfprint
 
     # devtools
-    pkgsStable.wget              # download files from the web
-    pkgsStable.curl              # transfer data with URLs
-    pkgsStable.netcat            # networking utility
-    pkgsStable.git               # version control
-    pkgsStable.wl-clipboard      # Wayland clipboard manager
-    pkgsStable.wireguard-tools   # VPN
-    pkgsStable.filezilla         # FTP client
-    pkgsStable.gnumake42         # make
-    pkgsStable.aria2             # download manager
-    direnv                       # environment switcher (mainly for vscoide enviroments)
-    pkgsStable.nixfmt-rfc-style  # nix formatter
-    pkgsStable.openssl           # cryptography toolkit  
-    pkgsStable.busybox           # set of unix utilities
-    code-cursor       # vscode with better ai features
-    opencode          # code editor with open source ai features
-    antigravity       # code editor
+    pkgsStable.wget # download files from the web
+    pkgsStable.curl # transfer data with URLs
+    pkgsStable.netcat # networking utility
+    pkgsStable.git # version control
+    pkgsStable.wl-clipboard # Wayland clipboard manager
+    pkgsStable.wireguard-tools # VPN
+    pkgsStable.filezilla # FTP client
+    pkgsStable.gnumake42 # make
+    pkgsStable.aria2 # download manager
+    direnv # environment switcher (mainly for vscoide enviroments)
+    pkgsStable.nixfmt-rfc-style # nix formatter
+    pkgsStable.openssl # cryptography toolkit
+    pkgsStable.busybox # set of unix utilities
+    code-cursor # vscode with better ai features
+    opencode # code editor with open source ai features
+    antigravity # code editor
+    codex # codex cli
     micromamba
     python3
-    protege-distribution         # ontology editor
+    protege-distribution # ontology editor
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
-    
+
     # web browsers
     brave
-    firefox           
-    tor-browser       # web browser
+    firefox
+    tor-browser # web browser
     google-chrome
-    
+
     # office
     pkgsStable.libreoffice
 
     # style
-    swww      # for wallpapers
-    pkgsStable.vlc       # media player 
+    swww # for wallpapers
+    pkgsStable.vlc # media player
 
     # social
-    discord           # chat client
-    telegram-desktop  # chat
-    signal-desktop    # chat
+    discord # chat client
+    telegram-desktop # chat
+    signal-desktop # chat
   ];
-
 
   # environment variables
   environment.sessionVariables = {
@@ -185,15 +188,13 @@
   # docker
   virtualisation.docker.enable = true;
 
-
   # Create a swap file
   swapDevices = [
     {
       device = "/swapfile";
       size = 8 * 1024; # 8GB swap file
     }
-  ];  
-
+  ];
 
   # remove old nixos generations
   nix.gc = {
@@ -209,9 +210,9 @@
   # Install steam
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true;                 # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true;            # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true;  # Open ports in the firewall for Steam Local Network Game Transfers
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
   programs.mtr.enable = true;

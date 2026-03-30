@@ -115,6 +115,13 @@
   # Enable Wireshark for network analysis
   programs.wireshark.enable = true;
 
+  # direnv
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    nix-direnv.enable = true;
+  };
+
   # Programs
   environment.systemPackages = with pkgs; [
     # essentials
@@ -153,6 +160,7 @@
     opencode # code editor with open source ai features
     antigravity # code editor
     codex # codex cli
+    bubblewrap # required by codex
     micromamba
     python3
     protege-distribution # ontology editor
@@ -232,6 +240,12 @@
   };
 
   programs.mtr.enable = true;
+
+  # Create a symlink for codex to find bwrap
+  system.activationScripts.bwrap-link = ''
+    mkdir -p /usr/bin
+    ln -sf ${pkgs.bubblewrap}/bin/bwrap /usr/bin/bwrap
+  '';
 
   system.stateVersion = "23.11";
 

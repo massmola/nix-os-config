@@ -96,6 +96,21 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "libsoup-2.74.3"
+  ];
+
+  # Re-enable Google Drive support in GNOME Wait for upstream fix.
+  nixpkgs.overlays = [
+    (final: prev: {
+      gnome = prev.gnome.overrideScope (gfinal: gprev: {
+        gvfs = gprev.gvfs.override {
+          googleSupport = true;
+          gnomeSupport = true;
+        };
+      });
+    })
+  ];
   programs.nix-ld.enable = true;
   # Enable Wireshark for network analysis
   programs.wireshark.enable = true;
@@ -112,6 +127,7 @@
 
     # system
     dconf
+    jq
     pkgsStable.unzip # extract files from .zip archives
     home-manager # manage user configuration
     pkgsStable.dust # disk usage

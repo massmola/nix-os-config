@@ -35,7 +35,7 @@
     wireshark # network analysis
     burpsuite # web app pentesting
     ngrok # tunneling
-    swww # wallpapers
+    awww # wallpapers
 
     # Gaming tools
     protonup-ng # proton updater
@@ -90,6 +90,7 @@
   programs = {
     git = {
       enable = true;
+      signing.format = "openpgp";
       ignores = [
         ".cache/"
         ".DS_Store"

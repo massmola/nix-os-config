@@ -149,6 +149,9 @@
     pkgsStable.git # version control
     pkgsStable.wl-clipboard # Wayland clipboard manager
     pkgsStable.wireguard-tools # VPN
+    openconnect # CLI client for AnyConnect-compatible VPNs
+    networkmanager-openconnect # NetworkManager VPN service plugin
+    networkmanager-openconnect-gnome # GNOME editor/auth UI for OpenConnect
     pkgsStable.filezilla # FTP client
     pkgsStable.gnumake42 # make
     pkgsStable.aria2 # download manager

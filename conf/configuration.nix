@@ -114,7 +114,7 @@
       wireshark = super.wireshark.overrideAttrs (oldAttrs: {
         src = super.fetchurl {
           url = oldAttrs.src.url;
-          sha256 = "Zvrwxjp4LK2J3QnxmPxKKrU01YHQvPyp54UWzeGNCjA=";
+          sha256 = "NbabAdCUXeZqWXUaiR+3CjXBAV5u4Nz2VqVqX+Jp2Lg=";
         };
       });
     })

@@ -11,17 +11,6 @@
     ./hardware-configuration.nix
   ];
 
-  nixpkgs.overlays = [
-    (self: super: {
-      wireshark = super.wireshark.overrideAttrs (oldAttrs: {
-        src = super.fetchurl {
-          url = oldAttrs.src.url;
-          sha256 = "Zvrwxjp4LK2J3QnxmPxKKrU01YHQvPyp54UWzeGNCjA=";
-        };
-      });
-    })
-  ];
-
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -118,6 +107,14 @@
         gvfs = gprev.gvfs.override {
           googleSupport = true;
           gnomeSupport = true;
+        };
+      });
+    })
+    (self: super: {
+      wireshark = super.wireshark.overrideAttrs (oldAttrs: {
+        src = super.fetchurl {
+          url = oldAttrs.src.url;
+          sha256 = "Zvrwxjp4LK2J3QnxmPxKKrU01YHQvPyp54UWzeGNCjA=";
         };
       });
     })

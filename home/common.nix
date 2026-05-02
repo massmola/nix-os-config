@@ -32,7 +32,7 @@
   # environment.
   home.packages = with pkgs; [
     # Cybersecurity tools
-    # wireshark # network analysis
+    wireshark # network analysis
     burpsuite # web app pentesting
     ngrok # tunneling
     awww # wallpapers

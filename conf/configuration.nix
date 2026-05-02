@@ -113,7 +113,7 @@
   ];
   programs.nix-ld.enable = true;
   # Enable Wireshark for network analysis
-  programs.wireshark.enable = true;
+  # programs.wireshark.enable = true;
 
   # direnv
   programs.direnv = {

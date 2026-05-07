@@ -25,6 +25,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Keep the classic D-Bus daemon so `nixos-rebuild switch` can continue
+  # working after the 26.05 default changed to dbus-broker.
+  services.dbus.implementation = "dbus";
+
   # Set your time zone.
   time.timeZone = "Europe/Rome";
 

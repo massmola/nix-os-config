@@ -71,6 +71,9 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = with pkgs; [
+    cnijfilter2
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.spatola = {

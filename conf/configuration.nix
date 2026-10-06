@@ -10,11 +10,11 @@ let
   # Nixpkgs' `chatgpt` derivation is currently only available for macOS.
   chatgptDesktop = pkgs.stdenv.mkDerivation (finalAttrs: {
     pname = "chatgpt";
-    version = "26.901.41600";
+    version = "26.930.51102";
 
     src = pkgs.fetchurl {
       url = "https://persistent.oaistatic.com/codex-app-prod/linux/deb/latest/chatgpt_amd64.deb";
-      hash = "sha256-Fc9CKnfo8op1U9MYC4xyeEqZRDihQXhMgtcs3pPvync=";
+      hash = "sha256-Y3w8lLxQ+O4zoV4uKOx/kqeH8JQ+cA7+ERvAvw1IE7Q=";
     };
 
     nativeBuildInputs = with pkgs; [
@@ -208,7 +208,6 @@ in
     pkgsStable.vim
     gh # github cli
     glab # giglab cli
-    powershell # powershell for linux
     pkgsStable.bat # cat clone with wings
     gnome-sound-recorder # audio recorder
 
@@ -238,9 +237,6 @@ in
     pkgsStable.nixfmt-rfc-style # nix formatter
     pkgsStable.openssl # cryptography toolkit
     pkgsStable.busybox # set of unix utilities
-    code-cursor # vscode with better ai features
-    opencode # code editor with open source ai features
-    antigravity-ide # code editor
     codex # codex cli
     chatgptDesktop # ChatGPT desktop app, including the Codex GUI
     bubblewrap # required by codex

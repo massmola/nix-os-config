@@ -208,6 +208,7 @@ in
     pkgsStable.vim
     gh # github cli
     glab # giglab cli
+    oci-cli # Oracle Cloud Infrastructure CLI
     pkgsStable.bat # cat clone with wings
     gnome-sound-recorder # audio recorder
 

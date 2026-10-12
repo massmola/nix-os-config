@@ -23,6 +23,12 @@
     "flakes"
   ];
 
+  # Prebuilt packages for the llm-agents input (ChatGPT and OpenClaw).
+  nix.settings.extra-substituters = [ "https://cache.numtide.com" ];
+  nix.settings.extra-trusted-public-keys = [
+    "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+  ];
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -166,6 +172,7 @@
     pkgsStable.busybox # set of unix utilities
     codex # codex cli
     inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
+    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.openclaw
     bubblewrap # required by codex
     pkgsStable.micromamba
     python3

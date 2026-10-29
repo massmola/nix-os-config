@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgsStable,
   inputs,
   ...
 }:
@@ -15,6 +14,11 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Linux 6.18.57 can load both ACPI button drivers, causing wake
+  # notifications to trigger shutdown. Keep the normal button driver.
+  boot.blacklistedKernelModules = [ "tiny_power_button" ];
+
   networking.hostName = "marvin";
 
   # Enable fakes
@@ -63,6 +67,19 @@
   services.displayManager = {
     gdm.enable = true;
   };
+
+  # Keep working with the lid closed on AC; suspend on battery, including
+  # when the charger is unplugged while the lid is already closed.
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "ignore";
+  };
+
+  # Work around a suspected suspend/session-freezer deadlock.
+  # Oct 23-25 recovery logs repeatedly show user.slice failing to thaw.
+  # Verify with a real suspend/resume cycle. Limit this to plain suspend;
+  # hibernation keeps systemd's default session-freezing behavior.
+  systemd.services.systemd-suspend.environment.SYSTEMD_SLEEP_FREEZE_USER_SESSIONS = "false";
 
   # audio
   security.rtkit.enable = true;
@@ -137,44 +154,52 @@
   # Programs
   environment.systemPackages = with pkgs; [
     # essentials
-    pkgsStable.vim
+    vim
     gh # github cli
     glab # giglab cli
     oci-cli # Oracle Cloud Infrastructure CLI
-    pkgsStable.bat # cat clone with wings
+    bat # cat clone with wings
     gnome-sound-recorder # audio recorder
 
     # system
     dconf
     jq
-    pkgsStable.unzip # extract files from .zip archives
+    unzip # extract files from .zip archives
     home-manager # manage user configuration
-    pkgsStable.dust # disk usage
-    pkgsStable.htop # interactive process viewer
-    pkgsStable.efitools # EFI tools
-    pkgsStable.libfprint
+    dust # disk usage
+    htop # interactive process viewer
+    efitools # EFI tools
+    libfprint
 
     # devtools
-    pkgsStable.wget # download files from the web
-    pkgsStable.curl # transfer data with URLs
-    pkgsStable.netcat # networking utility
-    pkgsStable.git # version control
-    pkgsStable.wl-clipboard # Wayland clipboard manager
-    pkgsStable.wireguard-tools # VPN
+    wget # download files from the web
+    curl # transfer data with URLs
+    netcat # networking utility
+    git # version control
+    wl-clipboard # Wayland clipboard manager
+    wireguard-tools # VPN
     openconnect # CLI client for AnyConnect-compatible VPNs
     networkmanager-openconnect # NetworkManager VPN service plugin
-    pkgsStable.filezilla # FTP client
-    pkgsStable.gnumake42 # make
-    pkgsStable.aria2 # download manager
+    filezilla # FTP client
+    gnumake # make
+    aria2 # download manager
     direnv # environment switcher (mainly for vscoide enviroments)
-    pkgsStable.nixfmt-rfc-style # nix formatter
-    pkgsStable.openssl # cryptography toolkit
-    pkgsStable.busybox # set of unix utilities
+    nixfmt # nix formatter
+    openssl # cryptography toolkit
+    busybox # set of unix utilities
     codex # codex cli
-    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt
+    (let
+      chatgpt = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt;
+    in
+      chatgpt.override {
+        # The device-key native module needs TPM libraries missing upstream.
+        chatgpt-unwrapped = chatgpt.unwrapped.overrideAttrs (old: {
+          buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.tpm2-tss ];
+        });
+      })
     inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.openclaw
     bubblewrap # required by codex
-    pkgsStable.micromamba
+    micromamba
     python3
     protege-distribution # ontology editor
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
@@ -186,11 +211,11 @@
     google-chrome
 
     # office
-    pkgsStable.libreoffice
+    libreoffice
 
     # style
     awww # for wallpapers
-    pkgsStable.vlc # media player
+    vlc # media player
 
     # social
     discord # chat client

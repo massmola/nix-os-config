@@ -4,7 +4,6 @@
   outputs =
     {
       self,
-      nixpkgs-stable,
       nixpkgs,
       ...
     }@inputs:
@@ -17,10 +16,6 @@
         
         specialArgs = { 
           inherit inputs;
-          pkgsStable = import nixpkgs-stable {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
         };
 
         modules = [
@@ -45,11 +40,7 @@
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
             home-manager.extraSpecialArgs = { 
-              inherit inputs; 
-              pkgsStable = import nixpkgs-stable {
-                system = "x86_64-linux";
-                config.allowUnfree = true;
-              };
+              inherit inputs;
             };
           }
         ];
@@ -57,9 +48,6 @@
     };
 
   inputs = {
-
-    # Stable Nixpkgs
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     # Unstable Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -72,11 +60,6 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    home-manager-stable = {
-      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

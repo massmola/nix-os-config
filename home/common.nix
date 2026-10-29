@@ -2,7 +2,7 @@
 # This Home Manager configuration is shared between all hosts.
 # --------------------------------------------------------------
 
-{ pkgs, pkgsStable, config, inputs, ... }:
+{ pkgs, config, inputs, ... }:
 
 {
   dconf = {
@@ -48,7 +48,7 @@
     quadrapassel # Tetris-style game
 
     # Learning tools
-    pkgsStable.obsidian # note taking
+    obsidian # note taking
     foliate # ebook reader
 
     # You can also create simple shell scripts directly inside your
@@ -57,7 +57,7 @@
     (writeShellScriptBin "my-hello" ''
       echo "Hello, ${config.home.username}!"
     '')
-    pkgsStable.conda
+    conda
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

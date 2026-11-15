@@ -5,6 +5,13 @@
   ...
 }:
 
+let
+  # Share the same prebuilt R Markdown packages between R and RStudio.
+  rMarkdownPackages = with pkgs.rPackages; [
+    rmarkdown
+    knitr
+  ];
+in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -35,6 +42,10 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+
+  # Android container for the Hatch Dragons compatibility test.
+  virtualisation.waydroid.enable = true;
+  virtualisation.waydroid.package = pkgs.waydroid-nftables;
 
   # Keep the classic D-Bus daemon so `nixos-rebuild switch` can continue
   # working after the 26.05 default changed to dbus-broker.
@@ -67,6 +78,9 @@
   services.displayManager = {
     gdm.enable = true;
   };
+
+  # Fingerprint enrollment and authentication (including GNOME/GDM).
+  services.fprintd.enable = true;
 
   # Keep working with the lid closed on AC; suspend on battery, including
   # when the charger is unplugged while the lid is already closed.
@@ -130,9 +144,37 @@
     "libsoup-2.74.3"
   ];
 
-  # Enable full GNOME support in gvfs.
+  # Custom fingerprint driver and full GNOME support in gvfs.
   nixpkgs.overlays = [
     (final: prev: {
+      # Use the restored upstream Brave recipe with this system's dependencies.
+      # https://github.com/NixOS/nixpkgs/pull/584534
+      brave = (prev.callPackage "${inputs.nixpkgs-fixes}/pkgs/applications/networking/browsers/brave" { }).brave;
+
+      # The upstream recipe adds AWS-LC and other required system libraries.
+      codex = prev.callPackage "${inputs.nixpkgs-fixes}/pkgs/by-name/co/codex/package.nix" { };
+
+      # RStudio enumerates individual dictionaries; the aggregate repeats their
+      # filenames and makes its dictionary symlink setup fail with "File exists".
+      rstudio = prev.rstudio.override {
+        hunspellDicts = builtins.removeAttrs prev.hunspellDicts [ "all" ];
+      };
+
+      # Goodix 27c6:5125 in this Huawei CREM-WXX9 is not supported upstream yet.
+      # https://gitlab.freedesktop.org/libfprint/libfprint/-/merge_requests/648
+      # Keep the driver's default guard against replacing an existing pairing;
+      # do not set GOODIX5125_PROVISION_PSK=random here.
+      libfprint = prev.libfprint.overrideAttrs (_: {
+        version = "1.94.100-goodix5125";
+        src = prev.fetchFromGitLab {
+          domain = "gitlab.freedesktop.org";
+          owner = "Thomas97460";
+          repo = "libfprint";
+          rev = "8cef588bcf165ebf866bbb526b1d1f116888d4af";
+          hash = "sha256-/M2Kp+gKptLconlInVEWLgG0YopgzhrIv355QBDmq3M=";
+        };
+      });
+
       gnome = prev.gnome.overrideScope (gfinal: gprev: {
         gvfs = gprev.gvfs.override {
           gnomeSupport = true;
@@ -201,6 +243,20 @@
     bubblewrap # required by codex
     micromamba
     python3
+    (rWrapper.override { packages = rMarkdownPackages; })
+    (rstudioWrapper.override { packages = rMarkdownPackages; })
+    pandoc # Convert knitted Markdown into PDF via LaTeX.
+    (texliveSmall.withPackages (
+      ps: with ps; [
+        framed
+        titling
+        upquote
+        inconsolata
+        fvextra
+        xurl
+        bookmark
+      ]
+    ))
     protege-distribution # ontology editor
     (pkgs.warp-terminal.override { waylandSupport = true; }) # terminal
 

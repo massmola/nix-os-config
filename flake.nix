@@ -52,6 +52,12 @@
     # Unstable Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    # Temporary source for package fixes awaiting nixos-unstable.
+    nixpkgs-fixes = {
+      url = "github:NixOS/nixpkgs/master";
+      flake = false;
+    };
+
     # Maintained packaging for the ChatGPT Linux desktop app.
     llm-agents = {
       url = "github:numtide/llm-agents.nix";

@@ -6,10 +6,11 @@
 }:
 
 let
-  # Share the same prebuilt R Markdown packages between R and RStudio.
+  # Share R Markdown and editor packages between R and RStudio.
   rMarkdownPackages = with pkgs.rPackages; [
     rmarkdown
     knitr
+    languageserver # VS Code completion, hover, and diagnostics.
   ];
 in
 {

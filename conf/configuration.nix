@@ -35,7 +35,11 @@ in
     "flakes"
   ];
 
-  # Prebuilt packages for the llm-agents input (ChatGPT and OpenClaw).
+  # Limit memory use when a package needs a local build.
+  nix.settings.max-jobs = 1;
+  nix.settings.cores = 4;
+
+  # Prebuilt packages for the llm-agents input (ChatGPT, Codex, and OpenClaw).
   nix.settings.extra-substituters = [ "https://cache.numtide.com" ];
   nix.settings.extra-trusted-public-keys = [
     "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
@@ -152,15 +156,6 @@ in
       # https://github.com/NixOS/nixpkgs/pull/584534
       brave = (prev.callPackage "${inputs.nixpkgs-fixes}/pkgs/applications/networking/browsers/brave" { }).brave;
 
-      # The upstream recipe adds AWS-LC and other required system libraries.
-      codex = prev.callPackage "${inputs.nixpkgs-fixes}/pkgs/by-name/co/codex/package.nix" { };
-
-      # RStudio enumerates individual dictionaries; the aggregate repeats their
-      # filenames and makes its dictionary symlink setup fail with "File exists".
-      rstudio = prev.rstudio.override {
-        hunspellDicts = builtins.removeAttrs prev.hunspellDicts [ "all" ];
-      };
-
       # Goodix 27c6:5125 in this Huawei CREM-WXX9 is not supported upstream yet.
       # https://gitlab.freedesktop.org/libfprint/libfprint/-/merge_requests/648
       # Keep the driver's default guard against replacing an existing pairing;
@@ -230,7 +225,7 @@ in
     nixfmt # nix formatter
     openssl # cryptography toolkit
     busybox # set of unix utilities
-    codex # codex cli
+    inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.codex
     (let
       chatgpt = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}.chatgpt;
     in
